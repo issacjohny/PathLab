@@ -1,0 +1,119 @@
+{
+  "graph": {
+    "schema_version": 1,
+    "nodes": [
+      {
+        "id": "m1",
+        "column": "First mediator (score)",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "m2",
+        "column": "m2",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "w",
+        "column": "w",
+        "role": "moderator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "x",
+        "column": "Predictor score",
+        "role": "independent",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "y",
+        "column": "Outcome %",
+        "role": "dependent",
+        "measurement_scale": "interval"
+      }
+    ],
+    "edges": [
+      {
+        "id": "p_x_m1",
+        "source": "x",
+        "target": "m1"
+      },
+      {
+        "id": "p_x_m2",
+        "source": "x",
+        "target": "m2"
+      },
+      {
+        "id": "p_m1_m2",
+        "source": "m1",
+        "target": "m2"
+      },
+      {
+        "id": "p_x_y",
+        "source": "x",
+        "target": "y"
+      },
+      {
+        "id": "p_m1_y",
+        "source": "m1",
+        "target": "y"
+      },
+      {
+        "id": "p_m2_y",
+        "source": "m2",
+        "target": "y"
+      },
+      {
+        "id": "p_w_m1",
+        "source": "w",
+        "target": "m1"
+      }
+    ],
+    "moderations": [
+      {
+        "id": "mod_0",
+        "path_id": "p_x_m1",
+        "moderator_ids": [
+          "w"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "schema_version": 3,
+    "outcome_family": "linear",
+    "categorical": [],
+    "probes": [],
+    "automatic_probes": {
+      "probabilities": [
+        0.16,
+        0.5,
+        0.84
+      ],
+      "quantile_method": "linear",
+      "sample": "fixed_complete_case_sample",
+      "resolve_before_bootstrap": true
+    },
+    "bootstrap_interval_quantile_method": "linear"
+  },
+  "draws": 200,
+  "seed": 419,
+  "alpha": 0.05,
+  "reference_equations": {
+    "m1": [
+      "w",
+      "x",
+      "w:x"
+    ],
+    "m2": [
+      "m1",
+      "x"
+    ],
+    "y": [
+      "m1",
+      "m2",
+      "x"
+    ]
+  }
+}

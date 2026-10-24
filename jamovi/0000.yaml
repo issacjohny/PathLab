@@ -1,0 +1,52 @@
+---
+title: PathLab
+name: pathlab
+version: 0.4.6
+jms: '1.0'
+authors:
+  - Issac Johny
+maintainer: Issac Johny <johnydurai@gmail.com>
+date: '2026-10-22'
+type: R
+description: >-
+  Mediation, moderation and conditional process analysis with explicit paths,
+  categorical predictors and moderators, linear or binary logistic outcomes,
+  paired bootstrap inference and conditional-effect plots.
+analyses:
+  - title: Mediation and Moderation
+    name: paths
+    ns: pathlab
+    category: analyses
+    menuGroup: PathLab
+    menuTitle: Mediation and Moderation
+    description: >-
+      Choose the original or general graph editor. Select variables, explicit
+      arrows and their moderator attachments. General graphs support up to ten
+      continuous mediators and three moderators, subject to path and computation
+      budgets.
+datasets:
+  - name: Serial mediation with first-stage moderation (synthetic)
+    path: serial-first-stage.csv
+    description: Synthetic continuous X, two serial mediators, Y and moderator W.
+    tags:
+      - mediation
+      - moderation
+      - tutorial
+  - name: Categorical conditional process (synthetic)
+    path: categorical-linear.csv
+    description: Synthetic categorical predictors and moderators with continuous Y.
+    tags:
+      - mediation
+      - categorical
+      - tutorial
+  - name: Binary outcome conditional process (synthetic)
+    path: categorical-logistic.csv
+    description: Synthetic categorical predictors and moderators with binary Y.
+    tags:
+      - mediation
+      - logistic
+      - tutorial
+usesNative: true
+minApp: 2.7.0
+
+...

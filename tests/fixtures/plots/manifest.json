@@ -1,0 +1,93 @@
+[
+  {
+    "case": "ordinary_moderation",
+    "reference": "ordinary_moderation-python.json",
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 63,
+    "jn_points": 22,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  },
+  {
+    "case": "first_stage",
+    "reference": "first_stage-python.json",
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 63,
+    "jn_points": 22,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  },
+  {
+    "case": "repeated_w",
+    "reference": "repeated_w-python.json",
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 189,
+    "jn_points": 66,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  },
+  {
+    "case": "native-general/joint3_two",
+    "reference": "native-general_joint3_two-python.json",
+    "indices_sha256": "64bc7de2cd2d8a39e7501632a2f95d6c3cca86b108d5f555e95fb8bf3f6f6e95",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 210,
+    "jn_points": 110,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  },
+  {
+    "case": "categorical-logistic/categorical_linear",
+    "reference": "categorical-logistic_categorical_linear-python.json",
+    "indices_sha256": "1c2e0201aa78cf07d2f0259646a5625101cab263a211122a144f01d03cc92b1c",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 9,
+    "jn_points": 0,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  },
+  {
+    "case": "categorical-logistic/joint_logistic",
+    "reference": "categorical-logistic_joint_logistic-python.json",
+    "indices_sha256": "1c2e0201aa78cf07d2f0259646a5625101cab263a211122a144f01d03cc92b1c",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 28,
+    "jn_points": 109,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  },
+  {
+    "case": "plots/logistic",
+    "reference": "plots_logistic-python.json",
+    "indices_sha256": "3ee3ace18b81669b0e5bff3a4aaee6c7421a1746d83c245fde0f6081ab5e7765",
+    "engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "plot_points": 63,
+    "jn_points": 23,
+    "compared_covariance": [
+      "classical",
+      "HC3"
+    ],
+    "saved_draws": 200
+  }
+]

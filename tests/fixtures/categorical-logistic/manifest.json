@@ -1,0 +1,70 @@
+[
+  {
+    "name": "categorical_linear",
+    "n": 216,
+    "draws": 200,
+    "index_base": 1,
+    "indices_sha256": "1c2e0201aa78cf07d2f0259646a5625101cab263a211122a144f01d03cc92b1c",
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "counts": {
+      "effects": 36,
+      "indices": 0,
+      "effect_contrasts": 54,
+      "index_contrasts": 0,
+      "slopes": 6,
+      "johnson_neyman": 2
+    },
+    "reference": "Explicit indicator matrices; independent QR/HC3, Bernoulli Newton information/HC3, three route polynomials; shared whole-case draws"
+  },
+  {
+    "name": "joint_linear",
+    "n": 216,
+    "draws": 200,
+    "index_base": 1,
+    "indices_sha256": "1c2e0201aa78cf07d2f0259646a5625101cab263a211122a144f01d03cc92b1c",
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "counts": {
+      "effects": 48,
+      "indices": 26,
+      "effect_contrasts": 96,
+      "index_contrasts": 24,
+      "slopes": 10,
+      "johnson_neyman": 9
+    },
+    "reference": "Explicit indicator matrices; independent QR/HC3, Bernoulli Newton information/HC3, three route polynomials; shared whole-case draws"
+  },
+  {
+    "name": "categorical_logistic",
+    "n": 216,
+    "draws": 200,
+    "index_base": 1,
+    "indices_sha256": "1c2e0201aa78cf07d2f0259646a5625101cab263a211122a144f01d03cc92b1c",
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "counts": {
+      "effects": 36,
+      "indices": 0,
+      "effect_contrasts": 54,
+      "index_contrasts": 0,
+      "slopes": 6,
+      "johnson_neyman": 2
+    },
+    "reference": "Explicit indicator matrices; independent QR/HC3, Bernoulli Newton information/HC3, three route polynomials; shared whole-case draws"
+  },
+  {
+    "name": "joint_logistic",
+    "n": 216,
+    "draws": 200,
+    "index_base": 1,
+    "indices_sha256": "1c2e0201aa78cf07d2f0259646a5625101cab263a211122a144f01d03cc92b1c",
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "counts": {
+      "effects": 48,
+      "indices": 26,
+      "effect_contrasts": 96,
+      "index_contrasts": 24,
+      "slopes": 10,
+      "johnson_neyman": 9
+    },
+    "reference": "Explicit indicator matrices; independent QR/HC3, Bernoulli Newton information/HC3, three route polynomials; shared whole-case draws"
+  }
+]

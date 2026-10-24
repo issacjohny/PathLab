@@ -1,0 +1,67 @@
+{
+  "passed": true,
+  "independent_summary_cells": 12,
+  "checks": {
+    "categorical/100/effect_2_2_route_1": {
+      "passed": true,
+      "raw_datasets": 836,
+      "maximum_absolute_difference": 8.6736173798840355e-19
+    },
+    "categorical/300/effect_2_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 1.3010426069826053e-18
+    },
+    "serial_alt/100/effect_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    "serial_alt/300/effect_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 3.4694469519536142e-18
+    },
+    "serial_double_null/100/effect_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    "serial_double_null/300/effect_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 2.9490299091605721e-17
+    },
+    "logistic_alt/100/y/m2": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 3.4694469519536142e-18
+    },
+    "logistic_alt/300/y/m2": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    "logistic_null/100/effect_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 6.5052130349130266e-19
+    },
+    "logistic_null/300/effect_2_route_1": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 3.4694469519536142e-18
+    },
+    "heteroscedastic/100/HC3_X_M1_W0": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    },
+    "heteroscedastic/300/HC3_X_M1_W0": {
+      "passed": true,
+      "raw_datasets": 1000,
+      "maximum_absolute_difference": 1.1102230246251565e-16
+    }
+  },
+  "scope": "Separately parsed raw R worker CSVs; R means/SD/RMSE, literal CI exclusions and stats::prop.test score intervals versus Python aggregate CSV"
+}

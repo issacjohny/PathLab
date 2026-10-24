@@ -1,0 +1,13 @@
+PathLab is an independent implementation by Issac Johny.
+It is not affiliated with or endorsed by Andrew F. Hayes or PROCESS.
+No PROCESS implementation, manual or original template artwork is included.
+The original PathLab icon illustrates the conceptual structure commonly called
+PROCESS Model 59: X -> M -> Y and X -> Y, with W moderation of all three
+paths. Its shapes are unfilled, with colored outlines and letters.
+It is branding, not a model preset or active graph.
+
+Dependencies retain their own licenses. The tested jamovi runtime provides
+jmvcore (GPL >= 2), R6 (MIT), jsonlite (MIT), digest (GPL >= 2), and R base
+packages (R GPL >= 2 distribution). These dependencies are not relicensed here.
+Bundled numerical examples and datasets are synthetic; they contain no research
+participants' records. Statistical methods and limitations are in METHODS.md.

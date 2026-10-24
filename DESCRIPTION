@@ -1,0 +1,16 @@
+Package: pathlab
+Type: Package
+Title: Mediation, Moderation and Conditional Process Analysis
+Version: 0.4.6
+Authors@R: person("Issac", "Johny", email="johnydurai@gmail.com", role=c("aut", "cre"))
+Author: Issac Johny
+Maintainer: Issac Johny <johnydurai@gmail.com>
+Description: Observed-variable graph regression with continuous mediators,
+    categorical exogenous coding, linear or binary logistic outcomes, explicit
+    interactions and reproducible paired case bootstrap inference.
+    Release candidate with a bounded validated subset.
+License: GPL (>= 2)
+Encoding: UTF-8
+Imports: jmvcore (>= 2.3.4), R6, jsonlite, digest, stats, utils, graphics, grDevices
+Suggests: testthat (>= 3.0.0)
+Config/testthat/edition: 3

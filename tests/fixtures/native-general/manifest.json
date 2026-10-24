@@ -1,0 +1,24 @@
+[
+  {
+    "name": "joint3_two",
+    "n": 120,
+    "draws": 200,
+    "index_base": 1,
+    "indices_sha256": "64bc7de2cd2d8a39e7501632a2f95d6c3cca86b108d5f555e95fb8bf3f6f6e95",
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "expected_focal_indirect_routes": 7,
+    "expected_conditions": 4,
+    "reference": "Handwritten four equation matrices, NumPy QR/classical/HC3 covariance, explicit seven route polynomials and derivatives; identical saved whole-row draws"
+  },
+  {
+    "name": "separate3_three",
+    "n": 120,
+    "draws": 200,
+    "index_base": 1,
+    "indices_sha256": "64bc7de2cd2d8a39e7501632a2f95d6c3cca86b108d5f555e95fb8bf3f6f6e95",
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+    "expected_focal_indirect_routes": 7,
+    "expected_conditions": 8,
+    "reference": "Handwritten four equation matrices, NumPy QR/classical/HC3 covariance, explicit seven route polynomials and derivatives; identical saved whole-row draws"
+  }
+]

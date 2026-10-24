@@ -1,0 +1,524 @@
+{
+  "name": "paths",
+  "title": "Mediation and Moderation",
+  "jrs": "1.1",
+  "items": [
+    {
+      "name": "review",
+      "title": "Model, sample and estimation status",
+      "type": "Preformatted"
+    },
+    {
+      "name": "diagram",
+      "title": "Specified paths",
+      "type": "Html"
+    },
+    {
+      "name": "equations",
+      "title": "Fitted equations and model tests",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "target",
+          "title": "Equation",
+          "type": "text"
+        },
+        {
+          "name": "equation",
+          "title": "Declared equation",
+          "type": "text"
+        },
+        {
+          "name": "n",
+          "title": "N",
+          "type": "integer"
+        },
+        {
+          "name": "df",
+          "title": "Residual df",
+          "type": "integer"
+        },
+        {
+          "name": "r2",
+          "title": "R²",
+          "type": "number"
+        },
+        {
+          "name": "rmse",
+          "title": "RMSE",
+          "type": "number"
+        },
+        {
+          "name": "test",
+          "title": "Model test",
+          "type": "text"
+        },
+        {
+          "name": "statistic",
+          "title": "Statistic",
+          "type": "number"
+        },
+        {
+          "name": "p",
+          "title": "p",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "estimates",
+      "title": "Equation coefficients",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "target",
+          "title": "Equation",
+          "type": "text"
+        },
+        {
+          "name": "term",
+          "title": "Term",
+          "type": "text"
+        },
+        {
+          "name": "estimate",
+          "title": "Estimate",
+          "type": "number"
+        },
+        {
+          "name": "se",
+          "title": "SE",
+          "type": "number"
+        },
+        {
+          "name": "statistic",
+          "title": "Statistic",
+          "type": "number"
+        },
+        {
+          "name": "p",
+          "title": "p",
+          "type": "number"
+        },
+        {
+          "name": "lower",
+          "title": "CI lower",
+          "type": "number"
+        },
+        {
+          "name": "upper",
+          "title": "CI upper",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "effects",
+      "title": "Conditional effects, indices and paired contrasts",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "kind",
+          "title": "Association",
+          "type": "text"
+        },
+        {
+          "name": "route",
+          "title": "Route / contrast",
+          "type": "text"
+        },
+        {
+          "name": "condition",
+          "title": "Condition",
+          "type": "text"
+        },
+        {
+          "name": "estimate",
+          "title": "Estimate",
+          "type": "number"
+        },
+        {
+          "name": "se",
+          "title": "Bootstrap SE",
+          "type": "number"
+        },
+        {
+          "name": "lower",
+          "title": "CI lower",
+          "type": "number"
+        },
+        {
+          "name": "upper",
+          "title": "CI upper",
+          "type": "number"
+        }
+      ],
+      "visible": "(modelMode == 'legacy')"
+    },
+    {
+      "name": "effectPages",
+      "title": "Conditional effects, indices and paired contrasts",
+      "type": "Array",
+      "items": 0,
+      "layout": "none",
+      "visible": "(modelMode == 'general')",
+      "template": {
+        "name": "page",
+        "title": "Effects and contrasts",
+        "type": "Table",
+        "rows": 0,
+        "columns": [
+          {
+            "name": "kind",
+            "title": "Association",
+            "type": "text"
+          },
+          {
+            "name": "route",
+            "title": "Route / contrast",
+            "type": "text"
+          },
+          {
+            "name": "condition",
+            "title": "Condition",
+            "type": "text"
+          },
+          {
+            "name": "estimate",
+            "title": "Estimate",
+            "type": "number"
+          },
+          {
+            "name": "se",
+            "title": "Bootstrap SE",
+            "type": "number"
+          },
+          {
+            "name": "lower",
+            "title": "CI lower",
+            "type": "number"
+          },
+          {
+            "name": "upper",
+            "title": "CI upper",
+            "type": "number"
+          }
+        ]
+      }
+    },
+    {
+      "name": "simpleSlopes",
+      "title": "Conditional path slopes",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "path",
+          "title": "Path",
+          "type": "text"
+        },
+        {
+          "name": "condition",
+          "title": "Condition",
+          "type": "text"
+        },
+        {
+          "name": "estimate",
+          "title": "Estimate",
+          "type": "number"
+        },
+        {
+          "name": "se",
+          "title": "SE",
+          "type": "number"
+        },
+        {
+          "name": "p",
+          "title": "p",
+          "type": "number"
+        },
+        {
+          "name": "lower",
+          "title": "CI lower",
+          "type": "number"
+        },
+        {
+          "name": "upper",
+          "title": "CI upper",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "name": "jn",
+      "title": "Johnson–Neyman simple-slope boundaries",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "path",
+          "title": "Path",
+          "type": "text"
+        },
+        {
+          "name": "moderator",
+          "title": "Moderator",
+          "type": "text"
+        },
+        {
+          "name": "boundaries",
+          "title": "Boundaries in observed range",
+          "type": "text"
+        },
+        {
+          "name": "range",
+          "title": "Observed range",
+          "type": "text"
+        },
+        {
+          "name": "note",
+          "title": "Interpretation",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "covariance",
+      "title": "Full coefficient covariance",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "target",
+          "title": "Equation",
+          "type": "text"
+        },
+        {
+          "name": "term1",
+          "title": "Term 1",
+          "type": "text"
+        },
+        {
+          "name": "term2",
+          "title": "Term 2",
+          "type": "text"
+        },
+        {
+          "name": "value",
+          "title": "Covariance",
+          "type": "number"
+        }
+      ],
+      "visible": "(showCovariance)"
+    },
+    {
+      "name": "coding",
+      "title": "Categorical indicator coding",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "role",
+          "title": "Role",
+          "type": "text"
+        },
+        {
+          "name": "column",
+          "title": "Column",
+          "type": "text"
+        },
+        {
+          "name": "level",
+          "title": "Level",
+          "type": "text"
+        },
+        {
+          "name": "reference",
+          "title": "Reference",
+          "type": "text"
+        },
+        {
+          "name": "n",
+          "title": "Complete-case N",
+          "type": "integer"
+        },
+        {
+          "name": "basis",
+          "title": "Coding",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "name": "logisticFit",
+      "title": "Binary logistic outcome fit",
+      "type": "Table",
+      "rows": 0,
+      "columns": [
+        {
+          "name": "target",
+          "title": "Outcome",
+          "type": "text"
+        },
+        {
+          "name": "event",
+          "title": "Event (1)",
+          "type": "text"
+        },
+        {
+          "name": "nonEvent",
+          "title": "Other level (0)",
+          "type": "text"
+        },
+        {
+          "name": "ll",
+          "title": "Log likelihood",
+          "type": "number"
+        },
+        {
+          "name": "nullLL",
+          "title": "Null log likelihood",
+          "type": "number"
+        },
+        {
+          "name": "pseudoR2",
+          "title": "McFadden pseudo-R²",
+          "type": "number"
+        },
+        {
+          "name": "aic",
+          "title": "AIC",
+          "type": "number"
+        },
+        {
+          "name": "bic",
+          "title": "BIC",
+          "type": "number"
+        },
+        {
+          "name": "converged",
+          "title": "Converged",
+          "type": "text"
+        },
+        {
+          "name": "iterations",
+          "title": "Iterations",
+          "type": "integer"
+        }
+      ]
+    },
+    {
+      "name": "diagnostics",
+      "title": "Diagnostic details",
+      "type": "Preformatted",
+      "visible": "(showDetails)"
+    },
+    {
+      "name": "reproduction",
+      "title": "Model and result JSON (copy to reproduce)",
+      "type": "Preformatted",
+      "visible": "(showDetails)"
+    },
+    {
+      "name": "plotNotes",
+      "title": "Plot selection and interpretation",
+      "type": "Preformatted"
+    },
+    {
+      "name": "effectPlot",
+      "title": "Conditional effects",
+      "type": "Image",
+      "width": 760,
+      "height": 560,
+      "renderFun": ".renderPlot",
+      "requiresData": false
+    },
+    {
+      "name": "interactionPlot",
+      "title": "Fitted interaction",
+      "type": "Image",
+      "width": 760,
+      "height": 560,
+      "renderFun": ".renderPlot",
+      "requiresData": false
+    },
+    {
+      "name": "jnPlot",
+      "title": "Johnson–Neyman region",
+      "type": "Image",
+      "width": 760,
+      "height": 560,
+      "renderFun": ".renderPlot",
+      "requiresData": false
+    },
+    {
+      "name": "interactionPlots",
+      "title": "All declared interactions",
+      "type": "Array",
+      "items": 0,
+      "layout": "none",
+      "visible": false,
+      "template": {
+        "name": "plot",
+        "title": "Fitted interaction",
+        "type": "Image",
+        "width": 760,
+        "height": 560,
+        "renderFun": ".renderPlot",
+        "requiresData": false
+      }
+    },
+    {
+      "name": "fitCache",
+      "title": "",
+      "type": "Preformatted",
+      "visible": false,
+      "clearWith": [
+        "data",
+        "x",
+        "m1",
+        "m2",
+        "y",
+        "w",
+        "p_x_m1",
+        "p_x_m2",
+        "p_m1_m2",
+        "p_x_y",
+        "p_m1_y",
+        "p_m2_y",
+        "p_w_m1",
+        "p_w_m2",
+        "p_w_y",
+        "mod_x_m1",
+        "mod_x_m2",
+        "mod_m1_m2",
+        "mod_x_y",
+        "mod_m1_y",
+        "mod_m2_y",
+        "robust",
+        "draws",
+        "seed",
+        "confidence",
+        "probes",
+        "covM1",
+        "covM2",
+        "covY",
+        "modelMode",
+        "generalMediators",
+        "generalModerators",
+        "generalCovariates",
+        "generalPaths",
+        "generalModerations",
+        "generalProbesW",
+        "generalProbesZ",
+        "generalProbesV",
+        "categoricalCoding",
+        "outcomeFamily",
+        "logisticEvent"
+      ]
+    }
+  ]
+}

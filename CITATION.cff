@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite the exact PathLab version used in your analysis."
+title: "PathLab: Mediation, Moderation and Conditional Process Analysis"
+type: software
+authors:
+  - family-names: Johny
+    given-names: Issac
+version: 0.4.6
+abstract: "Observed-variable conditional-process analysis with explicit graph regression, categorical reference contrasts, optional binary logistic outcomes and paired bootstrap inference. Release candidate; not yet published in the jamovi Library."

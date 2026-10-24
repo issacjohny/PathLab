@@ -1,0 +1,73 @@
+{
+  "graph": {
+    "schema_version": 1,
+    "nodes": [
+      {
+        "id": "w",
+        "column": "w",
+        "role": "moderator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "x",
+        "column": "x",
+        "role": "independent",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "y",
+        "column": "y",
+        "role": "dependent",
+        "measurement_scale": "interval"
+      }
+    ],
+    "edges": [
+      {
+        "id": "p_x_y",
+        "source": "x",
+        "target": "y"
+      },
+      {
+        "id": "p_w_y",
+        "source": "w",
+        "target": "y"
+      }
+    ],
+    "moderations": [
+      {
+        "id": "mod_0",
+        "path_id": "p_x_y",
+        "moderator_ids": [
+          "w"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "schema_version": 3,
+    "outcome_family": "logistic",
+    "categorical": [],
+    "probes": [],
+    "automatic_probes": {
+      "probabilities": [
+        0.16,
+        0.5,
+        0.84
+      ],
+      "quantile_method": "linear",
+      "sample": "fixed_complete_case_sample",
+      "resolve_before_bootstrap": true
+    },
+    "bootstrap_interval_quantile_method": "linear"
+  },
+  "draws": 200,
+  "seed": 419,
+  "alpha": 0.05,
+  "reference_equations": {
+    "y": [
+      "w",
+      "x",
+      "w:x"
+    ]
+  }
+}

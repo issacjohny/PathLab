@@ -1,0 +1,743 @@
+{
+  "name": "paths",
+  "title": "Mediation and Moderation",
+  "menuGroup": "PathLab",
+  "version": "0.4.6",
+  "jas": "1.2",
+  "weightsSupport": "none",
+  "description": {
+    "main": "Choose the original or general graph editor. Select variables, explicit arrows and their moderator attachments. General graphs support up to ten continuous mediators and three moderators, subject to path and computation budgets."
+  },
+  "options": [
+    {
+      "name": "data",
+      "type": "Data"
+    },
+    {
+      "name": "x",
+      "title": "Predictor (X)",
+      "type": "Variable",
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "m1",
+      "title": "First mediator (M1, optional)",
+      "type": "Variable",
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric"
+      ],
+      "default": null
+    },
+    {
+      "name": "m2",
+      "title": "Second mediator (M2, optional)",
+      "type": "Variable",
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric"
+      ],
+      "default": null
+    },
+    {
+      "name": "y",
+      "title": "Outcome (Y)",
+      "type": "Variable",
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "w",
+      "title": "Moderator (W, optional)",
+      "type": "Variable",
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ],
+      "default": null
+    },
+    {
+      "name": "p_x_m1",
+      "title": "X → M1",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_x_m2",
+      "title": "X → M2",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_m1_m2",
+      "title": "M1 → M2",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_x_y",
+      "title": "X → Y",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_m1_y",
+      "title": "M1 → Y",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_m2_y",
+      "title": "M2 → Y",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_w_m1",
+      "title": "W → M1",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "p_w_m2",
+      "title": "W → M2",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "p_w_y",
+      "title": "W → Y",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "mod_x_m1",
+      "title": "W moderates X → M1",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "mod_x_m2",
+      "title": "W moderates X → M2",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "mod_m1_m2",
+      "title": "W moderates M1 → M2",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "mod_x_y",
+      "title": "W moderates X → Y",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "mod_m1_y",
+      "title": "W moderates M1 → Y",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "mod_m2_y",
+      "title": "W moderates M2 → Y",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "robust",
+      "title": "HC3 covariance (normal reference)",
+      "type": "Bool",
+      "default": true
+    },
+    {
+      "name": "draws",
+      "title": "Bootstrap draws",
+      "type": "Integer",
+      "min": 200,
+      "max": 5000,
+      "default": 1000
+    },
+    {
+      "name": "seed",
+      "title": "Seed",
+      "type": "Integer",
+      "min": 0,
+      "max": 2147483647,
+      "default": 419
+    },
+    {
+      "name": "confidence",
+      "title": "Confidence level (%)",
+      "type": "Number",
+      "min": 50.1,
+      "max": 99.9,
+      "default": 95
+    },
+    {
+      "name": "probes",
+      "title": "W probe values (comma separated; blank = 16th/50th/84th percentiles)",
+      "type": "String",
+      "default": ""
+    },
+    {
+      "name": "showDetails",
+      "title": "Show reproducibility JSON and diagnostic details",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "showCovariance",
+      "title": "Show full coefficient covariance",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "covM1",
+      "title": "Covariates in M1 equation",
+      "type": "Variables",
+      "default": null,
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "covM2",
+      "title": "Covariates in M2 equation",
+      "type": "Variables",
+      "default": null,
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "covY",
+      "title": "Covariates in Y equation",
+      "type": "Variables",
+      "default": null,
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "modelMode",
+      "title": "Model editor",
+      "type": "List",
+      "options": [
+        {
+          "name": "legacy",
+          "title": "Original editor"
+        },
+        {
+          "name": "general",
+          "title": "General graph"
+        }
+      ],
+      "default": "legacy"
+    },
+    {
+      "name": "generalMediators",
+      "title": "Ordered mediators (M1 to M10, top to bottom)",
+      "type": "Variables",
+      "default": null,
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric"
+      ]
+    },
+    {
+      "name": "generalModerators",
+      "title": "Moderators (W, Z, V, top to bottom)",
+      "type": "Variables",
+      "default": null,
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "generalCovariates",
+      "title": "Covariates (C1 to C20, top to bottom)",
+      "type": "Variables",
+      "default": null,
+      "suggested": [
+        "continuous"
+      ],
+      "permitted": [
+        "numeric",
+        "factor"
+      ]
+    },
+    {
+      "name": "generalPaths",
+      "title": "Explicit arrows",
+      "type": "Array",
+      "default": [],
+      "template": {
+        "type": "Group",
+        "elements": [
+          {
+            "name": "source",
+            "type": "List",
+            "options": [
+              "X",
+              "M1",
+              "M2",
+              "M3",
+              "M4",
+              "M5",
+              "M6",
+              "M7",
+              "M8",
+              "M9",
+              "M10",
+              "W",
+              "Z",
+              "V",
+              "C1",
+              "C2",
+              "C3",
+              "C4",
+              "C5",
+              "C6",
+              "C7",
+              "C8",
+              "C9",
+              "C10",
+              "C11",
+              "C12",
+              "C13",
+              "C14",
+              "C15",
+              "C16",
+              "C17",
+              "C18",
+              "C19",
+              "C20"
+            ],
+            "default": "X"
+          },
+          {
+            "name": "target",
+            "type": "List",
+            "options": [
+              "M1",
+              "M2",
+              "M3",
+              "M4",
+              "M5",
+              "M6",
+              "M7",
+              "M8",
+              "M9",
+              "M10",
+              "Y"
+            ],
+            "default": "M1"
+          }
+        ]
+      }
+    },
+    {
+      "name": "generalModerations",
+      "title": "Moderation attachments",
+      "type": "Array",
+      "default": [],
+      "template": {
+        "type": "Group",
+        "elements": [
+          {
+            "name": "source",
+            "type": "List",
+            "options": [
+              "X",
+              "M1",
+              "M2",
+              "M3",
+              "M4",
+              "M5",
+              "M6",
+              "M7",
+              "M8",
+              "M9",
+              "M10",
+              "W",
+              "Z",
+              "V",
+              "C1",
+              "C2",
+              "C3",
+              "C4",
+              "C5",
+              "C6",
+              "C7",
+              "C8",
+              "C9",
+              "C10",
+              "C11",
+              "C12",
+              "C13",
+              "C14",
+              "C15",
+              "C16",
+              "C17",
+              "C18",
+              "C19",
+              "C20"
+            ],
+            "default": "X"
+          },
+          {
+            "name": "target",
+            "type": "List",
+            "options": [
+              "M1",
+              "M2",
+              "M3",
+              "M4",
+              "M5",
+              "M6",
+              "M7",
+              "M8",
+              "M9",
+              "M10",
+              "Y"
+            ],
+            "default": "M1"
+          },
+          {
+            "name": "mod1",
+            "type": "List",
+            "options": [
+              "W",
+              "Z",
+              "V"
+            ],
+            "default": "W"
+          },
+          {
+            "name": "mod2",
+            "type": "List",
+            "options": [
+              "none",
+              "W",
+              "Z",
+              "V"
+            ],
+            "default": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "generalProbesW",
+      "title": "W probes (blank = percentiles or all categories)",
+      "type": "String",
+      "default": ""
+    },
+    {
+      "name": "generalProbesZ",
+      "title": "Z probes (blank = percentiles or all categories)",
+      "type": "String",
+      "default": ""
+    },
+    {
+      "name": "generalProbesV",
+      "title": "V probes (blank = percentiles or all categories)",
+      "type": "String",
+      "default": ""
+    },
+    {
+      "name": "categoricalCoding",
+      "title": "Categorical coding and references",
+      "type": "Array",
+      "default": [],
+      "template": {
+        "type": "Group",
+        "elements": [
+          {
+            "name": "role",
+            "type": "List",
+            "options": [
+              "X",
+              "W",
+              "Z",
+              "V",
+              "C1",
+              "C2",
+              "C3",
+              "C4",
+              "C5",
+              "C6",
+              "C7",
+              "C8",
+              "C9",
+              "C10",
+              "C11",
+              "C12",
+              "C13",
+              "C14",
+              "C15",
+              "C16",
+              "C17",
+              "C18",
+              "C19",
+              "C20"
+            ],
+            "default": "X"
+          },
+          {
+            "name": "reference",
+            "type": "String",
+            "default": ""
+          }
+        ]
+      }
+    },
+    {
+      "name": "outcomeFamily",
+      "title": "Outcome model",
+      "type": "List",
+      "options": [
+        {
+          "name": "linear",
+          "title": "Continuous linear"
+        },
+        {
+          "name": "logistic",
+          "title": "Binary logistic"
+        }
+      ],
+      "default": "linear"
+    },
+    {
+      "name": "logisticEvent",
+      "title": "Event level (blank = 1 for levels 0 and 1)",
+      "type": "String",
+      "default": ""
+    },
+    {
+      "name": "showEffectPlot",
+      "title": "Effect plot with bootstrap intervals",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "showInteractionPlot",
+      "title": "Fitted interaction plot",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "showJNPlot",
+      "title": "Johnson–Neyman path-slope plot",
+      "type": "Bool",
+      "default": false
+    },
+    {
+      "name": "plotInteractionMode",
+      "title": "Interaction plots to display",
+      "type": "List",
+      "options": [
+        {
+          "name": "selected",
+          "title": "Selected arrow"
+        },
+        {
+          "name": "all",
+          "title": "All moderated arrows (six per page)"
+        }
+      ],
+      "default": "selected"
+    },
+    {
+      "name": "plotInteractionPage",
+      "title": "Interaction plot page",
+      "type": "Integer",
+      "min": 1,
+      "max": 100,
+      "default": 1
+    },
+    {
+      "name": "plotEffectKind",
+      "title": "Effect kind",
+      "type": "List",
+      "options": [
+        {
+          "name": "specific_indirect",
+          "title": "Specific indirect"
+        },
+        {
+          "name": "total_indirect",
+          "title": "Summed indirect"
+        },
+        {
+          "name": "direct",
+          "title": "Direct"
+        },
+        {
+          "name": "total",
+          "title": "Total path association"
+        },
+        {
+          "name": "indices",
+          "title": "Indices and derivatives"
+        },
+        {
+          "name": "contrasts",
+          "title": "Paired contrasts"
+        }
+      ],
+      "default": "specific_indirect"
+    },
+    {
+      "name": "plotEffectPage",
+      "title": "Effect page (12 estimands per page)",
+      "type": "Integer",
+      "min": 1,
+      "max": 8000,
+      "default": 1
+    },
+    {
+      "name": "plotSource",
+      "title": "Plot arrow from role",
+      "type": "List",
+      "options": [
+        "X",
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "M9",
+        "M10",
+        "W",
+        "Z",
+        "V",
+        "C1",
+        "C2",
+        "C3",
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8",
+        "C9",
+        "C10",
+        "C11",
+        "C12",
+        "C13",
+        "C14",
+        "C15",
+        "C16",
+        "C17",
+        "C18",
+        "C19",
+        "C20"
+      ],
+      "default": "X"
+    },
+    {
+      "name": "plotTarget",
+      "title": "Plot arrow to equation",
+      "type": "List",
+      "options": [
+        "M1",
+        "M2",
+        "M3",
+        "M4",
+        "M5",
+        "M6",
+        "M7",
+        "M8",
+        "M9",
+        "M10",
+        "Y"
+      ],
+      "default": "Y"
+    },
+    {
+      "name": "plotModerator",
+      "title": "Plot moderator",
+      "type": "List",
+      "options": [
+        "W",
+        "Z",
+        "V"
+      ],
+      "default": "W"
+    },
+    {
+      "name": "plotCondition",
+      "title": "Fixed probe-combination number (1 to 25)",
+      "type": "Integer",
+      "min": 1,
+      "max": 25,
+      "default": 1
+    },
+    {
+      "name": "plotContrast",
+      "title": "JN focal category contrast (1 to 9; continuous = 1)",
+      "type": "Integer",
+      "min": 1,
+      "max": 9,
+      "default": 1
+    },
+    {
+      "name": "plotResponseScale",
+      "title": "Logistic interaction scale",
+      "type": "List",
+      "options": [
+        {
+          "name": "response",
+          "title": "Event probability"
+        },
+        {
+          "name": "link",
+          "title": "Log odds"
+        }
+      ],
+      "default": "response"
+    }
+  ]
+}

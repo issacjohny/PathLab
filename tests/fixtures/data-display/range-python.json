@@ -1,0 +1,4604 @@
+{
+  "schema_version": 3,
+  "graph": {
+    "schema_version": 1,
+    "nodes": [
+      {
+        "id": "m1",
+        "column": "m1",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "m2",
+        "column": "m2",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "w",
+        "column": "w",
+        "role": "moderator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "x",
+        "column": "x",
+        "role": "independent",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "y",
+        "column": "y",
+        "role": "dependent",
+        "measurement_scale": "interval"
+      }
+    ],
+    "edges": [
+      {
+        "id": "p_m1_m2",
+        "source": "m1",
+        "target": "m2"
+      },
+      {
+        "id": "p_m1_y",
+        "source": "m1",
+        "target": "y"
+      },
+      {
+        "id": "p_m2_y",
+        "source": "m2",
+        "target": "y"
+      },
+      {
+        "id": "p_w_m1",
+        "source": "w",
+        "target": "m1"
+      },
+      {
+        "id": "p_x_m1",
+        "source": "x",
+        "target": "m1"
+      },
+      {
+        "id": "p_x_m2",
+        "source": "x",
+        "target": "m2"
+      },
+      {
+        "id": "p_x_y",
+        "source": "x",
+        "target": "y"
+      }
+    ],
+    "moderations": [
+      {
+        "id": "mod_0",
+        "path_id": "p_x_m1",
+        "moderator_ids": [
+          "w"
+        ]
+      }
+    ]
+  },
+  "requested_settings": {
+    "schema_version": 3,
+    "outcome_family": "linear",
+    "categorical": [],
+    "probes": [],
+    "automatic_probes": {
+      "probabilities": [
+        0.16,
+        0.5,
+        0.84
+      ],
+      "quantile_method": "linear",
+      "sample": "fixed_complete_case_sample",
+      "resolve_before_bootstrap": true
+    },
+    "bootstrap_interval_quantile_method": "linear"
+  },
+  "settings": {
+    "schema_version": 3,
+    "outcome_family": "linear",
+    "categorical": [],
+    "probes": [
+      {
+        "node_id": "w",
+        "values": [
+          -1.41961267283265,
+          -0.3229336407970946,
+          0.5674541522667568
+        ]
+      }
+    ],
+    "automatic_probes": {
+      "probabilities": [
+        0.16,
+        0.5,
+        0.84
+      ],
+      "quantile_method": "linear",
+      "sample": "fixed_complete_case_sample",
+      "resolve_before_bootstrap": true
+    },
+    "bootstrap_interval_quantile_method": "linear"
+  },
+  "sample": {
+    "source_n": 45,
+    "n": 43,
+    "excluded": 2,
+    "rule": "One fixed listwise sample across all graph nodes and equations"
+  },
+  "equations": [
+    {
+      "target_id": "m1",
+      "column": "m1",
+      "family": "linear",
+      "formula": "m1 ~ Intercept + w + x + w \u00d7 x",
+      "n": 43,
+      "df_model": 3.0,
+      "df_resid": 39.0,
+      "coefficients": [
+        {
+          "term_id": "term_m1_4f53cda18c2baa0c",
+          "term": "Intercept",
+          "factors": [],
+          "estimate": -0.4800348817306132,
+          "se": 0.3118596424776285,
+          "statistic": -1.5392657989244278,
+          "reference": "residual-df t",
+          "p": 0.13181455225225006,
+          "lower": -1.1108305488960228,
+          "upper": 0.15076078543479637
+        },
+        {
+          "term_id": "term_m1_62ac4f4fd703fc80",
+          "term": "w",
+          "factors": [
+            {
+              "node_id": "w",
+              "column": "w"
+            }
+          ],
+          "estimate": -0.619762052767294,
+          "se": 0.33032219227067616,
+          "statistic": -1.876234982902517,
+          "reference": "residual-df t",
+          "p": 0.0681211731478501,
+          "lower": -1.2879017517598277,
+          "upper": 0.04837764622523966
+        },
+        {
+          "term_id": "term_m1_b82a1892cd394697",
+          "term": "x",
+          "factors": [
+            {
+              "node_id": "x",
+              "column": "x"
+            }
+          ],
+          "estimate": 1.119906853568701,
+          "se": 0.3193605935856032,
+          "statistic": 3.5067158442906474,
+          "reference": "residual-df t",
+          "p": 0.0011582556171558095,
+          "lower": 0.47393908070555124,
+          "upper": 1.7658746264318506
+        },
+        {
+          "term_id": "term_m1_a573a5691bd7327e",
+          "term": "w \u00d7 x",
+          "factors": [
+            {
+              "node_id": "w",
+              "column": "w"
+            },
+            {
+              "node_id": "x",
+              "column": "x"
+            }
+          ],
+          "estimate": 0.7739521806096005,
+          "se": 0.31118843106105887,
+          "statistic": 2.4870853263106745,
+          "reference": "residual-df t",
+          "p": 0.017265115341825718,
+          "lower": 0.1445141666819113,
+          "upper": 1.4033901945372897
+        }
+      ],
+      "covariance": {
+        "term_ids": [
+          "term_m1_4f53cda18c2baa0c",
+          "term_m1_62ac4f4fd703fc80",
+          "term_m1_b82a1892cd394697",
+          "term_m1_a573a5691bd7327e"
+        ],
+        "values": [
+          [
+            0.09725643660627425,
+            0.03202237715209794,
+            -0.08417506374983423,
+            -0.02956575154667265
+          ],
+          [
+            0.03202237715209794,
+            0.10911275070650556,
+            -0.02925423042073301,
+            -0.08839750730226448
+          ],
+          [
+            -0.08417506374983423,
+            -0.02925423042073301,
+            0.10199118873534882,
+            0.039801620609981145
+          ],
+          [
+            -0.02956575154667265,
+            -0.08839750730226448,
+            0.039801620609981145,
+            0.0968382396262434
+          ]
+        ]
+      },
+      "standard_errors": "classical OLS",
+      "assumptions": [
+        "Independent cases; correctly specified conditional mean/link; no unmeasured confounding is established by this fit."
+      ],
+      "R": 0.5099773768325101,
+      "R2": 0.260076924880968,
+      "adjustedR2": 0.2031597652564271,
+      "MSE": 1.0025902374196742,
+      "RMSE": 1.0012942811280179,
+      "overall_test": {
+        "statistic": 4.569393950727485,
+        "reference": "OLS F",
+        "df_num": 3.0,
+        "df_den": 39.0,
+        "p": 0.007761009940013285
+      },
+      "diagnostics": {
+        "max_cooks_distance": 0.38929530413432795,
+        "max_leverage": 0.39963048085467434,
+        "durbin_watson": 2.114688945963062,
+        "breusch_pagan_p": 0.6275797971032147
+      },
+      "diagnostic_evidence": {
+        "schema_version": 1,
+        "n": 43,
+        "design": {
+          "columns": 4,
+          "rank": 4,
+          "condition_number": 5.5805529552472555,
+          "condition_number_note": "Condition number of the unscaled design, including the intercept; sensitive to measurement units and centering. VIF describes each non-intercept compiled term, not a generalized factor-level VIF.",
+          "vif": [
+            {
+              "term_id": "term_m1_62ac4f4fd703fc80",
+              "value": 3.919956872431186,
+              "unavailable_reason": null
+            },
+            {
+              "term_id": "term_m1_b82a1892cd394697",
+              "value": 1.2160710444948761,
+              "unavailable_reason": null
+            },
+            {
+              "term_id": "term_m1_a573a5691bd7327e",
+              "value": 4.309770770812999,
+              "unavailable_reason": null
+            }
+          ]
+        },
+        "linear": {
+          "status": "computed",
+          "scale": "internally_studentized_residual",
+          "sampling": "all_cases",
+          "total_cases": 43,
+          "plotted_cases": 43,
+          "points": [
+            {
+              "case_position": 1,
+              "fitted": 0.46080276909876255,
+              "residual": 1.2541333354691815,
+              "standardized_residual": 1.2887292598508724,
+              "leverage": 0.055416023708700995,
+              "cooks_distance": 0.024358928079334867
+            },
+            {
+              "case_position": 2,
+              "fitted": -0.12293030814500253,
+              "residual": -1.0843979188396335,
+              "standardized_residual": -1.1245867616326604,
+              "leverage": 0.07259817576589876,
+              "cooks_distance": 0.02475048447464517
+            },
+            {
+              "case_position": 3,
+              "fitted": 0.13977916764229562,
+              "residual": 0.04585405485218688,
+              "standardized_residual": 0.04706934920488318,
+              "leverage": 0.053423684739054976,
+              "cooks_distance": 3.1260405071679306e-05
+            },
+            {
+              "case_position": 4,
+              "fitted": 0.36792578191025666,
+              "residual": -1.5548222143557837,
+              "standardized_residual": -1.5982317885885233,
+              "leverage": 0.05602938883740458,
+              "cooks_distance": 0.037903293581428736
+            },
+            {
+              "case_position": 5,
+              "fitted": 0.6603489426322442,
+              "residual": -0.9249603063065248,
+              "standardized_residual": -1.065715588216469,
+              "leverage": 0.24865381812735077,
+              "cooks_distance": 0.0939675045529163
+            },
+            {
+              "case_position": 6,
+              "fitted": 1.4568467468125113,
+              "residual": 0.06829162652887644,
+              "standardized_residual": 0.07332505692497732,
+              "leverage": 0.13481969581619493,
+              "cooks_distance": 0.00020945539209508938
+            },
+            {
+              "case_position": 7,
+              "fitted": 1.2377676097429207,
+              "residual": -0.46809275155986474,
+              "standardized_residual": -0.48876100876398576,
+              "leverage": 0.08515555399855099,
+              "cooks_distance": 0.005559027679731264
+            },
+            {
+              "case_position": 8,
+              "fitted": -0.028728496473243534,
+              "residual": 2.1114585225326357,
+              "standardized_residual": 2.1603349519897836,
+              "leverage": 0.04720503504140287,
+              "cooks_distance": 0.05780575313257499
+            },
+            {
+              "case_position": 9,
+              "fitted": 0.4362838729409898,
+              "residual": -0.5394588610138813,
+              "standardized_residual": -0.5460939000316181,
+              "leverage": 0.02667351741982245,
+              "cooks_distance": 0.002043131921320054
+            },
+            {
+              "case_position": 10,
+              "fitted": 0.8408619515864013,
+              "residual": -1.423255559092797,
+              "standardized_residual": -1.4528662512792985,
+              "leverage": 0.04282568772723586,
+              "cooks_distance": 0.023610467744989806
+            },
+            {
+              "case_position": 11,
+              "fitted": -0.20376167925485983,
+              "residual": -0.26340223225693127,
+              "standardized_residual": -0.271749180735389,
+              "leverage": 0.06291509096090396,
+              "cooks_distance": 0.0012395166943991332
+            },
+            {
+              "case_position": 12,
+              "fitted": -0.09647500175886617,
+              "residual": -0.4178143737598833,
+              "standardized_residual": -0.42908551637758024,
+              "leverage": 0.05429524831650025,
+              "cooks_distance": 0.0026426154629025814
+            },
+            {
+              "case_position": 13,
+              "fitted": 0.6304072038331374,
+              "residual": -0.3180366000515991,
+              "standardized_residual": -0.33381255878221805,
+              "leverage": 0.0946314816816945,
+              "cooks_distance": 0.0029117601851345377
+            },
+            {
+              "case_position": 14,
+              "fitted": 0.3054090831577445,
+              "residual": -0.1834632484065162,
+              "standardized_residual": -0.19245564803208293,
+              "leverage": 0.09361363344082241,
+              "cooks_distance": 0.0009563724742428626
+            },
+            {
+              "case_position": 15,
+              "fitted": -0.13831807019634035,
+              "residual": -0.06171248899566875,
+              "standardized_residual": -0.0640435688277689,
+              "leverage": 0.07387074269778444,
+              "cooks_distance": 8.178843909178908e-05
+            },
+            {
+              "case_position": 16,
+              "fitted": -0.7968657825881098,
+              "residual": 0.162141225996839,
+              "standardized_residual": 0.17973091627953863,
+              "leverage": 0.18825829966359514,
+              "cooks_distance": 0.001872931355471387
+            },
+            {
+              "case_position": 17,
+              "fitted": 0.24250615659073185,
+              "residual": 1.2698997130709717,
+              "standardized_residual": 1.287201320404578,
+              "leverage": 0.029216412066628766,
+              "cooks_distance": 0.0124662955090118
+            },
+            {
+              "case_position": 18,
+              "fitted": -0.5976156902265948,
+              "residual": -1.0628927624615547,
+              "standardized_residual": -1.131923026606104,
+              "leverage": 0.12052876681429482,
+              "cooks_distance": 0.04389781185972289
+            },
+            {
+              "case_position": 19,
+              "fitted": -0.44571970111992976,
+              "residual": -0.9171272021544613,
+              "standardized_residual": -0.9694106312201201,
+              "leverage": 0.10727001521075695,
+              "cooks_distance": 0.028230188968154272
+            },
+            {
+              "case_position": 20,
+              "fitted": 0.15640213815326545,
+              "residual": -0.38532230590072203,
+              "standardized_residual": -0.3938582939212648,
+              "leverage": 0.045348544373926776,
+              "cooks_distance": 0.001842207353807773
+            },
+            {
+              "case_position": 21,
+              "fitted": 0.5140263473124239,
+              "residual": 1.3483093600327622,
+              "standardized_residual": 1.3836203480450213,
+              "leverage": 0.05284349381269381,
+              "cooks_distance": 0.026701992291810084
+            },
+            {
+              "case_position": 22,
+              "fitted": 0.34017644620793686,
+              "residual": 1.0694080374824932,
+              "standardized_residual": 1.1248556850002152,
+              "leverage": 0.09849155135875078,
+              "cooks_distance": 0.03455912999457578
+            },
+            {
+              "case_position": 23,
+              "fitted": 0.7026673865613464,
+              "residual": -0.16469021710408394,
+              "standardized_residual": -0.1670363473832116,
+              "leverage": 0.030405455005208665,
+              "cooks_distance": 0.00021873753885149277
+            },
+            {
+              "case_position": 24,
+              "fitted": 0.5643079671353775,
+              "residual": 2.0495047780718836,
+              "standardized_residual": 2.0760647204731155,
+              "leverage": 0.027941007714991677,
+              "cooks_distance": 0.030972141050510733
+            },
+            {
+              "case_position": 25,
+              "fitted": 1.0168846039560666,
+              "residual": -0.29258256198863986,
+              "standardized_residual": -0.300888196389131,
+              "leverage": 0.05688836335674726,
+              "cooks_distance": 0.00136524516403231
+            },
+            {
+              "case_position": 26,
+              "fitted": 0.1643850238325501,
+              "residual": 0.8621729111495562,
+              "standardized_residual": 0.8797691841132542,
+              "leverage": 0.04208321309727846,
+              "cooks_distance": 0.008500776684207852
+            },
+            {
+              "case_position": 27,
+              "fitted": 2.5204742336486152,
+              "residual": -1.1866445420748,
+              "standardized_residual": -1.529500392884978,
+              "leverage": 0.39963048085467434,
+              "cooks_distance": 0.38929530413432806
+            },
+            {
+              "case_position": 28,
+              "fitted": 0.41367952398438923,
+              "residual": 1.239824509232712,
+              "standardized_residual": 1.254408871764279,
+              "leverage": 0.02564160905330337,
+              "cooks_distance": 0.010352489228167198
+            },
+            {
+              "case_position": 29,
+              "fitted": 0.12270280337361594,
+              "residual": -0.826090840339865,
+              "standardized_residual": -0.9841995232283486,
+              "leverage": 0.29730665342720475,
+              "cooks_distance": 0.1024578164860102
+            },
+            {
+              "case_position": 30,
+              "fitted": 0.59586368424178,
+              "residual": 0.8080476795991011,
+              "standardized_residual": 0.8191920036497946,
+              "leverage": 0.029536748188637437,
+              "cooks_distance": 0.0051061668665418275
+            },
+            {
+              "case_position": 31,
+              "fitted": 0.8350699688634261,
+              "residual": 1.4057223208752805,
+              "standardized_residual": 1.4326438179177887,
+              "leverage": 0.03971719988750615,
+              "cooks_distance": 0.021222470631175615
+            },
+            {
+              "case_position": 32,
+              "fitted": 0.45923372418421016,
+              "residual": 0.0967794575108818,
+              "standardized_residual": 0.10494461606844531,
+              "leverage": 0.15175253732909796,
+              "cooks_distance": 0.0004925765434428608
+            },
+            {
+              "case_position": 33,
+              "fitted": 0.3797636602183532,
+              "residual": -0.8599579707913798,
+              "standardized_residual": -0.8832882961278659,
+              "leverage": 0.05457729230259605,
+              "cooks_distance": 0.011259806231892284
+            },
+            {
+              "case_position": 34,
+              "fitted": -0.2854378002638705,
+              "residual": -1.2391333904527173,
+              "standardized_residual": -1.3061231287649409,
+              "leverage": 0.10227274945007761,
+              "cooks_distance": 0.04858741251932002
+            },
+            {
+              "case_position": 35,
+              "fitted": 0.4932998096332552,
+              "residual": -0.6805440563258979,
+              "standardized_residual": -0.7325304970823272,
+              "leverage": 0.13912994979232207,
+              "cooks_distance": 0.021680757831548693
+            },
+            {
+              "case_position": 36,
+              "fitted": 0.26563701858099953,
+              "residual": 0.7224654845157868,
+              "standardized_residual": 0.7326176617182775,
+              "leverage": 0.030035214823852494,
+              "cooks_distance": 0.00415498588161943
+            },
+            {
+              "case_position": 37,
+              "fitted": 1.0795514279469551,
+              "residual": -0.9182122943811988,
+              "standardized_residual": -0.9544049998358513,
+              "leverage": 0.07679675174303886,
+              "cooks_distance": 0.018943095449433334
+            },
+            {
+              "case_position": 38,
+              "fitted": 0.3457371886859488,
+              "residual": -0.3437196978548479,
+              "standardized_residual": -0.3893097748244186,
+              "leverage": 0.22251010187386422,
+              "cooks_distance": 0.010843902462489835
+            },
+            {
+              "case_position": 39,
+              "fitted": 0.6617565838810113,
+              "residual": 0.3610420613781671,
+              "standardized_residual": 0.3681285396096396,
+              "leverage": 0.04061449421889023,
+              "cooks_distance": 0.0014342566787308114
+            },
+            {
+              "case_position": 40,
+              "fitted": 1.1415961565905965,
+              "residual": 1.1670866655936856,
+              "standardized_residual": 1.26734123769264,
+              "leverage": 0.1541456057877882,
+              "cooks_distance": 0.07317499150851876
+            },
+            {
+              "case_position": 41,
+              "fitted": 0.47362838779851846,
+              "residual": -0.6813163364866024,
+              "standardized_residual": -0.6987676353433091,
+              "leverage": 0.051781181233146775,
+              "cooks_distance": 0.006666055958921129
+            },
+            {
+              "case_position": 42,
+              "fitted": 0.4169924104412897,
+              "residual": -0.3936176116647973,
+              "standardized_residual": -0.40622725555690425,
+              "leverage": 0.06354383132107629,
+              "cooks_distance": 0.002799394261945439
+            },
+            {
+              "case_position": 43,
+              "fitted": 0.443355695959985,
+              "residual": 1.149126600727694,
+              "standardized_residual": 1.223115671802354,
+              "leverage": 0.11960569795872807,
+              "cooks_distance": 0.0508100610754293
+            }
+          ],
+          "qq": {
+            "scale": "residual_over_residual_standard_error",
+            "sampling": "all_cases",
+            "total_cases": 43,
+            "plotted_cases": 43,
+            "points": [
+              {
+                "rank": 1,
+                "theoretical_quantile": -2.269205796284963,
+                "standardized_residual": -1.5528124385212543
+              },
+              {
+                "rank": 2,
+                "theoretical_quantile": -1.8134175686740346,
+                "standardized_residual": -1.4214158473864593
+              },
+              {
+                "rank": 3,
+                "theoretical_quantile": -1.5705850285674192,
+                "standardized_residual": -1.2375316765584234
+              },
+              {
+                "rank": 4,
+                "theoretical_quantile": -1.3957469929496675,
+                "standardized_residual": -1.1851106756926384
+              },
+              {
+                "rank": 5,
+                "theoretical_quantile": -1.2554861698244295,
+                "standardized_residual": -1.0829962172739012
+              },
+              {
+                "rank": 6,
+                "theoretical_quantile": -1.1363408192553903,
+                "standardized_residual": -1.0615188586357873
+              },
+              {
+                "rank": 7,
+                "theoretical_quantile": -1.0314590939212473,
+                "standardized_residual": -0.9237646950949342
+              },
+              {
+                "rank": 8,
+                "theoretical_quantile": -0.9368471083583686,
+                "standardized_residual": -0.9170254057046823
+              },
+              {
+                "rank": 9,
+                "theoretical_quantile": -0.8499572808920577,
+                "standardized_residual": -0.9159417160769786
+              },
+              {
+                "rank": 10,
+                "theoretical_quantile": -0.7690553294512796,
+                "standardized_residual": -0.8588463821271263
+              },
+              {
+                "rank": 11,
+                "theoretical_quantile": -0.6929003452275887,
+                "standardized_residual": -0.825023028603763
+              },
+              {
+                "rank": 12,
+                "theoretical_quantile": -0.6205682718075382,
+                "standardized_residual": -0.6804356614511557
+              },
+              {
+                "rank": 13,
+                "theoretical_quantile": -0.5513476951205377,
+                "standardized_residual": -0.6796643795460654
+              },
+              {
+                "rank": 14,
+                "theoretical_quantile": -0.48467489602278124,
+                "standardized_residual": -0.5387615521044908
+              },
+              {
+                "rank": 15,
+                "theoretical_quantile": -0.42009150993941125,
+                "standardized_residual": -0.4674876910637403
+              },
+              {
+                "rank": 16,
+                "theoretical_quantile": -0.3572158346345847,
+                "standardized_residual": -0.4172743035036517
+              },
+              {
+                "rank": 17,
+                "theoretical_quantile": -0.29572269945216134,
+                "standardized_residual": -0.3931088183399625
+              },
+              {
+                "rank": 18,
+                "theoretical_quantile": -0.23532887106951692,
+                "standardized_residual": -0.38482423515555625
+              },
+              {
+                "rank": 19,
+                "theoretical_quantile": -0.17578212101566826,
+                "standardized_residual": -0.3432754029790594
+              },
+              {
+                "rank": 20,
+                "theoretical_quantile": -0.116852746716332,
+                "standardized_residual": -0.3176255033568272
+              },
+              {
+                "rank": 21,
+                "theoretical_quantile": -0.058326735272993036,
+                "standardized_residual": -0.29220436739040206
+              },
+              {
+                "rank": 22,
+                "theoretical_quantile": 0.0,
+                "standardized_residual": -0.2630617563901323
+              },
+              {
+                "rank": 23,
+                "theoretical_quantile": 0.058326735272993174,
+                "standardized_residual": -0.18322610232012299
+              },
+              {
+                "rank": 24,
+                "theoretical_quantile": 0.11685274671633186,
+                "standardized_residual": -0.16447733719057153
+              },
+              {
+                "rank": 25,
+                "theoretical_quantile": 0.17578212101566826,
+                "standardized_residual": -0.06163271893068833
+              },
+              {
+                "rank": 26,
+                "theoretical_quantile": 0.23532887106951705,
+                "standardized_residual": 0.045794783528104795
+              },
+              {
+                "rank": 27,
+                "theoretical_quantile": 0.29572269945216134,
+                "standardized_residual": 0.06820335221723411
+              },
+              {
+                "rank": 28,
+                "theoretical_quantile": 0.3572158346345847,
+                "standardized_residual": 0.09665435959731433
+              },
+              {
+                "rank": 29,
+                "theoretical_quantile": 0.42009150993941113,
+                "standardized_residual": 0.16193164092995438
+              },
+              {
+                "rank": 30,
+                "theoretical_quantile": 0.48467489602278124,
+                "standardized_residual": 0.3605753754744625
+              },
+              {
+                "rank": 31,
+                "theoretical_quantile": 0.5513476951205379,
+                "standardized_residual": 0.7215316197570671
+              },
+              {
+                "rank": 32,
+                "theoretical_quantile": 0.6205682718075379,
+                "standardized_residual": 0.8070031905992582
+              },
+              {
+                "rank": 33,
+                "theoretical_quantile": 0.6929003452275887,
+                "standardized_residual": 0.8610584594353888
+              },
+              {
+                "rank": 34,
+                "theoretical_quantile": 0.76905532945128,
+                "standardized_residual": 1.0680257119592664
+              },
+              {
+                "rank": 35,
+                "theoretical_quantile": 0.8499572808920577,
+                "standardized_residual": 1.1476412303415275
+              },
+              {
+                "rank": 36,
+                "theoretical_quantile": 0.9368471083583686,
+                "standardized_residual": 1.1655780798816635
+              },
+              {
+                "rank": 37,
+                "theoretical_quantile": 1.031459093921247,
+                "standardized_residual": 1.2382219019926646
+              },
+              {
+                "rank": 38,
+                "theoretical_quantile": 1.1363408192553903,
+                "standardized_residual": 1.2525122325240141
+              },
+              {
+                "rank": 39,
+                "theoretical_quantile": 1.2554861698244295,
+                "standardized_residual": 1.2682582303779402
+              },
+              {
+                "rank": 40,
+                "theoretical_quantile": 1.3957469929496675,
+                "standardized_residual": 1.3465665243926201
+              },
+              {
+                "rank": 41,
+                "theoretical_quantile": 1.5705850285674192,
+                "standardized_residual": 1.4039052727752028
+              },
+              {
+                "rank": 42,
+                "theoretical_quantile": 1.8134175686740353,
+                "standardized_residual": 2.046855571533869
+              },
+              {
+                "rank": 43,
+                "theoretical_quantile": 2.2692057962849628,
+                "standardized_residual": 2.108729234080865
+              }
+            ]
+          },
+          "full_sample": {
+            "leverage_threshold": 0.18604651162790697,
+            "high_leverage_cases": 5,
+            "cooks_threshold": 0.09302325581395349,
+            "influential_cases": 3,
+            "cooks_available_cases": 43,
+            "leverage_available_cases": 43,
+            "standardized_residual_available_cases": 43,
+            "max_leverage": 0.39963048085467434,
+            "max_cooks_distance": 0.38929530413432806,
+            "residual_standard_error": 1.0012942811280179,
+            "unavailable_standardized_reason": null
+          },
+          "notes": [
+            "Case positions refer to the fixed complete-case analysis sample, not original source row IDs. Plot thinning never changes the analysis sample or full-sample summaries.",
+            "Residual plot uses internally studentized residuals; Q-Q uses residual divided by residual standard error against normal quantiles at (rank - 0.5) / n.",
+            "Leverage > 2p/n and Cook distance > 4/n are screening heuristics, not deletion rules or hypothesis tests. No cases were removed.",
+            "Leverage roundoff within 1e-10 of [0, 1] is clipped to that range; values beyond it are unavailable. A leverage within 1e-10 of one cannot support finite studentization or Cook distance.",
+            "These OLS diagnostics describe the fitted mean model even when coefficient inference uses HC3. They do not establish normality, independent cases, correct causal ordering or absence of confounding."
+          ]
+        }
+      }
+    },
+    {
+      "target_id": "m2",
+      "column": "m2",
+      "family": "linear",
+      "formula": "m2 ~ Intercept + m1 + x",
+      "n": 43,
+      "df_model": 2.0,
+      "df_resid": 40.0,
+      "coefficients": [
+        {
+          "term_id": "term_m2_4f53cda18c2baa0c",
+          "term": "Intercept",
+          "factors": [],
+          "estimate": 0.34366730656317585,
+          "se": 0.31510651418188396,
+          "statistic": 1.0906385336255098,
+          "reference": "residual-df t",
+          "p": 0.28195846337305663,
+          "lower": -0.2931867145750244,
+          "upper": 0.980521327701376
+        },
+        {
+          "term_id": "term_m2_913b0f9bed579387",
+          "term": "m1",
+          "factors": [
+            {
+              "node_id": "m1",
+              "column": "m1"
+            }
+          ],
+          "estimate": 0.39663210025416334,
+          "se": 0.15683589644571275,
+          "statistic": 2.5289624967422797,
+          "reference": "residual-df t",
+          "p": 0.015486389121233308,
+          "lower": 0.07965492963111026,
+          "upper": 0.7136092708772164
+        },
+        {
+          "term_id": "term_m2_b82a1892cd394697",
+          "term": "x",
+          "factors": [
+            {
+              "node_id": "x",
+              "column": "x"
+            }
+          ],
+          "estimate": -0.07843248565313705,
+          "se": 0.32975116714555885,
+          "statistic": -0.23785354979051632,
+          "reference": "residual-df t",
+          "p": 0.813208874952178,
+          "lower": -0.7448844544957964,
+          "upper": 0.5880194831895222
+        }
+      ],
+      "covariance": {
+        "term_ids": [
+          "term_m2_4f53cda18c2baa0c",
+          "term_m2_913b0f9bed579387",
+          "term_m2_b82a1892cd394697"
+        ],
+        "values": [
+          [
+            0.09929211527985785,
+            0.006373217420700736,
+            -0.08689320759065393
+          ],
+          [
+            0.006373217420700736,
+            0.02459749841393033,
+            -0.01919104978225201
+          ],
+          [
+            -0.08689320759065393,
+            -0.01919104978225201,
+            0.1087358322338583
+          ]
+        ]
+      },
+      "standard_errors": "classical OLS",
+      "assumptions": [
+        "Independent cases; correctly specified conditional mean/link; no unmeasured confounding is established by this fit."
+      ],
+      "R": 0.3850966278778768,
+      "R2": 0.14829941280291192,
+      "adjustedR2": 0.1057143834430575,
+      "MSE": 1.120858656910686,
+      "RMSE": 1.0587061239601319,
+      "overall_test": {
+        "statistic": 3.4824306812082555,
+        "reference": "OLS F",
+        "df_num": 2.0,
+        "df_den": 40.0,
+        "p": 0.04034028232345159
+      },
+      "diagnostics": {
+        "max_cooks_distance": 0.18833814589120138,
+        "max_leverage": 0.1852570322908394,
+        "durbin_watson": 1.7983282152310245,
+        "breusch_pagan_p": 0.36240424630247803
+      },
+      "diagnostic_evidence": {
+        "schema_version": 1,
+        "n": 43,
+        "design": {
+          "columns": 3,
+          "rank": 3,
+          "condition_number": 4.222556853158386,
+          "condition_number_note": "Condition number of the unscaled design, including the intercept; sensitive to measurement units and centering. VIF describes each non-intercept compiled term, not a generalized factor-level VIF.",
+          "vif": [
+            {
+              "term_id": "term_m2_913b0f9bed579387",
+              "value": 1.1596891605418664,
+              "unavailable_reason": null
+            },
+            {
+              "term_id": "term_m2_b82a1892cd394697",
+              "value": 1.1596891605418664,
+              "unavailable_reason": null
+            }
+          ]
+        },
+        "linear": {
+          "status": "computed",
+          "scale": "internally_studentized_residual",
+          "sampling": "all_cases",
+          "total_cases": 43,
+          "plotted_cases": 43,
+          "points": [
+            {
+              "case_position": 1,
+              "fitted": 0.9589588904926359,
+              "residual": 0.25190242228990456,
+              "standardized_residual": 0.24569261808153794,
+              "leverage": 0.06215812413806469,
+              "cooks_distance": 0.0013336173607309835
+            },
+            {
+              "case_position": 2,
+              "fitted": -0.1446578730526273,
+              "residual": 0.08213651134587271,
+              "standardized_residual": 0.08153169745898048,
+              "leverage": 0.094541215376893,
+              "cooks_distance": 0.00023135783327173006
+            },
+            {
+              "case_position": 3,
+              "fitted": 0.38933543158407086,
+              "residual": -1.0932852921150247,
+              "standardized_residual": -1.0573998647410094,
+              "leverage": 0.0462431727516723,
+              "cooks_distance": 0.01807037686287757
+            },
+            {
+              "case_position": 4,
+              "fitted": -0.17429590265659514,
+              "residual": 0.021590764007929447,
+              "standardized_residual": 0.021173182659296727,
+              "leverage": 0.07228862375171616,
+              "cooks_distance": 1.1644158487801275e-05
+            },
+            {
+              "case_position": 5,
+              "fitted": 0.20848118131581125,
+              "residual": -1.040257680066102,
+              "standardized_residual": -1.0055919884561977,
+              "leverage": 0.0452549797768012,
+              "cooks_distance": 0.015977224143562722
+            },
+            {
+              "case_position": 6,
+              "fitted": 0.7920100020676206,
+              "residual": -0.8167551095117354,
+              "standardized_residual": -0.8270066548829732,
+              "leverage": 0.1298084514416698,
+              "cooks_distance": 0.03400829520941414
+            },
+            {
+              "case_position": 7,
+              "fitted": 0.5171266873213329,
+              "residual": -1.113766339839964,
+              "standardized_residual": -1.0964834713248746,
+              "leverage": 0.07948017154342712,
+              "cooks_distance": 0.03460258721870057
+            },
+            {
+              "case_position": 8,
+              "fitted": 1.142755548557905,
+              "residual": 0.5576684796999949,
+              "standardized_residual": 0.5683530896328705,
+              "leverage": 0.1410559106793033,
+              "cooks_distance": 0.017682415417808815
+            },
+            {
+              "case_position": 9,
+              "fitted": 0.23851793364420792,
+              "residual": -0.49320526159647055,
+              "standardized_residual": -0.4726711183194353,
+              "leverage": 0.028626124985785047,
+              "cooks_distance": 0.0021946891780424247
+            },
+            {
+              "case_position": 10,
+              "fitted": 0.022292360447831217,
+              "residual": 0.9344842372920008,
+              "standardized_residual": 0.9116322108969255,
+              "leverage": 0.0625377545873403,
+              "cooks_distance": 0.018480195719849615
+            },
+            {
+              "case_position": 11,
+              "fitted": 0.1347416937240398,
+              "residual": 2.404072002108546,
+              "standardized_residual": 2.335875314135774,
+              "leverage": 0.054971781084710646,
+              "cooks_distance": 0.10579693612101604
+            },
+            {
+              "case_position": 12,
+              "fitted": 0.1085208750150835,
+              "residual": -1.1332372979117724,
+              "standardized_residual": -1.0977722218703156,
+              "leverage": 0.04924986653952043,
+              "cooks_distance": 0.020808553072863736
+            },
+            {
+              "case_position": 13,
+              "fitted": 0.3965130003693574,
+              "residual": -1.3756695889882722,
+              "standardized_residual": -1.3150942904495346,
+              "leverage": 0.023744174268221147,
+              "cooks_distance": 0.014021225123651015
+            },
+            {
+              "case_position": 14,
+              "fitted": 0.2968617438633274,
+              "residual": -0.6127337241685624,
+              "standardized_residual": -0.5906711353933091,
+              "leverage": 0.039933710530995065,
+              "cooks_distance": 0.004837363096352209
+            },
+            {
+              "case_position": 15,
+              "fitted": 0.22946133627290238,
+              "residual": 0.4553492364215305,
+              "standardized_residual": 0.43907834737244067,
+              "leverage": 0.04047933379931002,
+              "cooks_distance": 0.002711076736930084
+            },
+            {
+              "case_position": 16,
+              "fitted": 0.08228135366965894,
+              "residual": -1.090926913715845,
+              "standardized_residual": -1.0715668717926816,
+              "leverage": 0.07529777079301579,
+              "cooks_distance": 0.031167180559056342
+            },
+            {
+              "case_position": 17,
+              "fitted": 0.8956019002131117,
+              "residual": -1.567489610200596,
+              "standardized_residual": -1.53183125613598,
+              "leverage": 0.06580693770425852,
+              "cooks_distance": 0.05509797564856646
+            },
+            {
+              "case_position": 18,
+              "fitted": -0.3230097950943612,
+              "residual": -0.9900860704231014,
+              "standardized_residual": -0.9975569730030359,
+              "leverage": 0.12114013284679297,
+              "cooks_distance": 0.045721721642916296
+            },
+            {
+              "case_position": 19,
+              "fitted": -0.21636112750059278,
+              "residual": 1.9263471510373278,
+              "standardized_residual": 1.910446851559597,
+              "leverage": 0.09291426090605572,
+              "cooks_distance": 0.12461855268266073
+            },
+            {
+              "case_position": 20,
+              "fitted": 0.22022803000246766,
+              "residual": -0.5950023775915081,
+              "standardized_residual": -0.574397372161193,
+              "leverage": 0.042670012215094,
+              "cooks_distance": 0.004901903281861193
+            },
+            {
+              "case_position": 21,
+              "fitted": 0.9833406443838517,
+              "residual": -1.2714839540106981,
+              "standardized_residual": -1.2415132840842373,
+              "leverage": 0.06423203068516024,
+              "cooks_distance": 0.03526671139617655
+            },
+            {
+              "case_position": 22,
+              "fitted": 0.8749481312575976,
+              "residual": 1.7055933254445286,
+              "standardized_residual": 1.687259378713909,
+              "leverage": 0.08833260383672159,
+              "cooks_distance": 0.09194477537844545
+            },
+            {
+              "case_position": 23,
+              "fitted": 0.4666544450256573,
+              "residual": 1.0568626745026486,
+              "standardized_residual": 1.0135708069755813,
+              "leverage": 0.02998582026802845,
+              "cooks_distance": 0.010585826771758221
+            },
+            {
+              "case_position": 24,
+              "fitted": 1.2976698274090102,
+              "residual": 0.0004373149750869221,
+              "standardized_residual": 0.0004398860669853895,
+              "leverage": 0.11822570266930735,
+              "cooks_distance": 8.647959085547481e-09
+            },
+            {
+              "case_position": 25,
+              "fitted": 0.5300268081885452,
+              "residual": -1.3548437769909285,
+              "standardized_residual": -1.3044323312038377,
+              "leverage": 0.0375360262682827,
+              "cooks_distance": 0.022120027697696682
+            },
+            {
+              "case_position": 26,
+              "fitted": 0.7160722229537969,
+              "residual": -0.554646228857742,
+              "standardized_residual": -0.5398196501267002,
+              "leverage": 0.0581453206758374,
+              "cooks_distance": 0.005996626426190422
+            },
+            {
+              "case_position": 27,
+              "fitted": 0.7219189680768691,
+              "residual": 0.4196792667709165,
+              "standardized_residual": 0.42148742871688155,
+              "leverage": 0.11546519417089895,
+              "cooks_distance": 0.0077300830610540485
+            },
+            {
+              "case_position": 28,
+              "fitted": 0.9369294972240144,
+              "residual": -0.6766685404221842,
+              "standardized_residual": -0.6593234296726528,
+              "leverage": 0.06026781132383184,
+              "cooks_distance": 0.009293024463370223
+            },
+            {
+              "case_position": 29,
+              "fitted": -0.08180879438642463,
+              "residual": 0.8326009748219289,
+              "standardized_residual": 0.8712668283564198,
+              "leverage": 0.1852570322908394,
+              "cooks_distance": 0.05753540656151902
+            },
+            {
+              "case_position": 30,
+              "fitted": 0.825136398176177,
+              "residual": -0.0688490689547342,
+              "standardized_residual": -0.06644840407729259,
+              "leverage": 0.04219702109901337,
+              "cooks_distance": 6.484156142057574e-05
+            },
+            {
+              "case_position": 31,
+              "fitted": 1.130505117078907,
+              "residual": 1.2951622704349404,
+              "standardized_residual": 1.2802244445662259,
+              "leverage": 0.08688539814733622,
+              "cooks_distance": 0.051984333933778944
+            },
+            {
+              "case_position": 32,
+              "fitted": 0.42888764931914664,
+              "residual": 0.04587874143986309,
+              "standardized_residual": 0.04542950089557442,
+              "leverage": 0.0900946681803642,
+              "cooks_distance": 6.811732058944315e-05
+            },
+            {
+              "case_position": 33,
+              "fitted": 0.1033603226972986,
+              "residual": 0.1504378505661027,
+              "standardized_residual": 0.14497177768470226,
+              "leverage": 0.03928082221951383,
+              "cooks_distance": 0.00028643744005479345
+            },
+            {
+              "case_position": 34,
+              "fitted": -0.2917104765842139,
+              "residual": 0.8938384370379934,
+              "standardized_residual": 0.8884000983561717,
+              "leverage": 0.09687054579758435,
+              "cooks_distance": 0.02821874412123167
+            },
+            {
+              "case_position": 35,
+              "fitted": 0.23270406264956325,
+              "residual": -0.3287530016527558,
+              "standardized_residual": -0.3167484172197414,
+              "leverage": 0.03891965330665819,
+              "cooks_distance": 0.0013543063621741435
+            },
+            {
+              "case_position": 36,
+              "fitted": 0.6834705588060335,
+              "residual": 0.7876524779464702,
+              "standardized_residual": 0.758756176168082,
+              "leverage": 0.03857821543555189,
+              "cooks_distance": 0.007700366558056647
+            },
+            {
+              "case_position": 37,
+              "fitted": 0.3109283919944158,
+              "residual": 0.905600052557331,
+              "standardized_residual": 0.8732567135873248,
+              "leverage": 0.04051506253134624,
+              "cooks_distance": 0.010733490193442888
+            },
+            {
+              "case_position": 38,
+              "fitted": 0.19859746742403153,
+              "residual": -0.4218702016199347,
+              "standardized_residual": -0.42861230393443717,
+              "leverage": 0.13567398923210303,
+              "cooks_distance": 0.009612293548748168
+            },
+            {
+              "case_position": 39,
+              "fitted": 0.6483870718743886,
+              "residual": 0.4592796982595503,
+              "standardized_residual": 0.4425844135999214,
+              "leverage": 0.03924773757652089,
+              "cooks_distance": 0.0026673142630302196
+            },
+            {
+              "case_position": 40,
+              "fitted": 1.1713615716017847,
+              "residual": 2.393762282418835,
+              "standardized_residual": 2.3718528672284704,
+              "leverage": 0.0912682565069452,
+              "cooks_distance": 0.18833814589120135
+            },
+            {
+              "case_position": 41,
+              "fitted": 0.1678966245931153,
+              "residual": 0.5999424227914972,
+              "standardized_residual": 0.5809588761082062,
+              "leverage": 0.04856853058844646,
+              "cooks_distance": 0.005743107962108586
+            },
+            {
+              "case_position": 42,
+              "fitted": 0.29056244756813726,
+              "residual": -0.6808907945789185,
+              "standardized_residual": -0.6517550793964001,
+              "leverage": 0.026277453942365542,
+              "cooks_distance": 0.003821163773940302
+            },
+            {
+              "case_position": 43,
+              "fitted": 0.9167646936895119,
+              "residual": -0.8998577609539613,
+              "standardized_residual": -0.8766539290912466,
+              "leverage": 0.059972593526695955,
+              "cooks_distance": 0.016343588809342776
+            }
+          ],
+          "qq": {
+            "scale": "residual_over_residual_standard_error",
+            "sampling": "all_cases",
+            "total_cases": 43,
+            "plotted_cases": 43,
+            "points": [
+              {
+                "rank": 1,
+                "theoretical_quantile": -2.269205796284963,
+                "standardized_residual": -1.4805710241264491
+              },
+              {
+                "rank": 2,
+                "theoretical_quantile": -1.8134175686740346,
+                "standardized_residual": -1.2993875806087964
+              },
+              {
+                "rank": 3,
+                "theoretical_quantile": -1.5705850285674192,
+                "standardized_residual": -1.2797165769884111
+              },
+              {
+                "rank": 4,
+                "theoretical_quantile": -1.3957469929496675,
+                "standardized_residual": -1.200979124645716
+              },
+              {
+                "rank": 5,
+                "theoretical_quantile": -1.2554861698244295,
+                "standardized_residual": -1.070398359152636
+              },
+              {
+                "rank": 6,
+                "theoretical_quantile": -1.1363408192553903,
+                "standardized_residual": -1.0520070816950384
+              },
+              {
+                "rank": 7,
+                "theoretical_quantile": -1.0314590939212473,
+                "standardized_residual": -1.03266172488504
+              },
+              {
+                "rank": 8,
+                "theoretical_quantile": -0.9368471083583686,
+                "standardized_residual": -1.030434120504744
+              },
+              {
+                "rank": 9,
+                "theoretical_quantile": -0.8499572808920577,
+                "standardized_residual": -0.9825745374693567
+              },
+              {
+                "rank": 10,
+                "theoretical_quantile": -0.7690553294512796,
+                "standardized_residual": -0.9351849847808998
+              },
+              {
+                "rank": 11,
+                "theoretical_quantile": -0.6929003452275887,
+                "standardized_residual": -0.8499599091653575
+              },
+              {
+                "rank": 12,
+                "theoretical_quantile": -0.6205682718075382,
+                "standardized_residual": -0.7714653679877007
+              },
+              {
+                "rank": 13,
+                "theoretical_quantile": -0.5513476951205377,
+                "standardized_residual": -0.6431348408867418
+              },
+              {
+                "rank": 14,
+                "theoretical_quantile": -0.48467489602278124,
+                "standardized_residual": -0.6391467141902221
+              },
+              {
+                "rank": 15,
+                "theoretical_quantile": -0.42009150993941125,
+                "standardized_residual": -0.5787571359997502
+              },
+              {
+                "rank": 16,
+                "theoretical_quantile": -0.3572158346345847,
+                "standardized_residual": -0.5620090071509913
+              },
+              {
+                "rank": 17,
+                "theoretical_quantile": -0.29572269945216134,
+                "standardized_residual": -0.523890640004108
+              },
+              {
+                "rank": 18,
+                "theoretical_quantile": -0.23532887106951692,
+                "standardized_residual": -0.4658566248314659
+              },
+              {
+                "rank": 19,
+                "theoretical_quantile": -0.17578212101566826,
+                "standardized_residual": -0.39847715250943544
+              },
+              {
+                "rank": 20,
+                "theoretical_quantile": -0.116852746716332,
+                "standardized_residual": -0.3105233777462647
+              },
+              {
+                "rank": 21,
+                "theoretical_quantile": -0.058326735272993036,
+                "standardized_residual": -0.0650313315438297
+              },
+              {
+                "rank": 22,
+                "theoretical_quantile": 0.0,
+                "standardized_residual": 0.00041306550060476484
+              },
+              {
+                "rank": 23,
+                "theoretical_quantile": 0.058326735272993174,
+                "standardized_residual": 0.020393538413821907
+              },
+              {
+                "rank": 24,
+                "theoretical_quantile": 0.11685274671633186,
+                "standardized_residual": 0.043334727552393724
+              },
+              {
+                "rank": 25,
+                "theoretical_quantile": 0.17578212101566826,
+                "standardized_residual": 0.07758197434301964
+              },
+              {
+                "rank": 26,
+                "theoretical_quantile": 0.23532887106951705,
+                "standardized_residual": 0.14209594821590718
+              },
+              {
+                "rank": 27,
+                "theoretical_quantile": 0.29572269945216134,
+                "standardized_residual": 0.23793422611711515
+              },
+              {
+                "rank": 28,
+                "theoretical_quantile": 0.3572158346345847,
+                "standardized_residual": 0.39640770679694354
+              },
+              {
+                "rank": 29,
+                "theoretical_quantile": 0.42009150993941113,
+                "standardized_residual": 0.43009974733902434
+              },
+              {
+                "rank": 30,
+                "theoretical_quantile": 0.48467489602278124,
+                "standardized_residual": 0.4338122618405158
+              },
+              {
+                "rank": 31,
+                "theoretical_quantile": 0.5513476951205379,
+                "standardized_residual": 0.5267453045553511
+              },
+              {
+                "rank": 32,
+                "theoretical_quantile": 0.6205682718075379,
+                "standardized_residual": 0.5666751227879829
+              },
+              {
+                "rank": 33,
+                "theoretical_quantile": 0.6929003452275887,
+                "standardized_residual": 0.7439765012411803
+              },
+              {
+                "rank": 34,
+                "theoretical_quantile": 0.76905532945128,
+                "standardized_residual": 0.7864325670541624
+              },
+              {
+                "rank": 35,
+                "theoretical_quantile": 0.8499572808920577,
+                "standardized_residual": 0.8442743617034684
+              },
+              {
+                "rank": 36,
+                "theoretical_quantile": 0.9368471083583686,
+                "standardized_residual": 0.8553837859838748
+              },
+              {
+                "rank": 37,
+                "theoretical_quantile": 1.031459093921247,
+                "standardized_residual": 0.88266631895594
+              },
+              {
+                "rank": 38,
+                "theoretical_quantile": 1.1363408192553903,
+                "standardized_residual": 0.998258771328735
+              },
+              {
+                "rank": 39,
+                "theoretical_quantile": 1.2554861698244295,
+                "standardized_residual": 1.2233444589801135
+              },
+              {
+                "rank": 40,
+                "theoretical_quantile": 1.3957469929496675,
+                "standardized_residual": 1.6110167749523254
+              },
+              {
+                "rank": 41,
+                "theoretical_quantile": 1.5705850285674192,
+                "standardized_residual": 1.8195296196377428
+              },
+              {
+                "rank": 42,
+                "theoretical_quantile": 1.8134175686740353,
+                "standardized_residual": 2.261026198152962
+              },
+              {
+                "rank": 43,
+                "theoretical_quantile": 2.2692057962849628,
+                "standardized_residual": 2.2707642354197595
+              }
+            ]
+          },
+          "full_sample": {
+            "leverage_threshold": 0.13953488372093023,
+            "high_leverage_cases": 2,
+            "cooks_threshold": 0.09302325581395349,
+            "influential_cases": 3,
+            "cooks_available_cases": 43,
+            "leverage_available_cases": 43,
+            "standardized_residual_available_cases": 43,
+            "max_leverage": 0.1852570322908394,
+            "max_cooks_distance": 0.18833814589120135,
+            "residual_standard_error": 1.0587061239601319,
+            "unavailable_standardized_reason": null
+          },
+          "notes": [
+            "Case positions refer to the fixed complete-case analysis sample, not original source row IDs. Plot thinning never changes the analysis sample or full-sample summaries.",
+            "Residual plot uses internally studentized residuals; Q-Q uses residual divided by residual standard error against normal quantiles at (rank - 0.5) / n.",
+            "Leverage > 2p/n and Cook distance > 4/n are screening heuristics, not deletion rules or hypothesis tests. No cases were removed.",
+            "Leverage roundoff within 1e-10 of [0, 1] is clipped to that range; values beyond it are unavailable. A leverage within 1e-10 of one cannot support finite studentization or Cook distance.",
+            "These OLS diagnostics describe the fitted mean model even when coefficient inference uses HC3. They do not establish normality, independent cases, correct causal ordering or absence of confounding."
+          ]
+        }
+      }
+    },
+    {
+      "target_id": "y",
+      "column": "y",
+      "family": "linear",
+      "formula": "y ~ Intercept + m1 + m2 + x",
+      "n": 43,
+      "df_model": 3.0,
+      "df_resid": 39.0,
+      "coefficients": [
+        {
+          "term_id": "term_y_4f53cda18c2baa0c",
+          "term": "Intercept",
+          "factors": [],
+          "estimate": 0.41898375089556744,
+          "se": 0.31349838622935455,
+          "statistic": 1.3364781743694212,
+          "reference": "residual-df t",
+          "p": 0.18913833336781652,
+          "lower": -0.21512658837672544,
+          "upper": 1.0530940901678603
+        },
+        {
+          "term_id": "term_y_913b0f9bed579387",
+          "term": "m1",
+          "factors": [
+            {
+              "node_id": "m1",
+              "column": "m1"
+            }
+          ],
+          "estimate": 0.45398364461188095,
+          "se": 0.16560323513039,
+          "statistic": 2.7413935739505972,
+          "reference": "residual-df t",
+          "p": 0.009186163402757753,
+          "lower": 0.11901948458492845,
+          "upper": 0.7889478046388334
+        },
+        {
+          "term_id": "term_y_2605486010b99f25",
+          "term": "m2",
+          "factors": [
+            {
+              "node_id": "m2",
+              "column": "m2"
+            }
+          ],
+          "estimate": 0.4891673397541149,
+          "se": 0.15501892044998364,
+          "statistic": 3.1555331332083636,
+          "reference": "residual-df t",
+          "p": 0.0030835612866911316,
+          "lower": 0.17561197692603214,
+          "upper": 0.8027227025821977
+        },
+        {
+          "term_id": "term_y_b82a1892cd394697",
+          "term": "x",
+          "factors": [
+            {
+              "node_id": "x",
+              "column": "x"
+            }
+          ],
+          "estimate": -0.223510829899299,
+          "se": 0.3235250791315399,
+          "statistic": -0.6908609079063798,
+          "reference": "residual-df t",
+          "p": 0.4937446765219339,
+          "lower": -0.877902069862839,
+          "upper": 0.4308804100642411
+        }
+      ],
+      "covariance": {
+        "term_ids": [
+          "term_y_4f53cda18c2baa0c",
+          "term_y_913b0f9bed579387",
+          "term_y_2605486010b99f25",
+          "term_y_b82a1892cd394697"
+        ],
+        "values": [
+          [
+            0.09828123816840956,
+            0.009401792217433603,
+            -0.008258622888633787,
+            -0.08417250438659173
+          ],
+          [
+            0.009401792217433603,
+            0.027424431485651234,
+            -0.00953141273251659,
+            -0.01919467398883416
+          ],
+          [
+            -0.008258622888633787,
+            -0.00953141273251659,
+            0.024030865697478355,
+            0.0018848005290499428
+          ],
+          [
+            -0.08417250438659173,
+            -0.01919467398883416,
+            0.0018848005290499428,
+            0.10466847682706913
+          ]
+        ]
+      },
+      "standard_errors": "classical OLS",
+      "assumptions": [
+        "Independent cases; correctly specified conditional mean/link; no unmeasured confounding is established by this fit."
+      ],
+      "R": 0.6489671818229308,
+      "R2": 0.42115840308319696,
+      "adjustedR2": 0.37663212639728905,
+      "MSE": 1.0774081540030656,
+      "RMSE": 1.0379827329985145,
+      "overall_test": {
+        "statistic": 9.458648565072787,
+        "reference": "OLS F",
+        "df_num": 3.0,
+        "df_den": 39.0,
+        "p": 7.974934634466773e-05
+      },
+      "diagnostics": {
+        "max_cooks_distance": 0.19002161648904423,
+        "max_leverage": 0.2190742432252961,
+        "durbin_watson": 2.290431832771556,
+        "breusch_pagan_p": 0.6214705740377313
+      },
+      "diagnostic_evidence": {
+        "schema_version": 1,
+        "n": 43,
+        "design": {
+          "columns": 4,
+          "rank": 4,
+          "condition_number": 4.70619984447018,
+          "condition_number_note": "Condition number of the unscaled design, including the intercept; sensitive to measurement units and centering. VIF describes each non-intercept compiled term, not a generalized factor-level VIF.",
+          "vif": [
+            {
+              "term_id": "term_y_913b0f9bed579387",
+              "value": 1.3451133480101158,
+              "unavailable_reason": null
+            },
+            {
+              "term_id": "term_y_2605486010b99f25",
+              "value": 1.174121534060412,
+              "unavailable_reason": null
+            },
+            {
+              "term_id": "term_y_b82a1892cd394697",
+              "value": 1.1613293759269514,
+              "unavailable_reason": null
+            }
+          ]
+        },
+        "linear": {
+          "status": "computed",
+          "scale": "internally_studentized_residual",
+          "sampling": "all_cases",
+          "total_cases": 43,
+          "plotted_cases": 43,
+          "points": [
+            {
+              "case_position": 1,
+              "fitted": 1.604883197569273,
+              "residual": 0.11069093543243524,
+              "standardized_residual": 0.11020088122506919,
+              "leverage": 0.06357344153701354,
+              "cooks_distance": 0.00020611620777849138
+            },
+            {
+              "case_position": 2,
+              "fitted": -0.18666544252153833,
+              "residual": 0.5091712864347758,
+              "standardized_residual": 0.5155556160013285,
+              "leverage": 0.09469168944546683,
+              "cooks_distance": 0.006950345770694252
+            },
+            {
+              "case_position": 3,
+              "fitted": 0.07923075805111578,
+              "residual": 0.5846552715571469,
+              "standardized_residual": 0.5849882409581848,
+              "leverage": 0.07290292870273588,
+              "cooks_distance": 0.006727505283297403
+            },
+            {
+              "case_position": 4,
+              "fitted": -0.329058747311939,
+              "residual": -0.9452479640768321,
+              "standardized_residual": -0.9454784056835394,
+              "leverage": 0.07229902116194203,
+              "cooks_distance": 0.017416770923778704
+            },
+            {
+              "case_position": 5,
+              "fitted": -0.19417837044461173,
+              "residual": 0.07867284067908473,
+              "standardized_residual": 0.0785689859665541,
+              "leverage": 0.06939129781887914,
+              "cooks_distance": 0.00011507479385826803
+            },
+            {
+              "case_position": 6,
+              "fitted": 0.6530685571230483,
+              "residual": 2.0348439002284255,
+              "standardized_residual": 2.119720208546062,
+              "leverage": 0.1446874217917797,
+              "cooks_distance": 0.19002161648904423
+            },
+            {
+              "case_position": 7,
+              "fitted": 0.10090110995466328,
+              "residual": -0.5863537341451623,
+              "standardized_residual": -0.5978329714271445,
+              "leverage": 0.10714814404183994,
+              "cooks_distance": 0.010722720421358495
+            },
+            {
+              "case_position": 8,
+              "fitted": 2.119388876915457,
+              "residual": 1.2119289642732158,
+              "standardized_residual": 1.2649265498952473,
+              "leverage": 0.1479924260760812,
+              "cooks_distance": 0.06948109582984123
+            },
+            {
+              "case_position": 9,
+              "fitted": 0.06453053218986976,
+              "residual": -1.2800102234058306,
+              "standardized_residual": -1.2547186827730472,
+              "leverage": 0.03405168485826916,
+              "cooks_distance": 0.013874503607294413
+            },
+            {
+              "case_position": 10,
+              "fitted": 0.36505551189900287,
+              "residual": 0.21372923380906217,
+              "standardized_residual": 0.21490972412081308,
+              "leverage": 0.08201525035282119,
+              "cooks_distance": 0.001031599898015637
+            },
+            {
+              "case_position": 11,
+              "fitted": 1.3814550555122955,
+              "residual": -1.4067377232382958,
+              "standardized_residual": -1.5001900131044583,
+              "leverage": 0.1838810364062478,
+              "cooks_distance": 0.12676986335132334
+            },
+            {
+              "case_position": 12,
+              "fitted": -0.40455823313893535,
+              "residual": -0.5977665799733501,
+              "standardized_residual": -0.5997234119052135,
+              "leverage": 0.07789368272143674,
+              "cooks_distance": 0.007595620444013454
+            },
+            {
+              "case_position": 13,
+              "fitted": -0.12065078811918717,
+              "residual": 2.122078252756114,
+              "standardized_residual": 2.1153742852581954,
+              "leverage": 0.06595437638423067,
+              "cooks_distance": 0.07899324931373168
+            },
+            {
+              "case_position": 14,
+              "fitted": 0.048613700070469945,
+              "residual": 0.5702722556147333,
+              "standardized_residual": 0.563175609582159,
+              "leverage": 0.04830770609276094,
+              "cooks_distance": 0.00402483005056941
+            },
+            {
+              "case_position": 15,
+              "fitted": 0.5637976115632343,
+              "residual": 0.8826743996435836,
+              "standardized_residual": 0.8702266115933363,
+              "leverage": 0.0451039786158373,
+              "cooks_distance": 0.008942593657472717
+            },
+            {
+              "case_position": 16,
+              "fitted": -0.3900209938851293,
+              "residual": -0.033952235545326226,
+              "standardized_residual": -0.034514535091333266,
+              "leverage": 0.10184263271052527,
+              "cooks_distance": 3.3769236790822025e-05
+            },
+            {
+              "case_position": 17,
+              "fitted": 0.6403268009644598,
+              "residual": -1.4156262748203285,
+              "standardized_residual": -1.4543452850053276,
+              "leverage": 0.12060920164132972,
+              "cooks_distance": 0.0725226373020207
+            },
+            {
+              "case_position": 18,
+              "fitted": -1.0001698202446543,
+              "residual": 0.7277108138590038,
+              "standardized_residual": 0.7573199634071363,
+              "leverage": 0.14300440674078402,
+              "cooks_distance": 0.023925975353936087
+            },
+            {
+              "case_position": 19,
+              "fitted": 0.5812313909509984,
+              "residual": 0.9517294310838694,
+              "standardized_residual": 1.0098941049751582,
+              "leverage": 0.17568146182453245,
+              "cooks_distance": 0.05434036516770995
+            },
+            {
+              "case_position": 20,
+              "fitted": 0.038709181445941765,
+              "residual": -1.1101045595332928,
+              "standardized_residual": -1.097593309096347,
+              "leverage": 0.05056636531806502,
+              "cooks_distance": 0.016040578812712116
+            },
+            {
+              "case_position": 21,
+              "fitted": 0.8414128246112648,
+              "residual": 0.7478964229710346,
+              "standardized_residual": 0.7596267447940898,
+              "leverage": 0.10029080213103003,
+              "cooks_distance": 0.01608049624343449
+            },
+            {
+              "case_position": 22,
+              "fitted": 2.24199031968381,
+              "residual": -0.3140242159244617,
+              "standardized_residual": -0.3287660323687472,
+              "leverage": 0.15321698006616646,
+              "cooks_distance": 0.0048893220799119085
+            },
+            {
+              "case_position": 23,
+              "fitted": 1.1508796277068847,
+              "residual": -0.9779040328462285,
+              "standardized_residual": -0.9690963521065383,
+              "leverage": 0.054898834631397386,
+              "cooks_distance": 0.013638253327694545
+            },
+            {
+              "case_position": 24,
+              "fitted": 2.004875921949794,
+              "residual": -0.3535846383280934,
+              "standardized_residual": -0.36276430145520333,
+              "leverage": 0.11822570693488511,
+              "cooks_distance": 0.004411066250765635
+            },
+            {
+              "case_position": 25,
+              "fitted": 0.056731976511583404,
+              "residual": -1.2977466960909354,
+              "standardized_residual": -1.3024076031148613,
+              "leverage": 0.07847788920375612,
+              "cooks_distance": 0.03611398453799363
+            },
+            {
+              "case_position": 26,
+              "fitted": 0.864929625916274,
+              "residual": 1.5459003887329756,
+              "standardized_residual": 1.5402356247165452,
+              "leverage": 0.06500685574293527,
+              "cooks_distance": 0.041234911902811665
+            },
+            {
+              "case_position": 27,
+              "fitted": 1.1532491803366172,
+              "residual": -0.3657629210568125,
+              "standardized_residual": -0.37550752702305085,
+              "leverage": 0.11939367092109925,
+              "cooks_distance": 0.004779437703034175
+            },
+            {
+              "case_position": 28,
+              "fitted": 1.1186498804599694,
+              "residual": -1.1539695625344515,
+              "standardized_residual": -1.1531212566930094,
+              "leverage": 0.07048052438033585,
+              "cooks_distance": 0.02520580648091576
+            },
+            {
+              "case_position": 29,
+              "fitted": 0.04946472498069099,
+              "residual": -1.2869170671019245,
+              "standardized_residual": -1.3867898989570635,
+              "leverage": 0.20071893685392472,
+              "cooks_distance": 0.12073972223979919
+            },
+            {
+              "case_position": 30,
+              "fitted": 1.2115119330985245,
+              "residual": -0.7146893961194145,
+              "standardized_residual": -0.7035793570917874,
+              "leverage": 0.04230274795107248,
+              "cooks_distance": 0.005466464407902493
+            },
+            {
+              "case_position": 31,
+              "fitted": 2.3323451631228016,
+              "residual": -0.7608143982047273,
+              "standardized_residual": -0.7832688261694989,
+              "leverage": 0.12429968978026984,
+              "cooks_distance": 0.021770892537489657
+            },
+            {
+              "case_position": 32,
+              "fitted": 0.5180422346657598,
+              "residual": 0.8461332470320306,
+              "standardized_residual": 0.8545977210001721,
+              "leverage": 0.09014161564566527,
+              "cooks_distance": 0.018089018615929743
+            },
+            {
+              "case_position": 33,
+              "fitted": 0.18308444853979422,
+              "residual": -0.8539017220007724,
+              "standardized_residual": -0.8395250395301039,
+              "leverage": 0.03978560368199826,
+              "cooks_distance": 0.007300709292404418
+            },
+            {
+              "case_position": 34,
+              "fitted": -0.06604593446211915,
+              "residual": 1.4005311770424302,
+              "standardized_residual": 1.4340196291090421,
+              "leverage": 0.1146905257433293,
+              "cooks_distance": 0.06660128867596281
+            },
+            {
+              "case_position": 35,
+              "fitted": 0.182420029003538,
+              "residual": -0.5928629092190245,
+              "standardized_residual": -0.5833505947418061,
+              "leverage": 0.04133027250983187,
+              "cooks_distance": 0.0036677401026230516
+            },
+            {
+              "case_position": 36,
+              "fitted": 1.4386926535096536,
+              "residual": 0.8250405653315442,
+              "standardized_residual": 0.8165377251134823,
+              "leverage": 0.05241574129552862,
+              "cooks_distance": 0.009220116579608913
+            },
+            {
+              "case_position": 37,
+              "fitted": 0.8116579885010726,
+              "residual": -0.18025458689444884,
+              "standardized_residual": -0.1790015840685569,
+              "leverage": 0.05880709806444899,
+              "cooks_distance": 0.0005005009001495949
+            },
+            {
+              "case_position": 38,
+              "fitted": -0.10500722802426227,
+              "residual": 0.6182101193974276,
+              "standardized_residual": 0.6421060787860429,
+              "leverage": 0.13964359025890385,
+              "cooks_distance": 0.016730009166171657
+            },
+            {
+              "case_position": 39,
+              "fitted": 1.137458238904434,
+              "residual": 1.345441336850834,
+              "standardized_residual": 1.3256684399738368,
+              "leverage": 0.04395256453960052,
+              "cooks_distance": 0.020198290892481485
+            },
+            {
+              "case_position": 40,
+              "fitted": 2.9602447162623893,
+              "residual": 0.8436439265006523,
+              "standardized_residual": 0.9197381091205867,
+              "leverage": 0.2190742432252961,
+              "cooks_distance": 0.059326666318398696
+            },
+            {
+              "case_position": 41,
+              "fitted": 0.4341488295680749,
+              "residual": -0.8852084003523579,
+              "standardized_residual": -0.8780245659417016,
+              "leverage": 0.05659654795811596,
+              "cooks_distance": 0.011562342353653013
+            },
+            {
+              "case_position": 42,
+              "fitted": 0.06090519346096987,
+              "residual": 0.3399881075590928,
+              "standardized_residual": 0.33371393082447004,
+              "leverage": 0.03661801453142591,
+              "cooks_distance": 0.0010582419011107944
+            },
+            {
+              "case_position": 43,
+              "fitted": 0.9834144210067179,
+              "residual": -1.3975030353774258,
+              "standardized_residual": -1.4021840876258829,
+              "leverage": 0.07803338970640558,
+              "cooks_distance": 0.04160210990287815
+            }
+          ],
+          "qq": {
+            "scale": "residual_over_residual_standard_error",
+            "sampling": "all_cases",
+            "total_cases": 43,
+            "plotted_cases": 43,
+            "points": [
+              {
+                "rank": 1,
+                "theoretical_quantile": -2.269205796284963,
+                "standardized_residual": -1.363824493236878
+              },
+              {
+                "rank": 2,
+                "theoretical_quantile": -1.8134175686740346,
+                "standardized_residual": -1.3552611989744043
+              },
+              {
+                "rank": 3,
+                "theoretical_quantile": -1.5705850285674192,
+                "standardized_residual": -1.3463644345415386
+              },
+              {
+                "rank": 4,
+                "theoretical_quantile": -1.3957469929496675,
+                "standardized_residual": -1.250258462722224
+              },
+              {
+                "rank": 5,
+                "theoretical_quantile": -1.2554861698244295,
+                "standardized_residual": -1.2398251205820072
+              },
+              {
+                "rank": 6,
+                "theoretical_quantile": -1.1363408192553903,
+                "standardized_residual": -1.233171017891742
+              },
+              {
+                "rank": 7,
+                "theoretical_quantile": -1.0314590939212473,
+                "standardized_residual": -1.1117425423839906
+              },
+              {
+                "rank": 8,
+                "theoretical_quantile": -0.9368471083583686,
+                "standardized_residual": -1.069482684289394
+              },
+              {
+                "rank": 9,
+                "theoretical_quantile": -0.8499572808920577,
+                "standardized_residual": -0.9421197499319365
+              },
+              {
+                "rank": 10,
+                "theoretical_quantile": -0.7690553294512796,
+                "standardized_residual": -0.9106586593653719
+              },
+              {
+                "rank": 11,
+                "theoretical_quantile": -0.6929003452275887,
+                "standardized_residual": -0.8528161136121951
+              },
+              {
+                "rank": 12,
+                "theoretical_quantile": -0.6205682718075382,
+                "standardized_residual": -0.8226550354397798
+              },
+              {
+                "rank": 13,
+                "theoretical_quantile": -0.5513476951205377,
+                "standardized_residual": -0.7329740409138541
+              },
+              {
+                "rank": 14,
+                "theoretical_quantile": -0.48467489602278124,
+                "standardized_residual": -0.6885368835132996
+              },
+              {
+                "rank": 15,
+                "theoretical_quantile": -0.42009150993941125,
+                "standardized_residual": -0.5758926049246771
+              },
+              {
+                "rank": 16,
+                "theoretical_quantile": -0.3572158346345847,
+                "standardized_residual": -0.5711683733951604
+              },
+              {
+                "rank": 17,
+                "theoretical_quantile": -0.29572269945216134,
+                "standardized_residual": -0.5648973875040381
+              },
+              {
+                "rank": 18,
+                "theoretical_quantile": -0.23532887106951692,
+                "standardized_residual": -0.3523786180914591
+              },
+              {
+                "rank": 19,
+                "theoretical_quantile": -0.17578212101566826,
+                "standardized_residual": -0.34064597327805396
+              },
+              {
+                "rank": 20,
+                "theoretical_quantile": -0.116852746716332,
+                "standardized_residual": -0.3025331789646554
+              },
+              {
+                "rank": 21,
+                "theoretical_quantile": -0.058326735272993036,
+                "standardized_residual": -0.17365856017058312
+              },
+              {
+                "rank": 22,
+                "theoretical_quantile": 0.0,
+                "standardized_residual": -0.032709826922886605
+              },
+              {
+                "rank": 23,
+                "theoretical_quantile": 0.058326735272993174,
+                "standardized_residual": 0.07579397824067399
+              },
+              {
+                "rank": 24,
+                "theoretical_quantile": 0.11685274671633186,
+                "standardized_residual": 0.10664044007039726
+              },
+              {
+                "rank": 25,
+                "theoretical_quantile": 0.17578212101566826,
+                "standardized_residual": 0.20590827478569246
+              },
+              {
+                "rank": 26,
+                "theoretical_quantile": 0.23532887106951705,
+                "standardized_residual": 0.3275469781437871
+              },
+              {
+                "rank": 27,
+                "theoretical_quantile": 0.29572269945216134,
+                "standardized_residual": 0.49053926452503377
+              },
+              {
+                "rank": 28,
+                "theoretical_quantile": 0.3572158346345847,
+                "standardized_residual": 0.5494043758968286
+              },
+              {
+                "rank": 29,
+                "theoretical_quantile": 0.42009150993941113,
+                "standardized_residual": 0.5632610764807238
+              },
+              {
+                "rank": 30,
+                "theoretical_quantile": 0.48467489602278124,
+                "standardized_residual": 0.5955880572420971
+              },
+              {
+                "rank": 31,
+                "theoretical_quantile": 0.5513476951205379,
+                "standardized_residual": 0.7010818106355198
+              },
+              {
+                "rank": 32,
+                "theoretical_quantile": 0.6205682718075379,
+                "standardized_residual": 0.7205287710427694
+              },
+              {
+                "rank": 33,
+                "theoretical_quantile": 0.6929003452275887,
+                "standardized_residual": 0.7948499903733225
+              },
+              {
+                "rank": 34,
+                "theoretical_quantile": 0.76905532945128,
+                "standardized_residual": 0.812772601778781
+              },
+              {
+                "rank": 35,
+                "theoretical_quantile": 0.8499572808920577,
+                "standardized_residual": 0.8151708310096152
+              },
+              {
+                "rank": 36,
+                "theoretical_quantile": 0.9368471083583686,
+                "standardized_residual": 0.8503748391784152
+              },
+              {
+                "rank": 37,
+                "theoretical_quantile": 1.031459093921247,
+                "standardized_residual": 0.9169029511064434
+              },
+              {
+                "rank": 38,
+                "theoretical_quantile": 1.1363408192553903,
+                "standardized_residual": 1.1675810451800168
+              },
+              {
+                "rank": 39,
+                "theoretical_quantile": 1.2554861698244295,
+                "standardized_residual": 1.2962078212651342
+              },
+              {
+                "rank": 40,
+                "theoretical_quantile": 1.3957469929496675,
+                "standardized_residual": 1.3492817679120628
+              },
+              {
+                "rank": 41,
+                "theoretical_quantile": 1.5705850285674192,
+                "standardized_residual": 1.4893315077286435
+              },
+              {
+                "rank": 42,
+                "theoretical_quantile": 1.8134175686740353,
+                "standardized_residual": 1.9603831889863794
+              },
+              {
+                "rank": 43,
+                "theoretical_quantile": 2.2692057962849628,
+                "standardized_residual": 2.0444253890677686
+              }
+            ]
+          },
+          "full_sample": {
+            "leverage_threshold": 0.18604651162790697,
+            "high_leverage_cases": 2,
+            "cooks_threshold": 0.09302325581395349,
+            "influential_cases": 3,
+            "cooks_available_cases": 43,
+            "leverage_available_cases": 43,
+            "standardized_residual_available_cases": 43,
+            "max_leverage": 0.2190742432252961,
+            "max_cooks_distance": 0.19002161648904423,
+            "residual_standard_error": 1.0379827329985145,
+            "unavailable_standardized_reason": null
+          },
+          "notes": [
+            "Case positions refer to the fixed complete-case analysis sample, not original source row IDs. Plot thinning never changes the analysis sample or full-sample summaries.",
+            "Residual plot uses internally studentized residuals; Q-Q uses residual divided by residual standard error against normal quantiles at (rank - 0.5) / n.",
+            "Leverage > 2p/n and Cook distance > 4/n are screening heuristics, not deletion rules or hypothesis tests. No cases were removed.",
+            "Leverage roundoff within 1e-10 of [0, 1] is clipped to that range; values beyond it are unavailable. A leverage within 1e-10 of one cannot support finite studentization or Cook distance.",
+            "These OLS diagnostics describe the fitted mean model even when coefficient inference uses HC3. They do not establish normality, independent cases, correct causal ordering or absence of confounding."
+          ]
+        }
+      }
+    }
+  ],
+  "path_coefficients": [
+    {
+      "path_id": "p_m1_m2",
+      "source_id": "m1",
+      "target_id": "m2",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_m2_913b0f9bed579387",
+      "estimate": 0.39663210025416334,
+      "se": 0.15683589644571275,
+      "statistic": 2.5289624967422797,
+      "reference": "residual-df t",
+      "p": 0.015486389121233308,
+      "lower": 0.07965492963111026,
+      "upper": 0.7136092708772164
+    },
+    {
+      "path_id": "p_m1_y",
+      "source_id": "m1",
+      "target_id": "y",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_y_913b0f9bed579387",
+      "estimate": 0.45398364461188095,
+      "se": 0.16560323513039,
+      "statistic": 2.7413935739505972,
+      "reference": "residual-df t",
+      "p": 0.009186163402757753,
+      "lower": 0.11901948458492845,
+      "upper": 0.7889478046388334
+    },
+    {
+      "path_id": "p_m2_y",
+      "source_id": "m2",
+      "target_id": "y",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_y_2605486010b99f25",
+      "estimate": 0.4891673397541149,
+      "se": 0.15501892044998364,
+      "statistic": 3.1555331332083636,
+      "reference": "residual-df t",
+      "p": 0.0030835612866911316,
+      "lower": 0.17561197692603214,
+      "upper": 0.8027227025821977
+    },
+    {
+      "path_id": "p_w_m1",
+      "source_id": "w",
+      "target_id": "m1",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_m1_62ac4f4fd703fc80",
+      "estimate": -0.619762052767294,
+      "se": 0.33032219227067616,
+      "statistic": -1.876234982902517,
+      "reference": "residual-df t",
+      "p": 0.0681211731478501,
+      "lower": -1.2879017517598277,
+      "upper": 0.04837764622523966
+    },
+    {
+      "path_id": "p_x_m1",
+      "source_id": "x",
+      "target_id": "m1",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_m1_b82a1892cd394697",
+      "estimate": 1.119906853568701,
+      "se": 0.3193605935856032,
+      "statistic": 3.5067158442906474,
+      "reference": "residual-df t",
+      "p": 0.0011582556171558095,
+      "lower": 0.47393908070555124,
+      "upper": 1.7658746264318506
+    },
+    {
+      "path_id": "p_x_m2",
+      "source_id": "x",
+      "target_id": "m2",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_m2_b82a1892cd394697",
+      "estimate": -0.07843248565313705,
+      "se": 0.32975116714555885,
+      "statistic": -0.23785354979051632,
+      "reference": "residual-df t",
+      "p": 0.813208874952178,
+      "lower": -0.7448844544957964,
+      "upper": 0.5880194831895222
+    },
+    {
+      "path_id": "p_x_y",
+      "source_id": "x",
+      "target_id": "y",
+      "family": "linear",
+      "scale": "outcome_units",
+      "term_id": "term_y_b82a1892cd394697",
+      "estimate": -0.223510829899299,
+      "se": 0.3235250791315399,
+      "statistic": -0.6908609079063798,
+      "reference": "residual-df t",
+      "p": 0.4937446765219339,
+      "lower": -0.877902069862839,
+      "upper": 0.4308804100642411
+    }
+  ],
+  "interaction_coefficients": [
+    {
+      "moderation_id": "mod_0",
+      "path_id": "p_x_m1",
+      "target_id": "m1",
+      "factors": [
+        {
+          "node_id": "w",
+          "column": "w"
+        },
+        {
+          "node_id": "x",
+          "column": "x"
+        }
+      ],
+      "term_id": "term_m1_a573a5691bd7327e",
+      "estimate": 0.7739521806096005,
+      "se": 0.31118843106105887,
+      "statistic": 2.4870853263106745,
+      "reference": "residual-df t",
+      "p": 0.017265115341825718,
+      "lower": 0.1445141666819113,
+      "upper": 1.4033901945372897
+    }
+  ],
+  "effects": [
+    {
+      "id": "effect_0_0_route_0",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_m2",
+        "p_m2_y"
+      ],
+      "node_ids": [
+        "x",
+        "m1",
+        "m2",
+        "y"
+      ],
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0041121514264747284,
+      "bootstrap_se": 0.09944568103344743,
+      "lower": -0.16864328270149131,
+      "upper": 0.20804729831397042
+    },
+    {
+      "id": "effect_0_0_route_1",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_y"
+      ],
+      "node_ids": [
+        "x",
+        "m1",
+        "y"
+      ],
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": 0.009621969888455996,
+      "bootstrap_se": 0.19730210904877557,
+      "lower": -0.3958098078419587,
+      "upper": 0.46778866620212217
+    },
+    {
+      "id": "effect_0_0_route_2",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m2",
+        "p_m2_y"
+      ],
+      "node_ids": [
+        "x",
+        "m2",
+        "y"
+      ],
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": -0.03836661035724784,
+      "bootstrap_se": 0.16212844835405393,
+      "lower": -0.4030989994594645,
+      "upper": 0.35159205524348625
+    },
+    {
+      "id": "effect_0_0_total_indirect",
+      "kind": "total_indirect",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": -0.024632489042317116,
+      "bootstrap_se": 0.32773126202402003,
+      "lower": -0.7151432635824654,
+      "upper": 0.6876892973879699
+    },
+    {
+      "id": "effect_0_0_direct",
+      "kind": "direct",
+      "path_ids": [
+        "p_x_y"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": -0.223510829899299,
+      "bootstrap_se": 0.33404647909920265,
+      "lower": -0.7415817404033396,
+      "upper": 0.4768262716241615,
+      "structurally_fixed_zero": false
+    },
+    {
+      "id": "effect_0_0_total",
+      "kind": "total",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2",
+        "p_x_y"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": -0.24814331894161612,
+      "bootstrap_se": 0.4835652512580194,
+      "lower": -1.1473519501688274,
+      "upper": 0.6264010674922275
+    },
+    {
+      "id": "effect_0_1_route_0",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_m2",
+        "p_m2_y"
+      ],
+      "node_ids": [
+        "x",
+        "m1",
+        "m2",
+        "y"
+      ],
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.1687914394439327,
+      "bootstrap_se": 0.11811569970811729,
+      "lower": 0.006707521969082681,
+      "upper": 0.45053291262163797
+    },
+    {
+      "id": "effect_0_1_route_1",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_y"
+      ],
+      "node_ids": [
+        "x",
+        "m1",
+        "y"
+      ],
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.39495290404492234,
+      "bootstrap_se": 0.16525848532712648,
+      "lower": 0.13164880809600574,
+      "upper": 0.7567713242359855
+    },
+    {
+      "id": "effect_0_1_route_2",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m2",
+        "p_m2_y"
+      ],
+      "node_ids": [
+        "x",
+        "m2",
+        "y"
+      ],
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.03836661035724784,
+      "bootstrap_se": 0.16212844835405393,
+      "lower": -0.4030989994594645,
+      "upper": 0.35159205524348625
+    },
+    {
+      "id": "effect_0_1_total_indirect",
+      "kind": "total_indirect",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.5253777331316072,
+      "bootstrap_se": 0.24724197792682023,
+      "lower": 0.013497949616606903,
+      "upper": 1.0897290716711363
+    },
+    {
+      "id": "effect_0_1_direct",
+      "kind": "direct",
+      "path_ids": [
+        "p_x_y"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.223510829899299,
+      "bootstrap_se": 0.33404647909920265,
+      "lower": -0.7415817404033396,
+      "upper": 0.4768262716241615,
+      "structurally_fixed_zero": false
+    },
+    {
+      "id": "effect_0_1_total",
+      "kind": "total",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2",
+        "p_x_y"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.3018669032323082,
+      "bootstrap_se": 0.37453337712335555,
+      "lower": -0.3239290402691634,
+      "upper": 1.0101989107594709
+    },
+    {
+      "id": "effect_0_2_route_0",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_m2",
+        "p_m2_y"
+      ],
+      "node_ids": [
+        "x",
+        "m1",
+        "m2",
+        "y"
+      ],
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.30249366547175455,
+      "bootstrap_se": 0.1992182109758354,
+      "lower": 0.018750661719034507,
+      "upper": 0.766852161702595
+    },
+    {
+      "id": "effect_0_2_route_1",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_y"
+      ],
+      "node_ids": [
+        "x",
+        "m1",
+        "y"
+      ],
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.707801011869131,
+      "bootstrap_se": 0.2816233022866831,
+      "lower": 0.23314374318082354,
+      "upper": 1.2845220517744986
+    },
+    {
+      "id": "effect_0_2_route_2",
+      "kind": "specific_indirect",
+      "path_ids": [
+        "p_x_m2",
+        "p_m2_y"
+      ],
+      "node_ids": [
+        "x",
+        "m2",
+        "y"
+      ],
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.03836661035724784,
+      "bootstrap_se": 0.16212844835405393,
+      "lower": -0.4030989994594645,
+      "upper": 0.35159205524348625
+    },
+    {
+      "id": "effect_0_2_total_indirect",
+      "kind": "total_indirect",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.9719280669836378,
+      "bootstrap_se": 0.36271166762280405,
+      "lower": 0.2997987304902475,
+      "upper": 1.708616627911375
+    },
+    {
+      "id": "effect_0_2_direct",
+      "kind": "direct",
+      "path_ids": [
+        "p_x_y"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.223510829899299,
+      "bootstrap_se": 0.33404647909920265,
+      "lower": -0.7415817404033396,
+      "upper": 0.4768262716241615,
+      "structurally_fixed_zero": false
+    },
+    {
+      "id": "effect_0_2_total",
+      "kind": "total",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2",
+        "p_x_y"
+      ],
+      "node_ids": [
+        "x",
+        "y"
+      ],
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.7484172370843387,
+      "bootstrap_se": 0.4151135832812532,
+      "lower": 0.07599049896735086,
+      "upper": 1.703432538882859
+    }
+  ],
+  "slopes": [
+    {
+      "path_id": "p_x_m1",
+      "source_id": "x",
+      "target_id": "m1",
+      "condition": {
+        "w": -1.41961267283265
+      },
+      "conditioning_note": "Other numerical equation predictors are held at complete-case means; other categorical predictors at their declared reference. All equation terms involving the focal source are included.",
+      "scale": "outcome_units",
+      "estimate": 0.02119452980884806,
+      "se": 0.42911948995707766,
+      "statistic": 0.04939074151809797,
+      "reference": "residual-df t",
+      "p": 0.9608599922904448,
+      "lower": -0.8467815661381387,
+      "upper": 0.8891706257558348
+    },
+    {
+      "path_id": "p_x_m1",
+      "source_id": "x",
+      "target_id": "m1",
+      "condition": {
+        "w": -0.3229336407970946
+      },
+      "conditioning_note": "Other numerical equation predictors are held at complete-case means; other categorical predictors at their declared reference. All equation terms involving the focal source are included.",
+      "scale": "outcome_units",
+      "estimate": 0.8699716580815922,
+      "se": 0.2939107178911878,
+      "statistic": 2.9599861628852704,
+      "reference": "residual-df t",
+      "p": 0.005210983019269589,
+      "lower": 0.2754811177016008,
+      "upper": 1.4644621984615835
+    },
+    {
+      "path_id": "p_x_m1",
+      "source_id": "x",
+      "target_id": "m1",
+      "condition": {
+        "w": 0.5674541522667568
+      },
+      "conditioning_note": "Other numerical equation predictors are held at complete-case means; other categorical predictors at their declared reference. All equation terms involving the focal source are included.",
+      "scale": "outcome_units",
+      "estimate": 1.5590892321115295,
+      "se": 0.4223087730855887,
+      "statistic": 3.6918229775812668,
+      "reference": "residual-df t",
+      "p": 0.0006797610659047128,
+      "lower": 0.7048891113394447,
+      "upper": 2.4132893528836146
+    }
+  ],
+  "indices": [
+    {
+      "id": "index_0_0_0_w",
+      "kind": "linear_index",
+      "effect_kind": "specific_indirect",
+      "definition": "Partial derivative of specific indirect path product with respect to w; constant over moderator values",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_m2",
+        "p_m2_y"
+      ],
+      "moderator_ids": [
+        "w"
+      ],
+      "condition": {},
+      "scale": "outcome_units",
+      "structurally_fixed_zero": false,
+      "estimate": 0.15016179137828076,
+      "bootstrap_se": 0.1126169126368562,
+      "lower": -0.0018806258982975396,
+      "upper": 0.4707586075853604
+    },
+    {
+      "id": "index_0_0_1_w",
+      "kind": "linear_index",
+      "effect_kind": "specific_indirect",
+      "definition": "Partial derivative of specific indirect path product with respect to w; constant over moderator values",
+      "path_ids": [
+        "p_x_m1",
+        "p_m1_y"
+      ],
+      "moderator_ids": [
+        "w"
+      ],
+      "condition": {},
+      "scale": "outcome_units",
+      "structurally_fixed_zero": false,
+      "estimate": 0.3513616317084592,
+      "bootstrap_se": 0.18634062062266968,
+      "lower": 0.06462234610677449,
+      "upper": 0.7455236303812386
+    },
+    {
+      "id": "index_0_0_2_w",
+      "kind": "linear_index",
+      "effect_kind": "specific_indirect",
+      "definition": "Partial derivative of specific indirect path product with respect to w; constant over moderator values",
+      "path_ids": [
+        "p_x_m2",
+        "p_m2_y"
+      ],
+      "moderator_ids": [
+        "w"
+      ],
+      "condition": {},
+      "scale": "outcome_units",
+      "structurally_fixed_zero": true,
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "index_0_0_total_indirect_w",
+      "kind": "linear_index",
+      "effect_kind": "total_indirect",
+      "definition": "Partial derivative of summed indirect path products with respect to w; constant over moderator values",
+      "path_ids": [
+        "p_m1_m2",
+        "p_m1_y",
+        "p_m2_y",
+        "p_x_m1",
+        "p_x_m2"
+      ],
+      "moderator_ids": [
+        "w"
+      ],
+      "condition": {},
+      "scale": "outcome_units",
+      "structurally_fixed_zero": false,
+      "estimate": 0.5015234230867399,
+      "bootstrap_se": 0.24707343457999872,
+      "lower": 0.07924533049825389,
+      "upper": 1.0622981076079527
+    }
+  ],
+  "index_contrasts": [
+    {
+      "id": "index_contrast_index_0_0_0_w_minus_index_0_0_1_w",
+      "kind": "route_index_difference",
+      "index_a": "index_0_0_0_w",
+      "index_b": "index_0_0_1_w",
+      "definition": "Difference between the stated specific indirect route derivatives; paired bootstrap resamples preserve their covariance.",
+      "condition": {},
+      "moderator_ids": [
+        "w"
+      ],
+      "scale": "outcome_units",
+      "estimate": -0.20119984033017843,
+      "bootstrap_se": 0.18375393801668882,
+      "lower": -0.6564167292685925,
+      "upper": 0.07951421008002175
+    },
+    {
+      "id": "index_contrast_index_0_0_0_w_minus_index_0_0_2_w",
+      "kind": "route_index_difference",
+      "index_a": "index_0_0_0_w",
+      "index_b": "index_0_0_2_w",
+      "definition": "Difference between the stated specific indirect route derivatives; paired bootstrap resamples preserve their covariance.",
+      "condition": {},
+      "moderator_ids": [
+        "w"
+      ],
+      "scale": "outcome_units",
+      "estimate": 0.15016179137828076,
+      "bootstrap_se": 0.1126169126368562,
+      "lower": -0.0018806258982975396,
+      "upper": 0.4707586075853604
+    },
+    {
+      "id": "index_contrast_index_0_0_1_w_minus_index_0_0_2_w",
+      "kind": "route_index_difference",
+      "index_a": "index_0_0_1_w",
+      "index_b": "index_0_0_2_w",
+      "definition": "Difference between the stated specific indirect route derivatives; paired bootstrap resamples preserve their covariance.",
+      "condition": {},
+      "moderator_ids": [
+        "w"
+      ],
+      "scale": "outcome_units",
+      "estimate": 0.3513616317084592,
+      "bootstrap_se": 0.18634062062266968,
+      "lower": 0.06462234610677449,
+      "upper": 0.7455236303812386
+    }
+  ],
+  "effect_contrasts": [
+    {
+      "id": "contrast_effect_0_0_route_0_minus_effect_0_0_route_1",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_0_route_0",
+      "effect_b": "effect_0_0_route_1",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": -0.005509818461981267,
+      "bootstrap_se": 0.1340122538989046,
+      "lower": -0.327140549900858,
+      "upper": 0.285782248596125
+    },
+    {
+      "id": "contrast_effect_0_0_route_0_minus_effect_0_0_route_2",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_0_route_0",
+      "effect_b": "effect_0_0_route_2",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": 0.04247876178372256,
+      "bootstrap_se": 0.19568982493133125,
+      "lower": -0.35544152851379957,
+      "upper": 0.46435743844363697
+    },
+    {
+      "id": "contrast_effect_0_0_route_1_minus_effect_0_0_route_2",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_0_route_1",
+      "effect_b": "effect_0_0_route_2",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -1.41961267283265
+      },
+      "scale": "outcome_units",
+      "estimate": 0.047988580245703835,
+      "bootstrap_se": 0.24829020630384568,
+      "lower": -0.3850222185201479,
+      "upper": 0.563947419975467
+    },
+    {
+      "id": "contrast_effect_0_1_route_0_minus_effect_0_1_route_1",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_1_route_0",
+      "effect_b": "effect_0_1_route_1",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.22616146460098963,
+      "bootstrap_se": 0.18854148941074905,
+      "lower": -0.6132793617232831,
+      "upper": 0.07506122379478239
+    },
+    {
+      "id": "contrast_effect_0_1_route_0_minus_effect_0_1_route_2",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_1_route_0",
+      "effect_b": "effect_0_1_route_2",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.20715804980118055,
+      "bootstrap_se": 0.21578155681953054,
+      "lower": -0.1281088032817721,
+      "upper": 0.6871831007935556
+    },
+    {
+      "id": "contrast_effect_0_1_route_1_minus_effect_0_1_route_2",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_1_route_1",
+      "effect_b": "effect_0_1_route_2",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.4333195144021702,
+      "bootstrap_se": 0.24372892447490085,
+      "lower": -0.06629554525330815,
+      "upper": 0.9707947211103335
+    },
+    {
+      "id": "contrast_effect_0_2_route_0_minus_effect_0_2_route_1",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_2_route_0",
+      "effect_b": "effect_0_2_route_1",
+      "condition_a": {
+        "w": 0.5674541522667568
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.4053073463973765,
+      "bootstrap_se": 0.33101050942338767,
+      "lower": -1.1325486165138803,
+      "upper": 0.137086208018282
+    },
+    {
+      "id": "contrast_effect_0_2_route_0_minus_effect_0_2_route_2",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_2_route_0",
+      "effect_b": "effect_0_2_route_2",
+      "condition_a": {
+        "w": 0.5674541522667568
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.34086027582900236,
+      "bootstrap_se": 0.275159073647625,
+      "lower": -0.046332054291374845,
+      "upper": 0.9157466530358209
+    },
+    {
+      "id": "contrast_effect_0_2_route_1_minus_effect_0_2_route_2",
+      "kind": "specific_indirect_route_difference",
+      "effect_a": "effect_0_2_route_1",
+      "effect_b": "effect_0_2_route_2",
+      "condition_a": {
+        "w": 0.5674541522667568
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.7461676222263789,
+      "bootstrap_se": 0.3449861073055277,
+      "lower": 0.07699487230269436,
+      "upper": 1.4249347047714331
+    },
+    {
+      "id": "contrast_effect_0_0_route_0_minus_effect_0_1_route_0",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_route_0",
+      "effect_b": "effect_0_1_route_0",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.164679288017458,
+      "bootstrap_se": 0.12350460674142016,
+      "lower": -0.5162710940891189,
+      "upper": 0.0020624429897659513
+    },
+    {
+      "id": "contrast_effect_0_0_route_1_minus_effect_0_1_route_1",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_route_1",
+      "effect_b": "effect_0_1_route_1",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.38533093415646635,
+      "bootstrap_se": 0.20435585145337398,
+      "lower": -0.8176001333261292,
+      "upper": -0.07086997197624396
+    },
+    {
+      "id": "contrast_effect_0_0_route_2_minus_effect_0_1_route_2",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_route_2",
+      "effect_b": "effect_0_1_route_2",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "contrast_effect_0_0_total_indirect_minus_effect_0_1_total_indirect",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_total_indirect",
+      "effect_b": "effect_0_1_total_indirect",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.5500102221739243,
+      "bootstrap_se": 0.2709602550768931,
+      "lower": -1.1650000603846915,
+      "upper": -0.08690669234416278
+    },
+    {
+      "id": "contrast_effect_0_0_direct_minus_effect_0_1_direct",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_direct",
+      "effect_b": "effect_0_1_direct",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "contrast_effect_0_0_total_minus_effect_0_1_total",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_total",
+      "effect_b": "effect_0_1_total",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": -0.3229336407970946
+      },
+      "scale": "outcome_units",
+      "estimate": -0.5500102221739243,
+      "bootstrap_se": 0.2709602550768931,
+      "lower": -1.1650000603846915,
+      "upper": -0.08690669234416278
+    },
+    {
+      "id": "contrast_effect_0_0_route_0_minus_effect_0_2_route_0",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_route_0",
+      "effect_b": "effect_0_2_route_0",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.2983815140452798,
+      "bootstrap_se": 0.22377733104581513,
+      "lower": -0.9354288117628596,
+      "upper": 0.003736929332929827
+    },
+    {
+      "id": "contrast_effect_0_0_route_1_minus_effect_0_2_route_1",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_route_1",
+      "effect_b": "effect_0_2_route_1",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.698179041980675,
+      "bootstrap_se": 0.37027126540774125,
+      "lower": -1.4814052732582303,
+      "upper": -0.12840892010886315
+    },
+    {
+      "id": "contrast_effect_0_0_route_2_minus_effect_0_2_route_2",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_route_2",
+      "effect_b": "effect_0_2_route_2",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "contrast_effect_0_0_total_indirect_minus_effect_0_2_total_indirect",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_total_indirect",
+      "effect_b": "effect_0_2_total_indirect",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.9965605560259548,
+      "bootstrap_se": 0.49095142521728397,
+      "lower": -2.1108573279936422,
+      "upper": -0.1574657672771186
+    },
+    {
+      "id": "contrast_effect_0_0_direct_minus_effect_0_2_direct",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_direct",
+      "effect_b": "effect_0_2_direct",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "contrast_effect_0_0_total_minus_effect_0_2_total",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_0_total",
+      "effect_b": "effect_0_2_total",
+      "condition_a": {
+        "w": -1.41961267283265
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.9965605560259548,
+      "bootstrap_se": 0.49095142521728397,
+      "lower": -2.1108573279936422,
+      "upper": -0.1574657672771185
+    },
+    {
+      "id": "contrast_effect_0_1_route_0_minus_effect_0_2_route_0",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_1_route_0",
+      "effect_b": "effect_0_2_route_0",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.13370222602782184,
+      "bootstrap_se": 0.10027272430439495,
+      "lower": -0.41915771767374077,
+      "upper": 0.0016744863431638758
+    },
+    {
+      "id": "contrast_effect_0_1_route_1_minus_effect_0_2_route_1",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_1_route_1",
+      "effect_b": "effect_0_2_route_1",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.3128481078242087,
+      "bootstrap_se": 0.16591541395436724,
+      "lower": -0.6638051399321011,
+      "upper": -0.05753894813261919
+    },
+    {
+      "id": "contrast_effect_0_1_route_2_minus_effect_0_2_route_2",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_1_route_2",
+      "effect_b": "effect_0_2_route_2",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "contrast_effect_0_1_total_indirect_minus_effect_0_2_total_indirect",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_1_total_indirect",
+      "effect_b": "effect_0_2_total_indirect",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.4465503338520306,
+      "bootstrap_se": 0.21999117014039088,
+      "lower": -0.9458572676089507,
+      "upper": -0.07055907493295584
+    },
+    {
+      "id": "contrast_effect_0_1_direct_minus_effect_0_2_direct",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_1_direct",
+      "effect_b": "effect_0_2_direct",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": 0.0,
+      "bootstrap_se": 0.0,
+      "lower": 0.0,
+      "upper": 0.0
+    },
+    {
+      "id": "contrast_effect_0_1_total_minus_effect_0_2_total",
+      "kind": "condition_difference",
+      "effect_a": "effect_0_1_total",
+      "effect_b": "effect_0_2_total",
+      "condition_a": {
+        "w": -0.3229336407970946
+      },
+      "condition_b": {
+        "w": 0.5674541522667568
+      },
+      "scale": "outcome_units",
+      "estimate": -0.4465503338520305,
+      "bootstrap_se": 0.21999117014039088,
+      "lower": -0.9458572676089506,
+      "upper": -0.07055907493295573
+    }
+  ],
+  "johnson_neyman": [
+    {
+      "path_id": "p_x_m1",
+      "moderator_id": "w",
+      "other_conditions": {},
+      "boundaries": [
+        -0.6565755622569224
+      ],
+      "boundary_details": [
+        {
+          "value": -0.6565755622569224,
+          "percent_below": 34.883720930232556,
+          "percent_above": 65.11627906976744,
+          "percent_equal": 0.0
+        }
+      ],
+      "grid": [
+        {
+          "moderator": -2.2048223928743056,
+          "estimate": -0.5865202452532452,
+          "se": 0.630265243147612,
+          "statistic": -0.9305927173202514,
+          "reference": "residual-df t",
+          "p": 0.3577892141480632,
+          "lower": -1.861352029782681,
+          "upper": 0.6883115392761907
+        },
+        {
+          "moderator": -2.021167328362228,
+          "estimate": -0.44438000759412577,
+          "se": 0.5802545071376093,
+          "statistic": -0.7658363737427025,
+          "reference": "residual-df t",
+          "p": 0.448384108370276,
+          "lower": -1.6180555304917736,
+          "upper": 0.7292955153035221
+        },
+        {
+          "moderator": -1.8375122638501498,
+          "estimate": -0.3022397699350061,
+          "se": 0.5316849243156663,
+          "statistic": -0.5684565352760755,
+          "reference": "residual-df t",
+          "p": 0.5729839260674393,
+          "lower": -1.3776740386687365,
+          "upper": 0.7731944987987243
+        },
+        {
+          "moderator": -1.653857199338072,
+          "estimate": -0.16009953227588647,
+          "se": 0.48498966359403606,
+          "statistic": -0.3301091637488977,
+          "reference": "residual-df t",
+          "p": 0.7430842127213331,
+          "lower": -1.1410837211392262,
+          "upper": 0.8208846565874532
+        },
+        {
+          "moderator": -1.470202134825994,
+          "estimate": -0.01795929461676704,
+          "se": 0.4407648332149598,
+          "statistic": -0.04074575207321121,
+          "reference": "residual-df t",
+          "p": 0.9677064693195443,
+          "lower": -0.9094903206321834,
+          "upper": 0.8735717313986493
+        },
+        {
+          "moderator": -1.2865470703139161,
+          "estimate": 0.1241809430423525,
+          "se": 0.3998310292641394,
+          "statistic": 0.31058355643607427,
+          "reference": "residual-df t",
+          "p": 0.7577710841138214,
+          "lower": -0.6845536493991745,
+          "upper": 0.9329155354838795
+        },
+        {
+          "moderator": -1.1028920058018383,
+          "estimate": 0.26632118070147204,
+          "se": 0.36330237417788147,
+          "statistic": 0.7330565381085973,
+          "reference": "residual-df t",
+          "p": 0.4679074918406503,
+          "lower": -0.46852723277592645,
+          "upper": 1.0011695941788705
+        },
+        {
+          "moderator": -0.9192369412897603,
+          "estimate": 0.4084614183605916,
+          "se": 0.33263332298734644,
+          "statistic": 1.227963015527851,
+          "reference": "residual-df t",
+          "p": 0.22682063088181945,
+          "lower": -0.2643529837475691,
+          "upper": 1.0812758204687523
+        },
+        {
+          "moderator": -0.7355818767776825,
+          "estimate": 0.5506016560197111,
+          "se": 0.309570330292452,
+          "statistic": 1.7785995689559657,
+          "reference": "residual-df t",
+          "p": 0.08310171512726304,
+          "lower": -0.07556344017561245,
+          "upper": 1.1767667522150347
+        },
+        {
+          "moderator": -0.6565755622569224,
+          "estimate": 0.6117487654249814,
+          "se": 0.30244302743686774,
+          "statistic": 2.022690920036761,
+          "reference": "residual-df t",
+          "p": 0.04999999999999998,
+          "lower": 2.220446049250313e-16,
+          "upper": 1.2234975308499625
+        },
+        {
+          "moderator": -0.5519268122656047,
+          "estimate": 0.6927418936788305,
+          "se": 0.2958972804717981,
+          "statistic": 2.3411566763110403,
+          "reference": "residual-df t",
+          "p": 0.024428807483178255,
+          "lower": 0.0942331512049539,
+          "upper": 1.2912506361527072
+        },
+        {
+          "moderator": -0.36827174775352667,
+          "estimate": 0.8348821313379502,
+          "se": 0.29293200771047306,
+          "statistic": 2.850088448385359,
+          "reference": "residual-df t",
+          "p": 0.0069482792884877605,
+          "lower": 0.24237121915383808,
+          "upper": 1.4273930435220623
+        },
+        {
+          "moderator": -0.18461668324144886,
+          "estimate": 0.9770223689970696,
+          "se": 0.3009911477924657,
+          "statistic": 3.2460169548598468,
+          "reference": "residual-df t",
+          "p": 0.002406365718831884,
+          "lower": 0.3682103073458066,
+          "upper": 1.5858344306483327
+        },
+        {
+          "moderator": -0.000961618729371061,
+          "estimate": 1.119162606656189,
+          "se": 0.31924086567201554,
+          "statistic": 3.50569969887879,
+          "reference": "residual-df t",
+          "p": 0.0011616142232776505,
+          "lower": 0.47343700635672814,
+          "upper": 1.76488820695565
+        },
+        {
+          "moderator": 0.18269344578270674,
+          "estimate": 1.2613028443153085,
+          "se": 0.34607273648478054,
+          "statistic": 3.644617767718254,
+          "reference": "residual-df t",
+          "p": 0.0007794993591035451,
+          "lower": 0.5613046625552683,
+          "upper": 1.9613010260753487
+        },
+        {
+          "moderator": 0.366348510294785,
+          "estimate": 1.4034430819744284,
+          "se": 0.3796715645377798,
+          "statistic": 3.696466138260867,
+          "reference": "residual-df t",
+          "p": 0.0006706442859984808,
+          "lower": 0.6354848557877103,
+          "upper": 2.1714013081611463
+        },
+        {
+          "moderator": 0.5500035748068628,
+          "estimate": 1.5455833196335478,
+          "se": 0.41841033000694566,
+          "statistic": 3.6939415898452865,
+          "reference": "residual-df t",
+          "p": 0.0006755864603644452,
+          "lower": 0.6992685442789143,
+          "upper": 2.391898094988181
+        },
+        {
+          "moderator": 0.7336586393189406,
+          "estimate": 1.6877235572926672,
+          "se": 0.46099507692808556,
+          "statistic": 3.6610446439885718,
+          "reference": "residual-df t",
+          "p": 0.0007432885364321132,
+          "lower": 0.7552730010085806,
+          "upper": 2.620174113576754
+        },
+        {
+          "moderator": 0.9173137038310184,
+          "estimate": 1.8298637949517869,
+          "se": 0.5064565795848608,
+          "statistic": 3.6130714235200863,
+          "reference": "residual-df t",
+          "p": 0.0008538630606021922,
+          "lower": 0.8054586700326141,
+          "upper": 2.8542689198709597
+        },
+        {
+          "moderator": 1.1009687683430962,
+          "estimate": 1.9720040326109063,
+          "se": 0.554087197483497,
+          "statistic": 3.5590138908951072,
+          "reference": "residual-df t",
+          "p": 0.0009974412128665535,
+          "lower": 0.8512568893524215,
+          "upper": 3.092751175869391
+        },
+        {
+          "moderator": 1.2846238328551745,
+          "estimate": 2.114144270270026,
+          "se": 0.6033734558156251,
+          "statistic": 3.503873512984059,
+          "reference": "residual-df t",
+          "p": 0.0011676737107925068,
+          "lower": 0.8937062598005596,
+          "upper": 3.3345822807394923
+        },
+        {
+          "moderator": 1.4682788973672525,
+          "estimate": 2.256284507929146,
+          "se": 0.6539411145570515,
+          "statistic": 3.4502869718742875,
+          "reference": "residual-df t",
+          "p": 0.001359600244270545,
+          "lower": 0.9335637532758787,
+          "upper": 3.579005262582413
+        }
+      ],
+      "regions": [
+        {
+          "lower": -2.2048223928743056,
+          "upper": -0.6565755622569224,
+          "significant": false
+        },
+        {
+          "lower": -0.6565755622569224,
+          "upper": 1.4682788973672525,
+          "significant": true
+        }
+      ],
+      "observed_range": [
+        -2.2048223928743056,
+        1.4682788973672525
+      ],
+      "status": "computed",
+      "reason": "Analytic conditional-slope boundaries restricted to the observed moderator range.",
+      "assumptions": [
+        "Pointwise intervals; no multiplicity adjustment. Other moderators are held at the stated values."
+      ]
+    }
+  ],
+  "interaction_tests": [
+    {
+      "target_id": "m1",
+      "moderation_ids": [
+        "mod_0"
+      ],
+      "term_ids": [
+        "term_m1_a573a5691bd7327e"
+      ],
+      "statistic": 6.185593420349873,
+      "reference": "OLS partial F",
+      "df_num": 1,
+      "df_den": 39.0,
+      "p": 0.017265115341825718,
+      "deltaR2": 0.11735546935952157,
+      "status": "computed",
+      "reason": null
+    }
+  ],
+  "plots": [
+    {
+      "path_id": "p_x_m1",
+      "source_id": "x",
+      "target_id": "m1",
+      "column": "m1",
+      "family": "linear",
+      "moderator_id": "w",
+      "scale": "outcome_mean",
+      "note": "Conditional fitted means, not individual prediction intervals or total pathway effects. Other numerical predictors are held at complete-case means and categorical predictors at their declared reference.",
+      "points": [
+        {
+          "x": 0.1028419093297299,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.40196686843150264,
+          "lower": -0.48294512406258083,
+          "upper": 1.2868788609255861
+        },
+        {
+          "x": 0.1975156869598942,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.40397343463360136,
+          "lower": -0.41209305700615706,
+          "upper": 1.2200399262733597
+        },
+        {
+          "x": 0.29218946459005846,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.40598000083570024,
+          "lower": -0.34393007706828954,
+          "upper": 1.15589007873969
+        },
+        {
+          "x": 0.3868632422202228,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.407986567037799,
+          "lower": -0.27923323255624777,
+          "upper": 1.095206366631846
+        },
+        {
+          "x": 0.48153701985038705,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4099931332398977,
+          "lower": -0.2190396980285224,
+          "upper": 1.0390259645083177
+        },
+        {
+          "x": 0.5762107974805513,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.41199969944199655,
+          "lower": -0.1647141590011808,
+          "upper": 0.9887135578851739
+        },
+        {
+          "x": 0.6708845751107156,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4140062656440954,
+          "lower": -0.11799069682339747,
+          "upper": 0.9460032281115882
+        },
+        {
+          "x": 0.7655583527408799,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4160128318461941,
+          "lower": -0.08092577952972857,
+          "upper": 0.9129514432221167
+        },
+        {
+          "x": 0.8602321303710442,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4180193980482929,
+          "lower": -0.05566881240790028,
+          "upper": 0.8917076085044862
+        },
+        {
+          "x": 0.9549059080012084,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4200259642503916,
+          "lower": -0.043998151309910694,
+          "upper": 0.884050079810694
+        },
+        {
+          "x": 1.0495796856313726,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.42203253045249056,
+          "lower": -0.046754799543980485,
+          "upper": 0.8908198604489617
+        },
+        {
+          "x": 1.144253463261537,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.42403909665458905,
+          "lower": -0.0635160936124094,
+          "upper": 0.9115942869215875
+        },
+        {
+          "x": 1.2389272408917014,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.426045662856688,
+          "lower": -0.09276440662416474,
+          "upper": 0.9448557323375407
+        },
+        {
+          "x": 1.3336010185218656,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4280522290587867,
+          "lower": -0.1324145716355406,
+          "upper": 0.988519029753114
+        },
+        {
+          "x": 1.42827479615203,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.43005879526088564,
+          "lower": -0.18034066657841807,
+          "upper": 1.0404582571001892
+        },
+        {
+          "x": 1.5229485737821942,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.43206536146298413,
+          "lower": -0.23468593639421398,
+          "upper": 1.0988166593201822
+        },
+        {
+          "x": 1.6176223514123584,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4340719276650833,
+          "lower": -0.29396131692074856,
+          "upper": 1.1621051722509153
+        },
+        {
+          "x": 1.7122961290425227,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4360784938671818,
+          "lower": -0.35702480274521975,
+          "upper": 1.2291817904795832
+        },
+        {
+          "x": 1.806969906672687,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.4380850600692805,
+          "lower": -0.42301806663513086,
+          "upper": 1.2991881867736919
+        },
+        {
+          "x": 1.9016436843028512,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.44009162627137943,
+          "lower": -0.49129963007051736,
+          "upper": 1.371482882613276
+        },
+        {
+          "x": 1.9963174619330155,
+          "moderator": -1.41961267283265,
+          "other_conditions": {},
+          "predicted": 0.44209819247347815,
+          "lower": -0.5613887639975719,
+          "upper": 1.4455851489445282
+        },
+        {
+          "x": 0.1028419093297299,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": -0.190423319222728,
+          "lower": -0.7390321036553814,
+          "upper": 0.35818546520992534
+        },
+        {
+          "x": 0.1975156869598942,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": -0.10805981592096606,
+          "lower": -0.6114350954906026,
+          "upper": 0.39531546364867054
+        },
+        {
+          "x": 0.29218946459005846,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": -0.02569631261920409,
+          "lower": -0.48627988008138934,
+          "upper": 0.4348872548429812
+        },
+        {
+          "x": 0.3868632422202228,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.056667190682557905,
+          "lower": -0.3643117279818141,
+          "upper": 0.47764610934692997
+        },
+        {
+          "x": 0.48153701985038705,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.1390306939843199,
+          "lower": -0.24651405583429958,
+          "upper": 0.5245754438029393
+        },
+        {
+          "x": 0.5762107974805513,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.22139419728608178,
+          "lower": -0.13413601953778664,
+          "upper": 0.5769244141099502
+        },
+        {
+          "x": 0.6708845751107156,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.3037577005878438,
+          "lower": -0.028648967284807703,
+          "upper": 0.6361643684604953
+        },
+        {
+          "x": 0.7655583527408799,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.38612120388960586,
+          "lower": 0.06843877216443378,
+          "upper": 0.7038036356147779
+        },
+        {
+          "x": 0.8602321303710442,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.46848470719136776,
+          "lower": 0.15593784859783572,
+          "upper": 0.7810315657848999
+        },
+        {
+          "x": 0.9549059080012084,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.5508482104931297,
+          "lower": 0.23338257925755923,
+          "upper": 0.8683138417287002
+        },
+        {
+          "x": 1.0495796856313726,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.6332117137948916,
+          "lower": 0.3012195572246494,
+          "upper": 0.9652038703651338
+        },
+        {
+          "x": 1.144253463261537,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.7155752170966536,
+          "lower": 0.36062644073340355,
+          "upper": 1.0705239934599038
+        },
+        {
+          "x": 1.2389272408917014,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.7979387203984156,
+          "lower": 0.4131089496313608,
+          "upper": 1.1827684911654703
+        },
+        {
+          "x": 1.3336010185218656,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.8803022237001776,
+          "lower": 0.4601418401503639,
+          "upper": 1.3004626072499914
+        },
+        {
+          "x": 1.42827479615203,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 0.9626657270019396,
+          "lower": 0.5029799428514219,
+          "upper": 1.4223515111524574
+        },
+        {
+          "x": 1.5229485737821942,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 1.0450292303037014,
+          "lower": 0.5426123026383675,
+          "upper": 1.5474461579690355
+        },
+        {
+          "x": 1.6176223514123584,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 1.1273927336054634,
+          "lower": 0.5797888666829246,
+          "upper": 1.6749966005280021
+        },
+        {
+          "x": 1.7122961290425227,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 1.2097562369072254,
+          "lower": 0.6150691782439237,
+          "upper": 1.8044432955705272
+        },
+        {
+          "x": 1.806969906672687,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 1.2921197402089875,
+          "lower": 0.648869495573241,
+          "upper": 1.9353699848447339
+        },
+        {
+          "x": 1.9016436843028512,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 1.3744832435107492,
+          "lower": 0.6815008963217796,
+          "upper": 2.067465590699719
+        },
+        {
+          "x": 1.9963174619330155,
+          "moderator": -0.3229336407970946,
+          "other_conditions": {},
+          "predicted": 1.4568467468125113,
+          "lower": 0.7131978601621198,
+          "upper": 2.2004956334629027
+        },
+        {
+          "x": 0.1028419093297299,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": -0.6713817185450109,
+          "lower": -1.4297871620574552,
+          "upper": 0.08702372496743327
+        },
+        {
+          "x": 0.1975156869598942,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": -0.5237768512785004,
+          "lower": -1.2186234424748426,
+          "upper": 0.1710697399178417
+        },
+        {
+          "x": 0.29218946459005846,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": -0.3761719840119899,
+          "lower": -1.0114079886611684,
+          "upper": 0.2590640206371886
+        },
+        {
+          "x": 0.3868632422202228,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": -0.22856711674547928,
+          "lower": -0.8093577895921871,
+          "upper": 0.3522235561012286
+        },
+        {
+          "x": 0.48153701985038705,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": -0.08096224947896871,
+          "lower": -0.6140577920287238,
+          "upper": 0.4521332930707864
+        },
+        {
+          "x": 0.5762107974805513,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.06664261778754171,
+          "lower": -0.42746661817623743,
+          "upper": 0.5607518537513209
+        },
+        {
+          "x": 0.6708845751107156,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.21424748505405233,
+          "lower": -0.25177509422790373,
+          "upper": 0.6802700643360085
+        },
+        {
+          "x": 0.7655583527408799,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.36185235232056295,
+          "lower": -0.08902477006879739,
+          "upper": 0.8127294747099233
+        },
+        {
+          "x": 0.8602321303710442,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.5094572195870735,
+          "lower": 0.05947572847302873,
+          "upper": 0.9594387107011182
+        },
+        {
+          "x": 0.9549059080012084,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.6570620868535839,
+          "lower": 0.1936437737131409,
+          "upper": 1.120480399994027
+        },
+        {
+          "x": 1.0495796856313726,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.8046669541200943,
+          "lower": 0.3146570038943321,
+          "upper": 1.2946769043458564
+        },
+        {
+          "x": 1.144253463261537,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 0.952271821386605,
+          "lower": 0.4245000928484235,
+          "upper": 1.4800435499247866
+        },
+        {
+          "x": 1.2389272408917014,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.0998766886531155,
+          "lower": 0.5253714481846654,
+          "upper": 1.6743819291215656
+        },
+        {
+          "x": 1.3336010185218656,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.2474815559196264,
+          "lower": 0.6192701480600994,
+          "upper": 1.8756929637791533
+        },
+        {
+          "x": 1.42827479615203,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.3950864231861366,
+          "lower": 0.7078289005924643,
+          "upper": 2.082343945779809
+        },
+        {
+          "x": 1.5229485737821942,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.5426912904526473,
+          "lower": 0.7923072157842541,
+          "upper": 2.2930753651210405
+        },
+        {
+          "x": 1.6176223514123584,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.6902961577191578,
+          "lower": 0.8736507974630089,
+          "upper": 2.5069415179753065
+        },
+        {
+          "x": 1.7122961290425227,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.8379010249856682,
+          "lower": 0.9525632040961192,
+          "upper": 2.7232388458752173
+        },
+        {
+          "x": 1.806969906672687,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 1.9855058922521787,
+          "lower": 1.029568395590069,
+          "upper": 2.9414433889142884
+        },
+        {
+          "x": 1.9016436843028512,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 2.133110759518689,
+          "lower": 1.1050592210686985,
+          "upper": 3.16116229796868
+        },
+        {
+          "x": 1.9963174619330155,
+          "moderator": 0.5674541522667568,
+          "other_conditions": {},
+          "predicted": 2.2807156267851996,
+          "lower": 1.179333103929598,
+          "upper": 3.382098149640801
+        }
+      ]
+    }
+  ],
+  "coding": [],
+  "assumptions": [
+    "Statistical associations do not establish causation. Temporal ordering and absence of unmeasured confounding require substantive justification.",
+    "All equations use one fixed listwise sample. Whole-case bootstrap resampling assumes independent observations.",
+    "No implicit centering, score construction, missing-value imputation or graph changes are performed."
+  ],
+  "warnings": [],
+  "bootstrap": {
+    "requested": 200,
+    "successful": 200,
+    "failed": 0,
+    "seed": 419,
+    "ci_method": "percentile",
+    "confidence_level": 0.95,
+    "success_threshold": 0.95,
+    "failure_reasons": {},
+    "quantile_method": "linear",
+    "rng": "numpy.PCG64"
+  },
+  "probe_policy": {
+    "probabilities": [
+      0.16,
+      0.5,
+      0.84
+    ],
+    "quantile_method": "linear",
+    "sample": "fixed_complete_case_sample",
+    "resolve_before_bootstrap": true
+  },
+  "compiler_plan": {
+    "schema_version": 1,
+    "semantic_sha256": "0fda8decc104ba96ebf10c2dd33df195d456e4cac4d2109ff022c79e172f084a",
+    "sample_mask_sha256": "4879faeaed102549a53c15e9aa2a616c86c488d3ff87cd0feb5fccc1e6cc42dd",
+    "equations": [
+      {
+        "target_id": "m1",
+        "family": "linear",
+        "term_ids": [
+          "term_m1_4f53cda18c2baa0c",
+          "term_m1_62ac4f4fd703fc80",
+          "term_m1_b82a1892cd394697",
+          "term_m1_a573a5691bd7327e"
+        ],
+        "terms": [
+          {
+            "term_id": "term_m1_4f53cda18c2baa0c",
+            "factors": []
+          },
+          {
+            "term_id": "term_m1_62ac4f4fd703fc80",
+            "factors": [
+              {
+                "node_id": "w",
+                "column": "w"
+              }
+            ]
+          },
+          {
+            "term_id": "term_m1_b82a1892cd394697",
+            "factors": [
+              {
+                "node_id": "x",
+                "column": "x"
+              }
+            ]
+          },
+          {
+            "term_id": "term_m1_a573a5691bd7327e",
+            "factors": [
+              {
+                "node_id": "w",
+                "column": "w"
+              },
+              {
+                "node_id": "x",
+                "column": "x"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target_id": "m2",
+        "family": "linear",
+        "term_ids": [
+          "term_m2_4f53cda18c2baa0c",
+          "term_m2_913b0f9bed579387",
+          "term_m2_b82a1892cd394697"
+        ],
+        "terms": [
+          {
+            "term_id": "term_m2_4f53cda18c2baa0c",
+            "factors": []
+          },
+          {
+            "term_id": "term_m2_913b0f9bed579387",
+            "factors": [
+              {
+                "node_id": "m1",
+                "column": "m1"
+              }
+            ]
+          },
+          {
+            "term_id": "term_m2_b82a1892cd394697",
+            "factors": [
+              {
+                "node_id": "x",
+                "column": "x"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target_id": "y",
+        "family": "linear",
+        "term_ids": [
+          "term_y_4f53cda18c2baa0c",
+          "term_y_913b0f9bed579387",
+          "term_y_2605486010b99f25",
+          "term_y_b82a1892cd394697"
+        ],
+        "terms": [
+          {
+            "term_id": "term_y_4f53cda18c2baa0c",
+            "factors": []
+          },
+          {
+            "term_id": "term_y_913b0f9bed579387",
+            "factors": [
+              {
+                "node_id": "m1",
+                "column": "m1"
+              }
+            ]
+          },
+          {
+            "term_id": "term_y_2605486010b99f25",
+            "factors": [
+              {
+                "node_id": "m2",
+                "column": "m2"
+              }
+            ]
+          },
+          {
+            "term_id": "term_y_b82a1892cd394697",
+            "factors": [
+              {
+                "node_id": "x",
+                "column": "x"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "routes": [
+      {
+        "path_ids": [
+          "p_x_m1",
+          "p_m1_m2",
+          "p_m2_y"
+        ],
+        "node_ids": [
+          "x",
+          "m1",
+          "m2",
+          "y"
+        ]
+      },
+      {
+        "path_ids": [
+          "p_x_m1",
+          "p_m1_y"
+        ],
+        "node_ids": [
+          "x",
+          "m1",
+          "y"
+        ]
+      },
+      {
+        "path_ids": [
+          "p_x_m2",
+          "p_m2_y"
+        ],
+        "node_ids": [
+          "x",
+          "m2",
+          "y"
+        ]
+      },
+      {
+        "path_ids": [
+          "p_x_y"
+        ],
+        "node_ids": [
+          "x",
+          "y"
+        ]
+      }
+    ],
+    "work": {
+      "estimated_fit_operations": 352600,
+      "design_cells": 473,
+      "estimated_effect_rows": 18,
+      "estimated_contrast_rows": 27,
+      "estimated_index_rows": 21,
+      "estimated_plot_points": 63,
+      "limits": {
+        "fit_operations": 2000000000,
+        "terms_per_equation": 80,
+        "result_rows": 8000,
+        "design_cells": 5000000,
+        "plot_points": 12000
+      },
+      "estimated_derivative_operations": 10200
+    },
+    "capabilities": {
+      "contract": "three_exogenous_moderators_v1",
+      "max_moderators": 3,
+      "max_moderators_per_attachment": 2,
+      "max_joint_conditions": 25,
+      "max_derivative_order": 3,
+      "max_derivative_work": 100000000
+    }
+  },
+  "residual_correlations": {
+    "status": "computed",
+    "target_ids": [
+      "m1",
+      "m2",
+      "y"
+    ],
+    "columns": [
+      "m1",
+      "m2",
+      "y"
+    ],
+    "n": 43,
+    "values": [
+      [
+        1.0,
+        -0.008420998410494703,
+        0.04296590592724501
+      ],
+      [
+        -0.008420998410494703,
+        1.0,
+        9.053843347496531e-17
+      ],
+      [
+        0.04296590592724501,
+        9.053843347496531e-17,
+        1.0
+      ]
+    ]
+  }
+}

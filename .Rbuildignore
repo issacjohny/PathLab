@@ -1,0 +1,12 @@
+^build$
+^dist$
+^.*[.]jmo$
+^jamovi/build$
+^.*[.]Rcheck$
+^[.]gitignore$
+^release-review$
+^CITATION[.]cff$
+^data$
+^build-evidence[.]json$
+^native-validation-evidence[.]json$
+^LICENSE$

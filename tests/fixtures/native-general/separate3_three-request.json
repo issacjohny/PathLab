@@ -1,0 +1,306 @@
+{
+  "graph": {
+    "schema_version": 1,
+    "nodes": [
+      {
+        "id": "x",
+        "column": "x",
+        "role": "independent",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "y",
+        "column": "y",
+        "role": "dependent",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "m1",
+        "column": "m1",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "m2",
+        "column": "m2",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "m3",
+        "column": "m3",
+        "role": "mediator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "w",
+        "column": "w",
+        "role": "moderator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "z",
+        "column": "z",
+        "role": "moderator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "v",
+        "column": "v",
+        "role": "moderator",
+        "measurement_scale": "interval"
+      },
+      {
+        "id": "cov1",
+        "column": "c1",
+        "role": "covariate",
+        "measurement_scale": "interval"
+      }
+    ],
+    "edges": [
+      {
+        "id": "p_x_m1",
+        "source": "x",
+        "target": "m1"
+      },
+      {
+        "id": "p_x_m2",
+        "source": "x",
+        "target": "m2"
+      },
+      {
+        "id": "p_x_m3",
+        "source": "x",
+        "target": "m3"
+      },
+      {
+        "id": "p_x_y",
+        "source": "x",
+        "target": "y"
+      },
+      {
+        "id": "p_m1_m2",
+        "source": "m1",
+        "target": "m2"
+      },
+      {
+        "id": "p_m1_m3",
+        "source": "m1",
+        "target": "m3"
+      },
+      {
+        "id": "p_m1_y",
+        "source": "m1",
+        "target": "y"
+      },
+      {
+        "id": "p_m2_m3",
+        "source": "m2",
+        "target": "m3"
+      },
+      {
+        "id": "p_m2_y",
+        "source": "m2",
+        "target": "y"
+      },
+      {
+        "id": "p_m3_y",
+        "source": "m3",
+        "target": "y"
+      },
+      {
+        "id": "p_w_m1",
+        "source": "w",
+        "target": "m1"
+      },
+      {
+        "id": "p_z_m2",
+        "source": "z",
+        "target": "m2"
+      },
+      {
+        "id": "p_v_m3",
+        "source": "v",
+        "target": "m3"
+      },
+      {
+        "id": "p_cov1_y",
+        "source": "cov1",
+        "target": "y"
+      }
+    ],
+    "moderations": [
+      {
+        "id": "mod_x_m1_w",
+        "path_id": "p_x_m1",
+        "moderator_ids": [
+          "w"
+        ]
+      },
+      {
+        "id": "mod_m1_m2_z",
+        "path_id": "p_m1_m2",
+        "moderator_ids": [
+          "z"
+        ]
+      },
+      {
+        "id": "mod_m2_m3_v",
+        "path_id": "p_m2_m3",
+        "moderator_ids": [
+          "v"
+        ]
+      }
+    ]
+  },
+  "settings": {
+    "schema_version": 3,
+    "outcome_family": "linear",
+    "categorical": [],
+    "probes": [
+      {
+        "node_id": "w",
+        "values": [
+          -0.5,
+          0.7
+        ]
+      },
+      {
+        "node_id": "z",
+        "values": [
+          -0.5,
+          0.7
+        ]
+      },
+      {
+        "node_id": "v",
+        "values": [
+          -0.5,
+          0.7
+        ]
+      }
+    ],
+    "automatic_probes": {
+      "probabilities": [
+        0.16,
+        0.5,
+        0.84
+      ],
+      "quantile_method": "linear",
+      "sample": "fixed_complete_case_sample",
+      "resolve_before_bootstrap": true
+    },
+    "bootstrap_interval_quantile_method": "linear"
+  },
+  "native_options": {
+    "modelMode": "general",
+    "x": "x",
+    "y": "y",
+    "generalMediators": [
+      "m1",
+      "m2",
+      "m3"
+    ],
+    "generalModerators": [
+      "w",
+      "z",
+      "v"
+    ],
+    "generalCovariates": [
+      "c1"
+    ],
+    "generalPaths": [
+      {
+        "source": "X",
+        "target": "M1"
+      },
+      {
+        "source": "X",
+        "target": "M2"
+      },
+      {
+        "source": "X",
+        "target": "M3"
+      },
+      {
+        "source": "X",
+        "target": "Y"
+      },
+      {
+        "source": "M1",
+        "target": "M2"
+      },
+      {
+        "source": "M1",
+        "target": "M3"
+      },
+      {
+        "source": "M1",
+        "target": "Y"
+      },
+      {
+        "source": "M2",
+        "target": "M3"
+      },
+      {
+        "source": "M2",
+        "target": "Y"
+      },
+      {
+        "source": "M3",
+        "target": "Y"
+      },
+      {
+        "source": "W",
+        "target": "M1"
+      },
+      {
+        "source": "Z",
+        "target": "M2"
+      },
+      {
+        "source": "V",
+        "target": "M3"
+      },
+      {
+        "source": "C1",
+        "target": "Y"
+      }
+    ],
+    "generalModerations": [
+      {
+        "source": "X",
+        "target": "M1",
+        "mod1": "W",
+        "mod2": "none"
+      },
+      {
+        "source": "M1",
+        "target": "M2",
+        "mod1": "Z",
+        "mod2": "none"
+      },
+      {
+        "source": "M2",
+        "target": "M3",
+        "mod1": "V",
+        "mod2": "none"
+      }
+    ],
+    "generalProbesW": "-0.5,0.7",
+    "generalProbesZ": "-0.5,0.7",
+    "generalProbesV": "-0.5,0.7",
+    "draws": 200,
+    "seed": 17421,
+    "robust": false,
+    "confidence": 95
+  },
+  "draws": 200,
+  "seed": 17421,
+  "reference_formulas": {
+    "m1": "x+w+x:w",
+    "m2": "x+m1+z+m1:z",
+    "m3": "x+m1+m2+v+m2:v",
+    "y": "x+m1+m2+m3+c1"
+  }
+}

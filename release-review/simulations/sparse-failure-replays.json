@@ -1,0 +1,154 @@
+[
+  {
+    "case": "categorical-100-11-BOOTSTRAP_FAILURE",
+    "R": {
+      "scenario": "categorical",
+      "n": 100,
+      "replicate": 11,
+      "generation_seed": 20871034,
+      "bootstrap_seed": 30871034,
+      "success": false,
+      "code": "BOOTSTRAP_FAILURE",
+      "message": "BOOTSTRAP_FAILURE: 1892 of 2000 draws succeeded; SINGULAR_DESIGN 108",
+      "elapsed_seconds": 1.36,
+      "draws_requested": 2000,
+      "draws_successful": null,
+      "draws_failed": null,
+      "reference_coefficient_max_abs": "NA",
+      "reference_covariance_max_abs": "NA"
+    },
+    "Python": {
+      "code": "BOOTSTRAP_FAILURE",
+      "message": "BOOTSTRAP_FAILURE"
+    },
+    "categorical_cell_counts": {
+      "high": {
+        "A": 21,
+        "B": 12,
+        "C": 3
+      },
+      "low": {
+        "A": 39,
+        "B": 18,
+        "C": 7
+      }
+    },
+    "same_rejection_code": true,
+    "indices_sha256": "3c1ae11a4ffe35952ecb2d351d7a6e27d9ab8ff6efba01bf5f76caf409910552",
+    "data_sha256": "46ef74cf18b2fc0cd5a2b348c5fae2b36d5ec537c00b55b1735aa20a49dbd124"
+  },
+  {
+    "case": "categorical-100-18-SINGULAR_DESIGN",
+    "R": {
+      "scenario": "categorical",
+      "n": 100,
+      "replicate": 18,
+      "generation_seed": 20871041,
+      "bootstrap_seed": 30871041,
+      "success": false,
+      "code": "SINGULAR_DESIGN",
+      "message": "SINGULAR_DESIGN: SINGULAR_DESIGN",
+      "elapsed_seconds": 0.03,
+      "draws_requested": 2000,
+      "draws_successful": null,
+      "draws_failed": null,
+      "reference_coefficient_max_abs": "NA",
+      "reference_covariance_max_abs": "NA"
+    },
+    "Python": {
+      "code": "BOOTSTRAP_FAILURE",
+      "message": "BOOTSTRAP_FAILURE"
+    },
+    "categorical_cell_counts": {
+      "high": {
+        "A": 22,
+        "B": 5,
+        "C": 1
+      },
+      "low": {
+        "A": 42,
+        "B": 19,
+        "C": 11
+      }
+    },
+    "same_rejection_code": false,
+    "indices_sha256": "e9ee0d9826218dedbe4fa3387613e5c0b2d722fb3464bcb76da33b34bfae1344",
+    "data_sha256": "5d061abf74e55fe0d4412e6909fc6d5ba30df3a8a50fb787f6a28e76b0bc082b"
+  },
+  {
+    "case": "categorical-100-19-BOOTSTRAP_FAILURE",
+    "R": {
+      "scenario": "categorical",
+      "n": 100,
+      "replicate": 19,
+      "generation_seed": 20871042,
+      "bootstrap_seed": 30871042,
+      "success": false,
+      "code": "BOOTSTRAP_FAILURE",
+      "message": "BOOTSTRAP_FAILURE: 1882 of 2000 draws succeeded; SINGULAR_DESIGN 118",
+      "elapsed_seconds": 1.56,
+      "draws_requested": 2000,
+      "draws_successful": null,
+      "draws_failed": null,
+      "reference_coefficient_max_abs": "NA",
+      "reference_covariance_max_abs": "NA"
+    },
+    "Python": {
+      "code": "BOOTSTRAP_FAILURE",
+      "message": "BOOTSTRAP_FAILURE"
+    },
+    "categorical_cell_counts": {
+      "high": {
+        "A": 24,
+        "B": 6,
+        "C": 4
+      },
+      "low": {
+        "A": 42,
+        "B": 21,
+        "C": 3
+      }
+    },
+    "same_rejection_code": true,
+    "indices_sha256": "bfc15663b6ebf0d48e08d5d5139210828bf54b21b45c331026ba859cf83a650c",
+    "data_sha256": "c9038185d12169276263e7d0c4d90b68a4ebad51020ef90922c6f29a5b300486"
+  },
+  {
+    "case": "categorical-100-4-SINGULAR_DESIGN",
+    "R": {
+      "scenario": "categorical",
+      "n": 100,
+      "replicate": 4,
+      "generation_seed": 20871027,
+      "bootstrap_seed": 30871027,
+      "success": false,
+      "code": "SINGULAR_DESIGN",
+      "message": "SINGULAR_DESIGN: SINGULAR_DESIGN",
+      "elapsed_seconds": 0,
+      "draws_requested": 2000,
+      "draws_successful": null,
+      "draws_failed": null,
+      "reference_coefficient_max_abs": "NA",
+      "reference_covariance_max_abs": "NA"
+    },
+    "Python": {
+      "code": "BOOTSTRAP_FAILURE",
+      "message": "BOOTSTRAP_FAILURE"
+    },
+    "categorical_cell_counts": {
+      "high": {
+        "A": 17,
+        "B": 14,
+        "C": 1
+      },
+      "low": {
+        "A": 38,
+        "B": 22,
+        "C": 8
+      }
+    },
+    "same_rejection_code": false,
+    "indices_sha256": "0ed203d68ef96d15b1ea4c977b725d236966ac5cc7fefe5aea359d54b28b1a52",
+    "data_sha256": "930990d973f4cfe6d67ded7708bebf33dbcd206eb6e2a465b6852f0b49753310"
+  }
+]

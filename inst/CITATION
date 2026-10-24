@@ -1,0 +1,5 @@
+bibentry(bibtype="Manual",
+    title="PathLab: Mediation, Moderation and Conditional Process Analysis",
+    author=person("Issac", "Johny"),
+    year="2026",
+    note=paste("Release candidate; R package version",meta$Version))

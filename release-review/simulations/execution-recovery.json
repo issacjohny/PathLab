@@ -1,0 +1,351 @@
+{
+  "reason": "External process interruption; Windows status 1073807364 in interrupted workers; incomplete batches are not scientific failures",
+  "protocol_sha256": "9accf436644769fcbe2a19e3020ad9d631463cb36f3748efd472f5639d99d775",
+  "original_workers": 14,
+  "recovery_workers": 8,
+  "original_completed_batches": 152,
+  "rerun_jobs": [
+    [
+      "logistic_null",
+      100,
+      601,
+      700
+    ],
+    [
+      "logistic_null",
+      300,
+      1,
+      100
+    ],
+    [
+      "logistic_null",
+      300,
+      201,
+      300
+    ],
+    [
+      "logistic_null",
+      300,
+      301,
+      400
+    ],
+    [
+      "logistic_null",
+      300,
+      401,
+      500
+    ],
+    [
+      "logistic_null",
+      300,
+      501,
+      600
+    ],
+    [
+      "logistic_null",
+      300,
+      601,
+      700
+    ],
+    [
+      "logistic_null",
+      300,
+      701,
+      800
+    ],
+    [
+      "logistic_null",
+      300,
+      801,
+      900
+    ],
+    [
+      "logistic_null",
+      300,
+      901,
+      1000
+    ],
+    [
+      "heteroscedastic",
+      100,
+      201,
+      300
+    ],
+    [
+      "heteroscedastic",
+      100,
+      301,
+      400
+    ],
+    [
+      "heteroscedastic",
+      100,
+      401,
+      500
+    ],
+    [
+      "heteroscedastic",
+      100,
+      501,
+      600
+    ],
+    [
+      "heteroscedastic",
+      100,
+      601,
+      700
+    ],
+    [
+      "heteroscedastic",
+      100,
+      701,
+      800
+    ],
+    [
+      "heteroscedastic",
+      100,
+      801,
+      900
+    ],
+    [
+      "heteroscedastic",
+      100,
+      901,
+      1000
+    ],
+    [
+      "heteroscedastic",
+      300,
+      1,
+      100
+    ],
+    [
+      "heteroscedastic",
+      300,
+      101,
+      200
+    ],
+    [
+      "heteroscedastic",
+      300,
+      201,
+      300
+    ],
+    [
+      "heteroscedastic",
+      300,
+      301,
+      400
+    ],
+    [
+      "heteroscedastic",
+      300,
+      401,
+      500
+    ],
+    [
+      "heteroscedastic",
+      300,
+      501,
+      600
+    ],
+    [
+      "heteroscedastic",
+      300,
+      601,
+      700
+    ],
+    [
+      "heteroscedastic",
+      300,
+      701,
+      800
+    ],
+    [
+      "heteroscedastic",
+      300,
+      801,
+      900
+    ],
+    [
+      "heteroscedastic",
+      300,
+      901,
+      1000
+    ],
+    [
+      "separation_stress",
+      100,
+      1,
+      100
+    ],
+    [
+      "separation_stress",
+      100,
+      101,
+      200
+    ],
+    [
+      "separation_stress",
+      100,
+      201,
+      300
+    ],
+    [
+      "separation_stress",
+      100,
+      301,
+      400
+    ],
+    [
+      "separation_stress",
+      100,
+      401,
+      500
+    ],
+    [
+      "separation_stress",
+      100,
+      501,
+      600
+    ],
+    [
+      "separation_stress",
+      100,
+      601,
+      700
+    ],
+    [
+      "separation_stress",
+      100,
+      701,
+      800
+    ],
+    [
+      "separation_stress",
+      100,
+      801,
+      900
+    ],
+    [
+      "separation_stress",
+      100,
+      901,
+      1000
+    ],
+    [
+      "separation_stress",
+      300,
+      1,
+      100
+    ],
+    [
+      "separation_stress",
+      300,
+      101,
+      200
+    ],
+    [
+      "separation_stress",
+      300,
+      201,
+      300
+    ],
+    [
+      "separation_stress",
+      300,
+      301,
+      400
+    ],
+    [
+      "separation_stress",
+      300,
+      401,
+      500
+    ],
+    [
+      "separation_stress",
+      300,
+      501,
+      600
+    ],
+    [
+      "separation_stress",
+      300,
+      601,
+      700
+    ],
+    [
+      "separation_stress",
+      300,
+      701,
+      800
+    ],
+    [
+      "separation_stress",
+      300,
+      801,
+      900
+    ],
+    [
+      "separation_stress",
+      300,
+      901,
+      1000
+    ]
+  ],
+  "preserved_interrupted_files": {
+    "logistic_null-100-601-700-status.csv": "dc8f42b873e4a7439efdf506c26bf9d660c5c9494e58db220e147d092e171f90",
+    "logistic_null-100-601-700-metrics.csv": "914cfb65032908080abbc73706e58161babaf91fba7eb9be5cfdd619ba3246df",
+    "logistic_null-100-601-700.log": "f270542b87442832840e264c6a6b143b62b35edf3ebbb085dd7fcf97334a9d7b",
+    "logistic_null-300-1-100-status.csv": "cb3757575f14fa84acbc18b3b22d209e7f80ac428bd1df351f5955a8eddbfbca",
+    "logistic_null-300-1-100-metrics.csv": "af70c894c326b9a2127c4802bf6258d4873d6016b6bbcfc4f97d0b362ae3e3e9",
+    "logistic_null-300-1-100.log": "c44ccf1d8c18837db78ab3ddfbece298d1b5a51242858061c7223364e7c996c0",
+    "logistic_null-300-replay": "interrupted synthetic replay directory preserved intact",
+    "logistic_null-300-201-300-status.csv": "8a8b9b28810ba63b0d2c38b61c816eee2966f8ae32165a034f8d85d023059e95",
+    "logistic_null-300-201-300-metrics.csv": "fe109c041ba376d23f1408eb5de961adec45568f7870e771089a2fd1bcb09504",
+    "logistic_null-300-201-300.log": "c1fcca051f9eea220faa69c3a6a645b316c85e09dca68ede129ddec497e984e0",
+    "logistic_null-300-301-400-status.csv": "2b223caed5adaa75d0e74abc4a8f336f4562d42e3e5444c5ddfbd92ab9cd88a1",
+    "logistic_null-300-301-400-metrics.csv": "35ef255af4ad3bc40720a1a6d9790264314bb5daca2da5b5e8ade945b0d62a35",
+    "logistic_null-300-301-400.log": "0980f860db355dfc6f091335c475211629f01ad242b87311109d0d6d095aa097",
+    "logistic_null-300-401-500-status.csv": "99fd020eebd51dc1587e456c0d705dde6e3ffc24234c952d098754b0e4c98bd1",
+    "logistic_null-300-401-500-metrics.csv": "0fc17eb501c5fb970d157b042629cd417a85753d49ae265e59882535f8349c1f",
+    "logistic_null-300-401-500.log": "ce43856accf352457c3df1cfff3e17e77c348cda7aacd964c3a299bd8b808b19",
+    "logistic_null-300-501-600-status.csv": "eb01d5dadbdb7eaf0546eb4a4bbdaa630bc378e57521c6011faf4e789a0c70f7",
+    "logistic_null-300-501-600-metrics.csv": "b9fafd8881233e7f27d4dc233c7ddaf4f1e126c2a9cd7dddf4a6cc08ad8e1f24",
+    "logistic_null-300-501-600.log": "6a8667aa5120fa859703f0573878dcfa907d046db3542183ca05df073a41ad82",
+    "logistic_null-300-601-700-status.csv": "389df5ed1b5840a18bb037cb2dd68c3dab9df7d0299a7a75563efa15d581ba55",
+    "logistic_null-300-601-700-metrics.csv": "c1862f06d7d131e84ff2ff5ccfd3daab0b5d660842a3bceae57e8d517716a76c",
+    "logistic_null-300-601-700.log": "8a87ba49679d0c047fb91909d813ff808a79976351457bce23bd29657134cb93",
+    "logistic_null-300-701-800-status.csv": "f981367fcf88fe68c740bbaf3b510e2a2f8e2c9ef9d7e7b06204ad795080bab6",
+    "logistic_null-300-701-800-metrics.csv": "abd1020a69d0b0296fd245f9c7a52f2487baf4f847ccbf1c55b38b23c45821f3",
+    "logistic_null-300-701-800.log": "667313dff66dd47d2c165024dedbcdce20cfe01e864e8ca19ba0711b34ef359b",
+    "logistic_null-300-801-900-status.csv": "3a2954c816f91a4755280b1e95fb0656daa50f0c71754bcc938b08fd057a42c7",
+    "logistic_null-300-801-900-metrics.csv": "d50ae735b3c68d501c211d98fcb70031f383dd6ac4e381472987f98d0005020a",
+    "logistic_null-300-801-900.log": "d0e00f1d0d0276d8cb066cadeb239aa8994780d1c6bf6cc2521256e1ff7104c8",
+    "logistic_null-300-901-1000-status.csv": "10215acc4e32881124fd2af6377a8160e2a3f581d410724c8069fce713d679f9",
+    "logistic_null-300-901-1000-metrics.csv": "7e28a8d5e120db40485bb8ae15bd8695996461f54b610874b183c4d46e8653c7",
+    "logistic_null-300-901-1000.log": "2ec8ebaf2350ef6c6c19448559628b7949492563a843f364def4e58f33e9c392",
+    "heteroscedastic-100-201-300-status.csv": "6a9c91367a3a0f916411a64a87a34cd4a461b84addbd1499642713e175e28665",
+    "heteroscedastic-100-201-300-metrics.csv": "640e0d194e4c2924a43c3fe7ea088b02d1fb5233b6d6b940035bd02157068f42",
+    "heteroscedastic-100-201-300.log": "487378c33edecc908ac6806a53513849e73dea6401a6faf52e0b9958ba7f362e",
+    "heteroscedastic-100-301-400-status.csv": "4276db1a26ddc6c1e5b855c58f08d78d308172926564a3d8f50877d7500ead80",
+    "heteroscedastic-100-301-400-metrics.csv": "36f5bc4b582071a300dfe04a62b91d99a95fd04e2053d6ae352c842eeead3829",
+    "heteroscedastic-100-301-400.log": "de4726b89c1e33a502d33400cd07f8f9729e599257ea22617ee7f3417992fdfd",
+    "heteroscedastic-100-401-500-status.csv": "9c5248a9779132b148337bfc48d63d53492429936aef2508e77776c168921dfb",
+    "heteroscedastic-100-401-500-metrics.csv": "842fb749f2e8d641c1b0b30822c79d87e9eede6bb65eeae381118a177ea4233f",
+    "heteroscedastic-100-401-500.log": "0e43192a456b351487c731b8cc350e2df4c61a285f5b4a71d4b3afeb2eebc9f0",
+    "heteroscedastic-100-501-600-status.csv": "0084d1ed00813f160baebfe8d1f1a3a6e093667742899dc5d615f3c929458270",
+    "heteroscedastic-100-501-600-metrics.csv": "ff2b7605522b56b148260c73738894e612402793377f417b8f1992cd7376dea7",
+    "heteroscedastic-100-501-600.log": "e2e255e4a5fe3e1124b2a98f77b3a2e7f9c30892726c69c46e0fd0aa497541e7",
+    "heteroscedastic-100-601-700.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "heteroscedastic-100-701-800.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "heteroscedastic-100-801-900.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "heteroscedastic-100-901-1000.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "heteroscedastic-300-1-100.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "resume_driver_sha256": "ef265ad2221346e964f087d33e61518216df6aee6c4d77c46818271beb09d093",
+  "started_UTC": "2026-10-23T05:02:52Z",
+  "completed_UTC": "2026-10-23T05:20:07Z",
+  "elapsed_recovery_seconds": 1034.547
+}

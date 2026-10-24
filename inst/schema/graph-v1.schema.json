@@ -1,0 +1,122 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "nodes": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 35,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+          },
+          "column": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 120
+          },
+          "role": {
+            "enum": [
+              "independent",
+              "dependent",
+              "mediator",
+              "moderator",
+              "covariate"
+            ]
+          },
+          "measurement_scale": {
+            "enum": [
+              "nominal",
+              "ordinal",
+              "interval",
+              "ratio"
+            ]
+          }
+        },
+        "required": [
+          "id",
+          "column",
+          "role",
+          "measurement_scale"
+        ]
+      }
+    },
+    "edges": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 150,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+          },
+          "source": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+          },
+          "target": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "target"
+        ]
+      }
+    },
+    "moderations": {
+      "type": "array",
+      "maxItems": 150,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+          },
+          "path_id": {
+            "type": "string",
+            "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+          },
+          "moderator_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[A-Za-z][A-Za-z0-9_]{0,39}$"
+            },
+            "minItems": 1,
+            "maxItems": 2,
+            "uniqueItems": true
+          }
+        },
+        "required": [
+          "id",
+          "path_id",
+          "moderator_ids"
+        ]
+      }
+    }
+  },
+  "required": [
+    "schema_version",
+    "nodes",
+    "edges",
+    "moderations"
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PathLab source graph schema 1",
+  "description": "Structural contract shared with Python/TypeScript. Semantic validation also checks roles, DAGs, focal routes, explicit interaction hierarchy and budgets. R 0.3.0 supports continuous mediators, explicitly coded categorical exogenous variables and an optional binary logistic outcome through separate versioned settings."
+}

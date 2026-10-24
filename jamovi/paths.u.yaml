@@ -1,0 +1,735 @@
+{
+  "title": "Mediation and Moderation",
+  "name": "paths",
+  "jus": "3.0",
+  "stage": 0,
+  "compilerMode": "tame",
+  "children": [
+    {
+      "type": "VariableSupplier",
+      "persistentItems": false,
+      "stretchFactor": 1,
+      "children": [
+        {
+          "type": "TargetLayoutBox",
+          "label": "Predictor (X)",
+          "children": [
+            {
+              "type": "VariablesListBox",
+              "name": "x",
+              "isTarget": true,
+              "itemDropBehaviour": "insert",
+              "maxItemCount": 1
+            }
+          ]
+        },
+        {
+          "type": "TargetLayoutBox",
+          "label": "Outcome (Y)",
+          "children": [
+            {
+              "type": "VariablesListBox",
+              "name": "y",
+              "isTarget": true,
+              "itemDropBehaviour": "insert",
+              "maxItemCount": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ModeSelector",
+      "name": "modelMode",
+      "form": "tabs",
+      "options": [
+        {
+          "name": "legacy",
+          "title": "Original editor"
+        },
+        {
+          "name": "general",
+          "title": "General graph"
+        }
+      ],
+      "children": [
+        {
+          "type": "Content",
+          "name": "legacy",
+          "children": [
+            {
+              "type": "Label",
+              "label": "The original editor retains saved 0.1.1 analyses. Unused"
+            },
+            {
+              "type": "Label",
+              "label": "roles require their selected arrows and moderation"
+            },
+            {
+              "type": "Label",
+              "label": "attachments to be deselected."
+            },
+            {
+              "type": "VariableSupplier",
+              "persistentItems": false,
+              "stretchFactor": 1,
+              "children": [
+                {
+                  "type": "TargetLayoutBox",
+                  "label": "First mediator (M1, optional)",
+                  "children": [
+                    {
+                      "type": "VariablesListBox",
+                      "name": "m1",
+                      "isTarget": true,
+                      "itemDropBehaviour": "insert",
+                      "maxItemCount": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "TargetLayoutBox",
+                  "label": "Second mediator (M2, optional)",
+                  "children": [
+                    {
+                      "type": "VariablesListBox",
+                      "name": "m2",
+                      "isTarget": true,
+                      "itemDropBehaviour": "insert",
+                      "maxItemCount": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "TargetLayoutBox",
+                  "label": "Moderator (W, optional)",
+                  "children": [
+                    {
+                      "type": "VariablesListBox",
+                      "name": "w",
+                      "isTarget": true,
+                      "itemDropBehaviour": "insert",
+                      "maxItemCount": 1
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "CollapseBox",
+              "label": "Covariates by equation",
+              "collapsed": true,
+              "children": [
+                {
+                  "type": "VariableSupplier",
+                  "persistentItems": true,
+                  "stretchFactor": 1,
+                  "children": [
+                    {
+                      "type": "TargetLayoutBox",
+                      "label": "Covariates in M1 equation",
+                      "children": [
+                        {
+                          "type": "VariablesListBox",
+                          "name": "covM1",
+                          "isTarget": true,
+                          "itemDropBehaviour": "insert"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TargetLayoutBox",
+                      "label": "Covariates in M2 equation",
+                      "children": [
+                        {
+                          "type": "VariablesListBox",
+                          "name": "covM2",
+                          "isTarget": true,
+                          "itemDropBehaviour": "insert"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "TargetLayoutBox",
+                      "label": "Covariates in Y equation",
+                      "children": [
+                        {
+                          "type": "VariablesListBox",
+                          "name": "covY",
+                          "isTarget": true,
+                          "itemDropBehaviour": "insert"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "CollapseBox",
+              "label": "Explicit arrows",
+              "collapsed": false,
+              "children": [
+                {
+                  "type": "CheckBox",
+                  "name": "p_x_m1"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_x_m2"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_m1_m2"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_x_y"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_m1_y"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_m2_y"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_w_m1"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_w_m2"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "p_w_y"
+                }
+              ]
+            },
+            {
+              "type": "CollapseBox",
+              "label": "Moderated arrows (requires W main arrow)",
+              "collapsed": false,
+              "children": [
+                {
+                  "type": "CheckBox",
+                  "name": "mod_x_m1"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "mod_x_m2"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "mod_m1_m2"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "mod_x_y"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "mod_m1_y"
+                },
+                {
+                  "type": "CheckBox",
+                  "name": "mod_m2_y"
+                }
+              ]
+            },
+            {
+              "type": "TextBox",
+              "name": "probes",
+              "format": "string"
+            }
+          ]
+        },
+        {
+          "type": "Content",
+          "name": "general",
+          "children": [
+            {
+              "type": "Label",
+              "label": "Role codes follow the order of the variable lists. X and Y"
+            },
+            {
+              "type": "Label",
+              "label": "use the shared selections above. Review the diagram and"
+            },
+            {
+              "type": "Label",
+              "label": "equations after changing role order. Selecting a variable"
+            },
+            {
+              "type": "Label",
+              "label": "adds no arrows automatically."
+            },
+            {
+              "type": "VariableSupplier",
+              "persistentItems": false,
+              "stretchFactor": 1,
+              "children": [
+                {
+                  "type": "TargetLayoutBox",
+                  "label": "Ordered mediators (M1 to M10, top to bottom)",
+                  "children": [
+                    {
+                      "type": "VariablesListBox",
+                      "name": "generalMediators",
+                      "isTarget": true,
+                      "itemDropBehaviour": "insert",
+                      "maxItemCount": 10
+                    }
+                  ]
+                },
+                {
+                  "type": "TargetLayoutBox",
+                  "label": "Moderators (W, Z, V, top to bottom)",
+                  "children": [
+                    {
+                      "type": "VariablesListBox",
+                      "name": "generalModerators",
+                      "isTarget": true,
+                      "itemDropBehaviour": "insert",
+                      "maxItemCount": 3
+                    }
+                  ]
+                },
+                {
+                  "type": "TargetLayoutBox",
+                  "label": "Covariates (C1 to C20, top to bottom)",
+                  "children": [
+                    {
+                      "type": "VariablesListBox",
+                      "name": "generalCovariates",
+                      "isTarget": true,
+                      "itemDropBehaviour": "insert",
+                      "maxItemCount": 20
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "Label",
+              "label": "Add each intended arrow explicitly. C1 to C20 arrows"
+            },
+            {
+              "type": "Label",
+              "label": "assign covariates to individual equations. Endpoints must"
+            },
+            {
+              "type": "Label",
+              "label": "refer to assigned roles, and mediator paths must connect X"
+            },
+            {
+              "type": "Label",
+              "label": "to Y."
+            },
+            {
+              "type": "ListBox",
+              "name": "generalPaths",
+              "showColumnHeaders": true,
+              "fullRowSelect": true,
+              "maxItemCount": 150,
+              "addButton": "Add arrow",
+              "removeAction": "deleterow",
+              "height": "large",
+              "columns": [
+                {
+                  "name": "source",
+                  "label": "From role",
+                  "selectable": false,
+                  "template": {
+                    "type": "ComboBox",
+                    "label": ""
+                  }
+                },
+                {
+                  "name": "target",
+                  "label": "To equation",
+                  "selectable": false,
+                  "template": {
+                    "type": "ComboBox",
+                    "label": ""
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Label",
+              "label": "Each attachment moderates an existing arrow. Use one"
+            },
+            {
+              "type": "Label",
+              "label": "moderator for a two-way interaction; a second moderator"
+            },
+            {
+              "type": "Label",
+              "label": "requests the joint three-way interaction. Separate"
+            },
+            {
+              "type": "Label",
+              "label": "single-moderator rows are still required for its"
+            },
+            {
+              "type": "Label",
+              "label": "lower-order terms."
+            },
+            {
+              "type": "ListBox",
+              "name": "generalModerations",
+              "showColumnHeaders": true,
+              "fullRowSelect": true,
+              "maxItemCount": 150,
+              "addButton": "Add moderation",
+              "removeAction": "deleterow",
+              "height": "large",
+              "columns": [
+                {
+                  "name": "source",
+                  "label": "Arrow from",
+                  "selectable": false,
+                  "template": {
+                    "type": "ComboBox",
+                    "label": ""
+                  }
+                },
+                {
+                  "name": "target",
+                  "label": "Arrow to",
+                  "selectable": false,
+                  "template": {
+                    "type": "ComboBox",
+                    "label": ""
+                  }
+                },
+                {
+                  "name": "mod1",
+                  "label": "Moderator 1",
+                  "selectable": false,
+                  "template": {
+                    "type": "ComboBox",
+                    "label": ""
+                  }
+                },
+                {
+                  "name": "mod2",
+                  "label": "Joint moderator 2",
+                  "selectable": false,
+                  "template": {
+                    "type": "ComboBox",
+                    "label": ""
+                  }
+                }
+              ]
+            },
+            {
+              "type": "Label",
+              "label": "A joint X with W and Z term requires X, W and Z main"
+            },
+            {
+              "type": "Label",
+              "label": "arrows to the same equation, plus X by W, X by Z and W by"
+            },
+            {
+              "type": "Label",
+              "label": "Z interactions. Add W by Z by moderating the W main arrow"
+            },
+            {
+              "type": "Label",
+              "label": "with Z. PathLab rejects an incomplete hierarchy; it does"
+            },
+            {
+              "type": "Label",
+              "label": "not add terms silently."
+            },
+            {
+              "type": "Label",
+              "label": "At most 25 moderator-probe combinations are allowed. Three"
+            },
+            {
+              "type": "Label",
+              "label": "automatic three-value probe lists produce 27 combinations;"
+            },
+            {
+              "type": "Label",
+              "label": "specify fewer custom values for at least one moderator."
+            },
+            {
+              "type": "CollapseBox",
+              "label": "General moderator probes",
+              "collapsed": false,
+              "children": [
+                {
+                  "type": "TextBox",
+                  "name": "generalProbesW",
+                  "format": "string"
+                },
+                {
+                  "type": "TextBox",
+                  "name": "generalProbesZ",
+                  "format": "string"
+                },
+                {
+                  "type": "TextBox",
+                  "name": "generalProbesV",
+                  "format": "string"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "CollapseBox",
+      "label": "Categorical predictors, moderators and covariates",
+      "collapsed": false,
+      "children": [
+        {
+          "type": "Label",
+          "label": "Add a coding row for each categorical X, moderator or"
+        },
+        {
+          "type": "Label",
+          "label": "covariate. Enter its exact reference level. The column"
+        },
+        {
+          "type": "Label",
+          "label": "level order is retained; every declared level must occur"
+        },
+        {
+          "type": "Label",
+          "label": "in the common analysis sample. Numerical columns remain"
+        },
+        {
+          "type": "Label",
+          "label": "quantitative unless you add a coding row."
+        },
+        {
+          "type": "ListBox",
+          "name": "categoricalCoding",
+          "showColumnHeaders": true,
+          "fullRowSelect": true,
+          "maxItemCount": 24,
+          "addButton": "Add categorical role",
+          "removeAction": "deleterow",
+          "height": "normal",
+          "columns": [
+            {
+              "name": "role",
+              "label": "Role",
+              "selectable": false,
+              "template": {
+                "type": "ComboBox",
+                "label": ""
+              }
+            },
+            {
+              "name": "reference",
+              "label": "Reference level",
+              "selectable": false,
+              "template": {
+                "type": "TextBox",
+                "format": "string",
+                "label": ""
+              }
+            }
+          ]
+        },
+        {
+          "type": "Label",
+          "label": "Blank categorical moderator probes use all declared"
+        },
+        {
+          "type": "Label",
+          "label": "levels. Custom category probes use comma-separated labels;"
+        },
+        {
+          "type": "Label",
+          "label": "quote a label containing a comma. Categorical moderators"
+        },
+        {
+          "type": "Label",
+          "label": "use level comparisons, not numerical derivatives or"
+        },
+        {
+          "type": "Label",
+          "label": "Johnson-Neyman regions."
+        }
+      ]
+    },
+    {
+      "type": "CollapseBox",
+      "label": "Outcome model",
+      "collapsed": false,
+      "children": [
+        {
+          "type": "ComboBox",
+          "name": "outcomeFamily"
+        },
+        {
+          "type": "TextBox",
+          "name": "logisticEvent",
+          "format": "string",
+          "enable": "(outcomeFamily == 'logistic')"
+        },
+        {
+          "type": "Label",
+          "label": "For binary logistic outcomes, the named event is coded 1"
+        },
+        {
+          "type": "Label",
+          "label": "and the other level 0. Mediators remain continuous."
+        },
+        {
+          "type": "Label",
+          "label": "Indirect and summed associations are log-odds path"
+        },
+        {
+          "type": "Label",
+          "label": "products, not probability effects, natural causal effects,"
+        },
+        {
+          "type": "Label",
+          "label": "or a reduced-model total coefficient."
+        }
+      ]
+    },
+    {
+      "type": "CollapseBox",
+      "label": "Estimation",
+      "collapsed": false,
+      "children": [
+        {
+          "type": "CheckBox",
+          "name": "robust"
+        },
+        {
+          "type": "TextBox",
+          "name": "draws",
+          "format": "number"
+        },
+        {
+          "type": "TextBox",
+          "name": "seed",
+          "format": "number"
+        },
+        {
+          "type": "TextBox",
+          "name": "confidence",
+          "format": "number"
+        }
+      ]
+    },
+    {
+      "type": "CollapseBox",
+      "label": "Additional output",
+      "collapsed": false,
+      "children": [
+        {
+          "type": "CheckBox",
+          "name": "showDetails"
+        },
+        {
+          "type": "CheckBox",
+          "name": "showCovariance"
+        }
+      ]
+    },
+    {
+      "type": "CollapseBox",
+      "label": "Effect, interaction and Johnson–Neyman plots",
+      "collapsed": false,
+      "children": [
+        {
+          "type": "Label",
+          "label": "Choose one arrow or all declared moderated arrows. All"
+        },
+        {
+          "type": "Label",
+          "label": "mode shows six plots per page; the selected arrow still"
+        },
+        {
+          "type": "Label",
+          "label": "controls the JN plot. Other moderators use the numbered"
+        },
+        {
+          "type": "Label",
+          "label": "fixed probe combination in reproduction JSON. Categorical"
+        },
+        {
+          "type": "Label",
+          "label": "sources use separate points; categorical moderators have"
+        },
+        {
+          "type": "Label",
+          "label": "no JN region. Effect pages retain every selected estimand."
+        },
+        {
+          "type": "Label",
+          "label": "Intervals are pointwise, without multiplicity adjustment."
+        },
+        {
+          "type": "CheckBox",
+          "name": "showEffectPlot"
+        },
+        {
+          "type": "ComboBox",
+          "name": "plotEffectKind"
+        },
+        {
+          "type": "TextBox",
+          "name": "plotEffectPage",
+          "format": "number"
+        },
+        {
+          "type": "CheckBox",
+          "name": "showInteractionPlot"
+        },
+        {
+          "type": "ComboBox",
+          "name": "plotInteractionMode"
+        },
+        {
+          "type": "TextBox",
+          "name": "plotInteractionPage",
+          "format": "number"
+        },
+        {
+          "type": "CheckBox",
+          "name": "showJNPlot"
+        },
+        {
+          "type": "ComboBox",
+          "name": "plotSource"
+        },
+        {
+          "type": "ComboBox",
+          "name": "plotTarget"
+        },
+        {
+          "type": "ComboBox",
+          "name": "plotModerator"
+        },
+        {
+          "type": "TextBox",
+          "name": "plotCondition",
+          "format": "number"
+        },
+        {
+          "type": "TextBox",
+          "name": "plotContrast",
+          "format": "number"
+        },
+        {
+          "type": "ComboBox",
+          "name": "plotResponseScale"
+        }
+      ]
+    }
+  ]
+}

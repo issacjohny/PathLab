@@ -1,0 +1,82 @@
+[
+  {
+    "name": "mediation",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "ordinary_moderation",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "serial",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "parallel",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "combined",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "first_stage",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "repeated_w",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "separate_three",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "joint_two",
+    "n": 100,
+    "source_n": 100,
+    "indices_sha256": "b820470c0f5bd9afdc278bc31b8c8ae15cac7542485a5827a926550df31043ba",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  },
+  {
+    "name": "missing_special",
+    "n": 98,
+    "source_n": 100,
+    "indices_sha256": "238c8c65ed7d8447b4cf8cfc93fed3562c4d9d659ef553a67613d1c7be3a20c9",
+    "index_base": 1,
+    "python_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d"
+  }
+]

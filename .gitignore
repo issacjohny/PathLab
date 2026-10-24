@@ -1,0 +1,7 @@
+build/
+dist/
+*.jmo
+jamovi/build/
+*.tar.gz
+*.Rcheck/
+inst/provenance/build-source.json

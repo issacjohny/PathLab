@@ -1,0 +1,111 @@
+{
+  "schema": 1,
+  "version": "0.4.6",
+  "status": "Proposed first public beta; private; not submitted or Library accepted",
+  "checked_date": "2026-10-24",
+  "analysis_source_revision": "cba2741a67202521e13159967fa94c727a3ca376",
+  "documentation": "VALIDATION.md; METHODS.md; release-review/simulations/REPORT.md",
+  "current_windows28": {
+    "runtime": {
+      "Desktop": "28.14.0.0",
+      "R": "4.6.0",
+      "jmvcore": "28.3",
+      "jmvtools": "28.4",
+      "platform": "Windows x64"
+    },
+    "installer": {
+      "filename": "pathlab_0.4.6-jamovi28-win-x64.jmo",
+      "sha256": "004f6eaeb55f5e59f304a5cad4e5ed059da03787ce6c6ebfe1762db8f14eb435",
+      "bytes": 498818,
+      "built": true,
+      "installed": true,
+      "installed_files_verified": 39,
+      "functions_verified": 63,
+      "R6_methods_verified": 89
+    },
+    "installed_full_suite": {
+      "passed": true,
+      "counts": {
+        "cases": 147,
+        "assertions": 58289,
+        "passed": 58289,
+        "failed": 0,
+        "errors": 0,
+        "warnings": 0,
+        "skipped": 0
+      },
+      "R": "R version 4.6.0 (2026-04-24 ucrt)",
+      "jmvcore": "28.3",
+      "scope": "Actual extracted final .jmo implementation; saved-index Python references and independent numerical/native tests"
+    },
+    "package_check": {
+      "status": "Status: OK",
+      "tests_enabled": false,
+      "tests_ran_separately": true,
+      "PDF_manual_checked": false
+    },
+    "Desktop": {
+      "result_assertions": 158,
+      "lifecycle_checks": 22,
+      "HTML_image_checks": 11,
+      "scope": "Targeted continuous/gallery and user-missing restart/cache/resize/save/reopen/export checks; broader six-case sweep is historical",
+      "full_release_sweep_complete": false
+    },
+    "older_runtime_focused_checks": {
+      "cases": 12,
+      "assertions": 303,
+      "passed": true,
+      "scope": "Changed source with R4.5/jmvcore2.7.35; no new 2.7 installer or GUI run"
+    }
+  },
+  "retained_windows27": {
+    "source_revision": "2c04290b9815a5830bb67c3fee1d78bb440110b1",
+    "target": "Windows x64 jamovi 2.7.39 / R4.5",
+    "current_analysis_source_GUI_tested": false,
+    "package_check": {
+      "status": "OK",
+      "tests_enabled": true,
+      "cases": 144,
+      "assertions": 58257
+    },
+    "installed_focused_checks": {
+      "cases": 52,
+      "assertions": 23706
+    }
+  },
+  "simulations": {
+    "source_revision": "b1beae8c08413ca38bcde1e142f2d513fcb0b9b0",
+    "cells": 20,
+    "datasets": 20000,
+    "finite_parameter_datasets": 18000,
+    "deliberate_separation_datasets": 2000,
+    "successful_fits": 17836,
+    "draws_per_estimable_fit": 2000,
+    "saved_index_Python_cells": 20,
+    "scalar_comparisons": 1714864,
+    "maximum_absolute_difference": 1.0096756763999792e-11,
+    "core_invariance": "Eight scientific files identical to the study after one error-message-only replacement; all current runtime/test files match the tested analysis source",
+    "summary_file_hashes": {
+      "cell-summary.csv": "ee8f5e6402fe1aca6c7bb65aa8c81f27ae0c4492da9157775e12affb6a11b3f9",
+      "estimand-summary.csv": "f78a5229a3a011baff216c9721a6f8cf0db3c91ff493d44445850afe6956b244"
+    }
+  },
+  "limitations": [
+    "Sparse categorical N100: 164/1000 fits failed; selected null indirect 89/836 false positives (10.65%) among successful fits",
+    "Composite-null serial products conservative (0.1–0.6%); no universal nominal coverage or minimum N",
+    "Independent observations, continuous mediators, correctly specified equations and common complete cases",
+    "Logistic indirects are coefficient/log-odds path products; no natural causal or probability interpretation",
+    "JN is pointwise conditional path-slope inference, not indirect-effect regions or simultaneous bands",
+    "Only bounded study DGPs at N100/300; arbitrary large graphs, missingness processes and all robust-logistic settings not calibrated"
+  ],
+  "unverified": [
+    "External statistician peer review; selected matched lavaan/jAMM reference",
+    "Fresh latest-source jamovi2.7 installer/GUI",
+    "macOS",
+    "Linux",
+    "ARM",
+    "Cloud",
+    "PDF-manual compilation without TeX"
+  ],
+  "publication_authorized": false
+}

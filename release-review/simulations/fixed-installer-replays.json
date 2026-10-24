@@ -1,0 +1,126 @@
+{
+  "passed": true,
+  "source_revision": "6849ad9cf6c6e9072a2f11ca920fd7e05b400cd0",
+  "simulation_source_revision": "b1beae8c08413ca38bcde1e142f2d513fcb0b9b0",
+  "case_count": 20,
+  "checks": {
+    "serial_alt-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "serial_alt-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "serial_null-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "serial_null-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "serial_double_null-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "serial_double_null-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "repeated_w-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 60000
+    },
+    "repeated_w-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 60000
+    },
+    "joint_wz-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 436000
+    },
+    "joint_wz-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 436000
+    },
+    "categorical-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 1908,
+      "distribution_values": 45792
+    },
+    "categorical-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 48000
+    },
+    "logistic_alt-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "logistic_alt-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "logistic_null-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "logistic_null-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "heteroscedastic-100": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "heteroscedastic-300": {
+      "passed": true,
+      "entire_scientific_objects_bit_identical": true,
+      "successful_draws": 2000,
+      "distribution_values": 52000
+    },
+    "separation_stress-100": {
+      "passed": true,
+      "separation_rejected": true
+    },
+    "separation_stress-300": {
+      "passed": true,
+      "separation_rejected": true
+    }
+  },
+  "sparse_error_checked_classical_and_HC3": true,
+  "scope": "Rebuilt isolated .jmo namespace; all first-replicate scientific R objects bit-identical to Python-validated Monte Carlo source; no Desktop installation"
+}

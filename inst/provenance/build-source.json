@@ -1,0 +1,21 @@
+{
+  "source_revision": "cba2741a67202521e13159967fa94c727a3ca376",
+  "application_base": "12419ca61ea8782f3c78d05abd712f6a36902dc3",
+  "engine": "pathlab-r/0.4.6",
+  "graph_schema": 1,
+  "settings_schema": 3,
+  "source_engine_sha256": "d9c74edc46851783d73b92f9ba96e2325e677e13a2228de3565676a54aaf247d",
+  "files": {
+    "R/bootstrap.R": "53629fa638c563176a17fc8961f3df8aa5f1025b2fc438d35065a17da4402873",
+    "R/cache.R": "336426043281cde466646193344313bee7c4fae9f535ec7e1938b886a8d18339",
+    "R/effects.R": "392215f014d3ff3dcf0c6036965508a5ac2693f5d2ab45442774f01964b20b81",
+    "R/estimand-plan.R": "c35c8e726bb47ce0104e5196654d9145535ba5c0c18ee9ad26ad8c58b7dcabfe",
+    "R/fitting.R": "be126bd0ffbe28ff29a50a3aa47f0af090d98710f5291ad0886913da831c7546",
+    "R/model.R": "9e7c9b8f1a24307249294208871a9d7dc1be0692de378e291f4d0df4ada9ad86",
+    "R/native.R": "a5e4228e485423fbe9b848cb87d88d9285864c6dcdb1fcab3a4862a99aa2f21c",
+    "R/output.R": "4ced9bca61d5d5891b6c208c825b7cf2fdefae8b6df5a4fe4427536bf116d785",
+    "R/paths.b.R": "18c7b251bfc6a332161da6dcd8c11ffc4396f6c539708bd853199f93d90732fe",
+    "R/paths.h.R": "563620b35d6f74d2fee4bfb0b9d6456f85e312e75d6b18787b72c2f9b3e3166e",
+    "R/plots.R": "baaf414688dc273306f70f283f5f1891358db93ec7c1a26bc0980ae619766d9e"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "synthetic_only": true,
+  "private_review": true,
+  "simulation_source_revision": "b1beae8c08413ca38bcde1e142f2d513fcb0b9b0",
+  "files": {
+    "cell-summary.csv": "ee8f5e6402fe1aca6c7bb65aa8c81f27ae0c4492da9157775e12affb6a11b3f9",
+    "coverage-figure-data.csv": "d75d0dcb85981bd1070eb9be7bc24dc4d69ce8d91726991ff75d734ae6cd126e",
+    "coverage.png": "4c23c1678049ecc4b4b2fc5742233f8027249972aa94674968bb870bafce088a",
+    "estimand-summary.csv": "f78a5229a3a011baff216c9721a6f8cf0db3c91ff493d44445850afe6956b244",
+    "evidence.json": "fb586af34707cc848202db4319862888284bf271e30088315a6d0472dab5f8a1",
+    "execution-recovery.json": "200f4129ea45ba999d67afc2494a76af4c196835cf05319ebca9e29fa02b6502",
+    "fixed-installer-replays.json": "47ab6a52cedfcccd8651db120517e780d16ec6dd23b1cf2df7c9ac176fb84204",
+    "protocol.json": "9accf436644769fcbe2a19e3020ad9d631463cb36f3748efd472f5639d99d775",
+    "PROTOCOL.md": "9e5f0d225583200cfb44d35183ffdbb9c9e6f62069038ca63f28c150f6731edf",
+    "python-parity.json": "7494c6992b5c930e1ea18b57fa95c7a2e12c2f727b8add5565c8f5f2dc866e17",
+    "REPORT.md": "cdd2fe07793003899bcaff2ebd644639f4efa85dacd878481a6728b72166bee7",
+    "simulation_study.R": "328e4d1464899177b526659efae7a82b2eb77c9c7bc1221e0ae42dce1b69f406",
+    "sparse-failure-replays.json": "0406387c894dd9de0dcd43a62fe198982585d4f1d311c76409a9547c59a77ad0",
+    "summary-crosscheck.json": "f9ea1fc9c0f5a7693455e936259819025704e6ffde17d411a90a0b79f65125b2"
+  },
+  "production_estimation_unchanged_by_diagnostic_fix": true
+}
